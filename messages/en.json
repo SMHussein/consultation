@@ -1,0 +1,75 @@
+{
+  "Nav": {
+    "items": ["Home", "About us", "Our Services", "Our Clients"]
+  },
+  "Hero": {
+    "title": "ECMC - Empowering Saudi Businesses with Strategic and Sustainable Consulting Solutions"
+  },
+  "Overview": {
+    "title": "Who are we ?",
+    "textFirst": "ECMC is a leading consulting company in Saudi Arabia, dedicated to empowering businesses for sustainable growth and success in local and global markets. With expertise in strategy, digital transformation, risk management, and more, we deliver tailored solutions across diverse sectors. Our team of experienced professionals focuses on innovation, excellence, and achieving client-specific objectives.",
+    "textSecond": "We are committed to enhancing competitive advantage through high-quality, customized services. At ECMC, trust and long-term partnerships form the foundation of our client relationships.",
+    "btnText": "Read More"
+  },
+  "OurServices": {
+    "title": "Our Services",
+    "strategies": {
+      "title": "Strategies",
+      "src": "service-1",
+      "items": [
+        "Strategy development",
+        "Strategy execution",
+        "Market Research and Local Economy Studies",
+        "Policies development",
+        "Polices auditing",
+        "Corporate Social Responsibility (CSR) strategy",
+        "Environmental, Social, and Governance (ESG) strategy"
+      ]
+    },
+    "organizationalExcellency": {
+      "title": "Organizational excellency",
+      "src": "service-3",
+      "items": [
+        "Governance, risk, compliance and business continuity",
+        "Designing Operating models",
+        "Performance and Project Management",
+        "Organizational culture transformation",
+        "Change management",
+        "Policies and procedures",
+        "Building capabilities"
+      ]
+    },
+    "marketing": {
+      "title": "Marketing",
+      "src": "service-4",
+      "items": [
+        "Marketing",
+        "Branding",
+        "Marketing strategy",
+        "Communication strategy",
+        "Costing",
+        "Marketing operational support",
+        "Marketing research•Distribution strategies"
+      ]
+    }
+  },
+  "Whyus": {
+    "title": "Why ECMC ?",
+    "expertise": {
+      "title": "Broad expertise in operational procedures and institutional excellence",
+      "text": "We provide services that enable organizations to achieve their strategies, starting from building organizational design and operating models, to developing policies and procedures, all while monitoring performance and enhancing human capital"
+    },
+    "knowledge": {
+      "title": "In-depth knowledge of the Saudi market, spanning both public and private sectors",
+      "text": "At Emerge Capabilities, we stand out for our extensive experience in both the public and private sectors of the Saudi market, making us the ideal choice for this project"
+    },
+    "strategy": {
+      "title": "Extensive experience in strategy development",
+      "text": "Our team possesses extensive knowledge and expertise in developing strategies across a wide range of sectors, having worked with numerous organizations. This has enabled us to develop a deep understanding of strategies and their associated challenges"
+    },
+    "governance": {
+      "title": "Extensive experience in governance, risk, compliance, and business continuity",
+      "text": "We excel in crafting and developing governance, risk, compliance, and business continuity strategies for a wide range of clients in both the public and private sectors"
+    }
+  }
+}

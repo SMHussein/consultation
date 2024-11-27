@@ -16,19 +16,19 @@ const team = [
 export default function Team() {
   return (
     <Section>
-      <Row grid={4} classes="flex flex-col gap-6">
+      <Row grid={3} classes="flex flex-col gap-6">
         <Heading classes="text-primary-100 text-center">
           STRATEGIC GEARS LEADERS
         </Heading>
         <ul className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-12 justify-items-center">
-          {team.map((member) => (
-            <TeamMember member={member} />
+          {team.map((member, i) => (
+            <TeamMember member={member} key={i} />
           ))}
         </ul>
         <Button
           href="/team"
           className="self-center"
-          customIcon={<BiGroup size={20} />}
+          icon={<BiGroup size={20} />}
         >
           Management Team
         </Button>

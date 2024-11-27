@@ -13,11 +13,14 @@ export default function TeamMember({ member }) {
           height={240}
           className="rounded-md"
         />
-        <Heading type="tertiary" classes="text-primary-100">
+        <Heading
+          type="tertiary"
+          classes="text-primary-100 text-primary-150 hover:text-primary-160"
+        >
           {member.name}
         </Heading>
       </Link>
-      <p className="text-primary-50 text-sm">{member.position}</p>
+      <p className="text-primary-200 text-sm">{member.position}</p>
     </li>
   );
 }

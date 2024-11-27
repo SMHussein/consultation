@@ -9,8 +9,8 @@ const inputs = [
 export default function Form() {
   return (
     <form className="text-primary-200 flex flex-col gap-6">
-      {inputs.map((input) => (
-        <FormItem {...input} />
+      {inputs.map((input, i) => (
+        <FormItem {...input} key={i} />
       ))}
       <Button
         variation="secondary"
@@ -30,7 +30,7 @@ function FormItem({ id, label, type, required }) {
         {label} {required && <span className="text-red-500">*</span>}
       </label>
       <input
-        className="p-2 rounded-md"
+        className="p-2 rounded-md border border-primary-200"
         id={id}
         type={type}
         name={id}

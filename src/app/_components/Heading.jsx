@@ -1,7 +1,16 @@
-export default function Heading({ children, type = "secondary", classes }) {
+export default function Heading({
+  children,
+  type = "secondary",
+  classes,
+  isLight = false,
+}) {
   let element;
 
-  const classNames = `uppercase ${classes} text-primary-200`;
+  let classNames = `uppercase ${classes}`;
+
+  if (isLight) classNames += " text-accent-50";
+
+  if (!isLight) classNames += " text-primary-200";
 
   switch (type) {
     case "primary":

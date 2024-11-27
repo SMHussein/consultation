@@ -5,9 +5,9 @@ import Section from "../_components/Section";
 
 export default function Contact() {
   return (
-    <Section classes="bg-primary-50">
+    <Section classes="bg-accent-150">
       <Row grid={2}>
-        <Heading type="secondary" classes="text-primary-100 mb-6 text-center">
+        <Heading type="secondary" classes="mb-6 text-center">
           Subscribe to our publications
         </Heading>
         <Form />

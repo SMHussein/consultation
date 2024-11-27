@@ -9,7 +9,6 @@ import {
   BiSolidColor,
   BiLayer,
   BiLogoFacebook,
-  BiLogoTwitter,
   BiLogoLinkedin,
 } from "react-icons/bi";
 import { BsTwitterX } from "react-icons/bs";
@@ -21,7 +20,7 @@ const linkWrapperClass =
 export default function Footer() {
   return (
     <footer className="bg-primary-200 text-white ">
-      <Row grid={4}>
+      <Row grid={3}>
         <div className="flex justify-around flex-col md:flex-row gap-8">
           <div>
             <Logo />
