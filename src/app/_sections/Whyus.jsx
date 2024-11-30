@@ -17,7 +17,7 @@ export default function WhyUs() {
   const t = useTranslations("Whyus");
 
   return (
-    <Section>
+    <Section classes="bg-accent-150">
       <Row grid={2} classes="flex flex-col items-center gap-8 text-center">
         <Heading type="secondary">{t("title")}</Heading>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-16 gap-x-12">

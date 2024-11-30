@@ -1,5 +1,3 @@
-import Header from "@/src/app/_sections/Header";
-import Footer from "@/src/app/_sections/Footer";
 import Hero from "@/src/app/_sections/Hero";
 import Overview from "@/src/app/_sections/Overview";
 import Clients from "@/src/app/_sections/Clients";
@@ -15,18 +13,14 @@ export default async function Home({ params }) {
   setRequestLocale(locale);
 
   return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <Overview locale={locale} />
-        <Clients />
-        <Services />
-        <WhyUs />
-        <Team />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <main>
+      <Hero />
+      <Overview />
+      <Services />
+      <WhyUs />
+      <Team />
+      <Clients />
+      <Contact />
+    </main>
   );
 }

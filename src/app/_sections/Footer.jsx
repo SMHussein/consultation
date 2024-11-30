@@ -19,7 +19,7 @@ const linkWrapperClass =
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-200 text-white ">
+    <footer className="bg-accent-150 border-t">
       <Row grid={3}>
         <div className="flex justify-around flex-col md:flex-row gap-8">
           <div>
@@ -67,7 +67,7 @@ function FooterLink({ href, label, icon }) {
   return (
     <Link
       href={href}
-      className="text-sm font-thin flex items-center gap-2 hover:text-accent-50"
+      className="text-sm font-thin flex items-center gap-2 hover:text-primary-170"
     >
       {icon}
       {label}

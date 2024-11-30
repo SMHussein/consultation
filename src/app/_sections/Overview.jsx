@@ -4,7 +4,7 @@ import Row from "../_components/Row";
 import Section from "../_components/Section";
 import { useTranslations } from "next-intl";
 
-export default function Overview({ locale }) {
+export default function Overview() {
   const t = useTranslations("Overview");
 
   return (
@@ -15,7 +15,7 @@ export default function Overview({ locale }) {
           <p>{t("textFirst")}</p>
           <p>{t("textSecond")}</p>
         </div>
-        <Button href="#" variation="secondary" locale={locale}>
+        <Button href="/about" variation="secondary">
           {t("btnText")}
         </Button>
       </Row>

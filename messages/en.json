@@ -1,4 +1,7 @@
 {
+  "Buttons": {
+    "contact": "Contact Us Now"
+  },
   "Nav": {
     "items": ["Home", "About us", "Our Services", "Our Clients"]
   },
@@ -15,7 +18,13 @@
     "title": "Our Services",
     "strategies": {
       "title": "Strategies",
-      "src": "service-1",
+      "subTitle": "Crafting Tailored, Professional Marketing Strategies to Drive Sustainable Growth",
+      "text1": "At Emergence Capabilities Management Consulting (ECMC), we specialize in developing highly customized, professional marketing strategies that enable Saudi businesses to achieve sustained growth, enhance brand value, and engage effectively with their target audiences. Our deep understanding of the Saudi market and its unique dynamics allows us to design marketing solutions that are specifically aligned with your business goals and customer needs.",
+      "text2": "Our services cover every aspect of marketing strategy, from market analysis and customer segmentation to brand positioning, integrated communication strategies, and performance measurement. We work closely with your team to create actionable, results-driven strategies that resonate with local and international audiences while ensuring maximum return on investment.",
+      "text3": "Whether you're looking to launch a new product, refine your brand’s presence, or enter new market segments, ECMC’s tailored marketing strategies provide the expertise and precision needed to meet your objectives. With extensive experience across 21+ sectors, we empower Saudi businesses to establish a competitive edge in a rapidly evolving marketplace, contributing to the Kingdom’s economic goals under Vision 2030.",
+      "src": "/services/strategies.webp",
+      "href": "strategies",
+      "btnText": "Read More",
       "items": [
         "Strategy development",
         "Strategy execution",
@@ -28,7 +37,13 @@
     },
     "organizationalExcellency": {
       "title": "Organizational excellency",
-      "src": "service-3",
+      "subTitle": "Empowering Saudi Organizations with Tailored Excellence Solutions for Sustainable Growth",
+      "text1": "At Emergence Capabilities Management Consulting (ECMC), we specialize in driving organizational excellence for Saudi businesses by providing customized solutions designed to enhance performance, streamline operations, and foster sustainable success. With a deep understanding of the Saudi market and global best practices, we help organizations build resilient structures that adapt to evolving business environments.",
+      "text2": "Our services include governance frameworks, business process optimization, operational efficiency, risk management, and continuous improvement initiatives. By focusing on strengthening internal capabilities, we empower organizations to achieve their strategic goals, improve their competitive positioning, and ensure long-term resilience.",
+      "text3": "Whether you are seeking to enhance operational efficiency, strengthen governance, or implement innovative performance strategies, ECMC is your trusted partner. With proven expertise across 21+ sectors and a commitment to excellence, we help Saudi organizations thrive in a fast-changing market, contributing to the Kingdom’s broader economic development goals under Vision 2030.",
+      "src": "/services/organizational-excellency.webp",
+      "href": "organizational-excellency",
+      "btnText": "Read More",
       "items": [
         "Governance, risk, compliance and business continuity",
         "Designing Operating models",
@@ -41,7 +56,13 @@
     },
     "marketing": {
       "title": "Marketing",
-      "src": "service-4",
+      "subTitle": "Driving Marketing Excellence for Saudi Businesses with Innovative, Tailored Strategies.",
+      "text1": "At Emergence Capabilities Management Consulting (ECMC), we empower Saudi businesses to stand out in today’s competitive market through innovative, data-driven marketing solutions. Our deep understanding of the local market, combined with global expertise, allows us to deliver customized strategies that resonate with target audiences and drive sustainable growth.",
+      "text2": "From crafting impactful brand identities and developing comprehensive marketing strategies to optimizing communication channels and conducting in-depth market research, our marketing services are designed to enhance your brand’s presence, improve customer engagement, and maximize ROI.",
+      "text3": "Whether you’re a growing business looking to establish your brand or a leading organization seeking to refine your market positioning, ECMC is your trusted partner. With a strong track record of success across 21+ sectors, we help businesses in Saudi Arabia create meaningful connections with their customers and achieve long-term success in an ever-evolving marketplace.",
+      "src": "/services/marketing.webp",
+      "href": "marketing",
+      "btnText": "Read More",
       "items": [
         "Marketing",
         "Branding",
@@ -71,5 +92,48 @@
       "title": "Extensive experience in governance, risk, compliance, and business continuity",
       "text": "We excel in crafting and developing governance, risk, compliance, and business continuity strategies for a wide range of clients in both the public and private sectors"
     }
+  },
+  "team": {
+    "title": "ECMC LEADERS",
+    "btnText": "Management Team"
+  },
+  "CompanyData": {
+    "about": {
+      "src": "/hero.jpg",
+      "title": "About us",
+      "subTitle": "We’re Not Just Different—We’re the Golden Standard, Leading with Bold Vision and Unmatched Excellence.",
+      "text1": "At Emergence Capabilities Management Consulting (ECMC), we are a leading consulting firm in Saudi Arabia, dedicated to empowering businesses to achieve sustainable growth and excel in both local and global markets. With a commitment to innovation and excellence, ECMC offers a wide range of consulting services tailored to meet the unique needs of our clients across various sectors, including strategy and planning, digital transformation, risk management, project management, marketing and branding, human resources, and innovation.",
+      "text2": "Our core mission is to be the trusted strategic partner for our clients, providing customized solutions that help them reach their strategic objectives, enhance their competitive advantage, and ensure long-term success. We leverage the expertise of our highly skilled team of professionals to deliver top-quality services while building lasting relationships based on trust, collaboration, and mutual respect.",
+      "text3": "We understand the challenges businesses face in today’s fast-evolving landscape. Our goal is to help our clients navigate these challenges by strengthening their organizational capabilities and preparing them for sustainable growth. Whether it’s improving operational efficiency, developing innovative strategies, or enhancing governance frameworks, ECMC is here to help Saudi organizations thrive."
+    },
+    "vision": {
+      "title": "vision",
+      "text": "To be the leading consulting firm in Saudi Arabia, providing innovative solutions that drive excellence in risk management, governance, compliance, business continuity, institutional excellence, and strategic development."
+    },
+    "mission": {
+      "title": "mission",
+      "text": "We are committed to delivering exceptional and comprehensive consulting services across multiple domains to help our clients enhance their institutional capabilities, adapt to evolving challenges, and contribute to the creation of a vibrant society and thriving economy in Saudi Arabia."
+    },
+    "values": {
+      "title": "Values",
+      "items": [
+        "Excellence",
+        "Innovation",
+        "Collaboration",
+        "Empowerment",
+        "Sustainable Growth"
+      ]
+    },
+    "specs": {
+      "title": "What Makes Us Unique?",
+      "items": [
+        "Extensive experience with a deep understanding of clients' needs",
+        "A consulting firm offering top-tier expertise",
+        "A vast network of global experts"
+      ]
+    }
+  },
+  "clients": {
+    "title": "Our Clients"
   }
 }

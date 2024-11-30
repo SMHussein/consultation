@@ -1,11 +1,10 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { usePathname } from "next/navigation"; // Import the usePathname hook
+import { Link, usePathname } from "@/src/i18n/routing";
 import { HiBars4, HiXMark } from "react-icons/hi2";
+import Logo from "../_components/Logo";
 
-const Header = () => {
+const Header = ({ locale }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(false);
   const pathname = usePathname(); // Get the current path
@@ -23,20 +22,18 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 left-0 w-full bg-accent-150 shadow-md z-50 text-primary-150">
+    <header className="sticky top-0 left-0 w-full bg-accent-150 shadow-md z-50 text-primary-170">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
-            <Link href="/">
-              <Image width={150} height={150} src="/logo.png" alt="Logo" />
-            </Link>
+            <Logo />
           </div>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center gap-8">
             <Link
               href="/"
               className={`${
-                pathname === "/" ? "text-primary-150" : "text-primary-200"
+                pathname === "/" ? "text-primary-170" : "text-primary-200"
               } hover:text-blue-600 transition duration-300`}
             >
               Home
@@ -50,7 +47,7 @@ const Header = () => {
                   href="/service1"
                   className={`block px-4 py-2 ${
                     pathname === "/service1"
-                      ? "text-primary-150"
+                      ? "text-primary-170"
                       : "text-primary-200"
                   } hover:bg-gray-100`}
                 >
@@ -60,7 +57,7 @@ const Header = () => {
                   href="/service2"
                   className={`block px-4 py-2 ${
                     pathname === "/service2"
-                      ? "text-primary-150"
+                      ? "text-primary-170"
                       : "text-primary-200"
                   } hover:bg-gray-100`}
                 >
@@ -71,7 +68,7 @@ const Header = () => {
             <Link
               href="/about"
               className={`${
-                pathname === "/about" ? "text-primary-150" : "text-primary-200"
+                pathname === "/about" ? "text-primary-170" : "text-primary-200"
               } hover:text-blue-600 transition duration-300`}
             >
               About
@@ -80,17 +77,26 @@ const Header = () => {
               href="/contact"
               className={`${
                 pathname === "/contact"
-                  ? "text-primary-150"
+                  ? "text-primary-170"
                   : "text-primary-200"
               } hover:text-blue-600 transition duration-300`}
             >
               Contact
             </Link>
-            <Link href="/ar">Ar</Link>
-            <Link href="/en">En</Link>
+          </div>
+          <div className="hidden md:flex">
+            {locale === "ar" ? (
+              <Link href={pathname} locale="en">
+                English
+              </Link>
+            ) : (
+              <Link href={pathname} locale="ar">
+                عربي
+              </Link>
+            )}
           </div>
           <button
-            className="md:hidden flex items-center text-primary-150"
+            className="md:hidden flex items-center text-primary-170"
             onClick={isOpen ? closeMenu : openMenu}
           >
             <HiBars4 size={28} />
@@ -112,7 +118,7 @@ const Header = () => {
         >
           <button
             onClick={closeMenu}
-            className="text-primary-150 absolute top-6 right-6 text-2xl"
+            className="text-primary-170 absolute top-6 right-6 text-2xl"
           >
             <HiXMark size={28} />
           </button>
@@ -120,7 +126,7 @@ const Header = () => {
             <Link
               href="/"
               className={`block text-lg ${
-                pathname === "/" ? "text-primary-150" : "text-primary-200"
+                pathname === "/" ? "text-primary-170" : "text-primary-200"
               }`}
             >
               Home
@@ -135,7 +141,7 @@ const Header = () => {
               <div
                 className={`overflow-hidden transition-all duration-300  ${
                   pathname === "/service2"
-                    ? "text-primary-150"
+                    ? "text-primary-170"
                     : "text-primary-200"
                 } ${
                   submenuOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
@@ -152,7 +158,7 @@ const Header = () => {
             <Link
               href="/about"
               className={`block text-lg ${
-                pathname === "/about" ? "text-primary-150" : "text-primary-200"
+                pathname === "/about" ? "text-primary-170" : "text-primary-200"
               }`}
             >
               About
@@ -161,7 +167,7 @@ const Header = () => {
               href="/contact"
               className={`block text-lg ${
                 pathname === "/contact"
-                  ? "text-primary-150"
+                  ? "text-primary-170"
                   : "text-primary-200"
               }`}
             >

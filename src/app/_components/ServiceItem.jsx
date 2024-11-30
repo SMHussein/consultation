@@ -3,23 +3,22 @@ import Button from "./Button";
 import Heading from "./Heading";
 import { BiPolygon } from "react-icons/bi";
 
-export default function ServiceItem({ service, title, src }) {
-  console.log(`/services/${src}.webp`);
+export default function ServiceItem({ service, title, href, btnText }) {
   return (
-    <div className="flex flex-col gap-6 justify-start">
-      <div className="h-[270px]">
+    <div className="flex flex-col gap-6 justify-start shadow-md">
+      <div className="h-[270px] ">
         <Image
-          src={`/services/${src}.webp`}
+          src={`/services/${href}.webp`}
           alt={title}
           width={690}
           height={270}
           className="w-full h-full object-cover rounded-md"
         />
       </div>
-      <Heading type="tertiary" classes="text-primary-100">
+      <Heading type="tertiary" classes="text-primary-100 px-2">
         {title}
       </Heading>
-      <ul className="flex-1 flex flex-col gap-2">
+      <ul className="flex-1 flex flex-col gap-2 p-2">
         {service.map((item, i) => (
           <li
             key={i}
@@ -30,8 +29,12 @@ export default function ServiceItem({ service, title, src }) {
           </li>
         ))}
       </ul>
-      <Button variation="secondary" className="bg-accent-50" href="#">
-        Read More
+      <Button
+        variation="secondary"
+        className="bg-accent-50"
+        href={`/services/${href}`}
+      >
+        {btnText}
       </Button>
     </div>
   );

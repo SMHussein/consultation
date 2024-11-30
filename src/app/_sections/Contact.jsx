@@ -5,7 +5,7 @@ import Section from "../_components/Section";
 
 export default function Contact() {
   return (
-    <Section classes="bg-accent-150">
+    <Section>
       <Row grid={2}>
         <Heading type="secondary" classes="mb-6 text-center">
           Subscribe to our publications

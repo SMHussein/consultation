@@ -1,25 +1,26 @@
 import Image from "next/image";
-import Heading from "../_components/Heading";
-import Section from "../_components/Section";
 import Row from "../_components/Row";
+import Section from "../_components/Section";
+import Heading from "../_components/Heading";
 import { useTranslations } from "next-intl";
 
-export default function Hero() {
-  const t = useTranslations("Hero");
+export default function SectionHero({ service, section }) {
+  const t = useTranslations(`${section}`);
+  console.log();
 
   return (
     <Section classes="relative">
       <Image
-        src="/hero.jpg"
+        src={t(`${service}.src`)}
         fill
         className="object-cover -z-10"
         alt="Hero Image"
         loading="eager"
       />
       <Row classes="flex items-center justify-center  min-h-[50dvh]">
-        <div className="absolute inset-0 bg-black/50 -z-10"></div>
+        <div className="absolute inset-0 bg-black/70 -z-10"></div>
         <Heading type="primary" classes="text-white text-balance max-w-[50rem]">
-          {t("title")}
+          {t(`${service}.title`)}
         </Heading>
       </Row>
     </Section>

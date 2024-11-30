@@ -1,21 +1,17 @@
 import "../globals.css";
-import localFont from "next/font/local";
-
+import Header from "@/src/app/_sections/Header";
+import Footer from "@/src/app/_sections/Footer";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/src/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
+import { Nunito } from "next/font/google";
 
-const geistSans = localFont({
-  src: "../fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "../fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const nunito = Nunito({
+  subsets: ["latin"],
+  variable: "--font-nunito", // Custom CSS variable name
+  weight: ["400", "700"], // Specify weights if needed
 });
 
 export const metadata = {
@@ -40,11 +36,11 @@ export default async function LocaleLayout({ children, params }) {
 
   return (
     <html lang={locale} dir={direction}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${nunito.className}`}>
         <NextIntlClientProvider messages={messages}>
+          <Header locale={locale} />
           {children}
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>
