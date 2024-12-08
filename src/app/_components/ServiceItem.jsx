@@ -3,12 +3,12 @@ import Button from "./Button";
 import Heading from "./Heading";
 import { BiPolygon } from "react-icons/bi";
 
-export default function ServiceItem({ service, title, href, btnText }) {
+export default function ServiceItem({ service, title, href, btnText, src }) {
   return (
     <div className="flex flex-col gap-6 justify-start shadow-md">
       <div className="h-[270px] ">
         <Image
-          src={`/services/${href}.webp`}
+          src={src}
           alt={title}
           width={690}
           height={270}

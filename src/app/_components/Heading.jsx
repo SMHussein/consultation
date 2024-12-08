@@ -1,11 +1,3 @@
-import { Josefin_Sans } from "next/font/google";
-
-const josefinSans = Josefin_Sans({
-  subsets: ["latin"],
-  variable: "--font-josefin",
-  weight: ["400", "700"],
-});
-
 export default function Heading({
   children,
   type = "secondary",
@@ -14,7 +6,7 @@ export default function Heading({
 }) {
   let element;
 
-  let classNames = `uppercase ${classes} ${josefinSans.className}`;
+  let classNames = `uppercase ${classes}`;
 
   if (isLight) classNames += " text-accent-50";
 

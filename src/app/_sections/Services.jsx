@@ -15,7 +15,7 @@ export default function Services() {
   const marketingServices = getItems(t, "OurServices.marketing.items");
 
   return (
-    <Section>
+    <Section classes="bg-accent-150">
       <Row grid={3}>
         <Heading classes="text-primary-100 text-center mb-6">
           {t("title")}
@@ -26,18 +26,21 @@ export default function Services() {
             href={t("strategies.href")}
             title={t("strategies.title")}
             btnText={t("strategies.btnText")}
+            src={t("strategies.src")}
           />
           <ServiceItem
             service={organizationalExcellencyrServices}
             href={t("organizationalExcellency.href")}
             title={t("organizationalExcellency.title")}
             btnText={t("organizationalExcellency.btnText")}
+            src={t("organizationalExcellency.src")}
           />
           <ServiceItem
             service={marketingServices}
             href={t("marketing.href")}
             title={t("marketing.title")}
             btnText={t("marketing.btnText")}
+            src={t("marketing.src")}
           />
         </div>
       </Row>

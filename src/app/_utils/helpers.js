@@ -11,51 +11,51 @@ export function getMetadata(locale) {
   if (locale === "ar") {
     return {
       title:
-        "الافق للامن و الحماية, شركة رائدة في مجال خدمات الأمن والحماية في الأردن",
+        "ايميرج كبابليتيز للاستشارات الإدارية - تمكين الشركات السعودية من خلال حلول استشارية استراتيجية ومستدامة",
       description:
-        "الافق للامن و الحماية تقدم حلول أمنية رفيعة المستوى تشمل توفير حراس الأمن، ومراقبة كاميرات وخدمات الإشراف. لتلبية جميع احتياجاتك الأمنية.",
+        "شركة ايميرج كبابليتيز للاستشارات الإدارية هي شركة استشارية رائدة في المملكة العربية السعودية، مكرسة لتمكين الشركات من تحقيق النمو المستدام والنجاح في الأسواق المحلية والعالمية. بفضل خبرتنا في مجالات الاستراتيجية، والتحول الرقمي، وإدارة المخاطر",
       alternates: {
-        canonical: "https://horizon-sp.com/en",
+        canonical: "https://ecmc-ksa.com/ar",
         languages: {
-          ar: "https://horizon-sp.com/ar",
-          en: "https://horizon-sp.com/en",
+          en: "https://ecmc-ksa.com/en",
         },
       },
-      author: "الافق للأمن و الحماية",
+      author: "Emerge Capabilities",
       keywords:
-        "شركات امن في الأردن , شركات امن وحماية في الاردن , شركة حراسة في الاردن , الافق للامن والحماية, شركات امن وحماية , امن وحماية , شركات امن , شركات حراسة , شركة الامن الأولى في الأردن , شركات دفاع , شركات حراسة اردنية ، شركة الامن الافضل في الاردن ،افضل شركة حراسات امنية في الاردن ",
+        "خدمات استشارية في السعودية, حلول استشارية استراتيجية, استشارات التحول الرقمي, الحوكمة وإدارة المخاطر (GRC), النمو المستدام للأعمال, التميز التنظيمي, أبحاث السوق في السعودية, الحوكمة البيئية والاجتماعية (ESG), خدمات إدارة التغيير, تطوير الاستراتيجيات المؤسسية, تخطيط استراتيجي, استراتيجيات استدامة الأعمال, حلول إدارة المخاطر, خدمات إدارة الأداء, استشارات الابتكار, دراسات الاقتصاد المحلي, الشراكات بين القطاعين العام والخاص",
       openGraph: {
         type: "website",
-        url: "https://horizon-sp.com/",
-        title: "الافق للامن و الحماية - خدمات الأمن في عمان، الأردن",
+        url: "https://ecmc-ksa.com/",
+        title:
+          "ايميرج كبابليتيز للاستشارات الإدارية - تمكين الشركات السعودية من خلال حلول استشارية استراتيجية ومستدامة",
         description:
-          "الافق للامن و الحاية - خدمات مثالية لضمان سلامتكم و سلامة منشآتكم من خلال حلول الامن المتخصصة و الحراسة المدربة و مراقبة الكاميرات في عمان، الأردن.",
+          "شركة ايميرج كبابليتيز للاستشارات الإدارية هي شركة استشارية رائدة في المملكة العربية السعودية، مكرسة لتمكين الشركات من تحقيق النمو المستدام والنجاح في الأسواق المحلية والعالمية. بفضل خبرتنا في مجالات الاستراتيجية، والتحول الرقمي، وإدارة المخاطر",
       },
-      metadataBase: new URL("https://horizon-sp.com"), // Add this line
+      metadataBase: new URL("https://ecmc-ksa.com"),
     };
   }
   return {
     title:
-      "Horizon Security - Leading Security & Protection Services in Jordan",
+      "ECMC - Empowering Saudi Businesses with Strategic and Sustainable Consulting Solutions",
     description:
-      "Horizon Security and Protection is a leading private security company in Jordan, providing tailored security guard services, CCTV monitoring, and consultancy for residential, corporate, and industrial clients. Contact us for the best security solutions in Jordan.",
+      "ECMC is a leading consulting company in Saudi Arabia, dedicated to empowering businesses for sustainable growth and success in local and global markets. With expertise in strategy, digital transformation, risk management.",
     alternates: {
-      canonical: "https://horizon-sp.com/en",
+      canonical: "https://ecmc-ksa.com/en",
       languages: {
-        ar: "https://horizon-sp.com/ar",
-        en: "https://horizon-sp.com/en",
+        ar: "https://ecmc-ksa.com/ar",
       },
     },
-    author: "Horizon Security & Protection",
+    author: "Emerge Capabilities",
     keywords:
-      "security services, Site Security and protection,Security Consultancy, security guards, CCTV monitoring, supervision, facilities management, security manpower, Horizon Security, Security companies in Jordan, security and protection companies in Jordan, Horizon for Security and Protection, public security, security companies, the best sercurity services company, best security company in Jordan, security training",
+      "Saudi Arabia consulting services, Strategic consulting solutions, Digital transformation consulting, Governance risk compliance (GRC), Sustainable business growth, Organizational excellence, Market research Saudi Arabia, Environmental Social Governance (ESG), Change management services, Corporate strategy development, Strategic planning consulting, Business continuity strategies, Risk management solutions, Performance management services, Innovation strategy consulting, Local economy studies consulting, Public-private sector strategies",
     openGraph: {
       type: "website",
-      url: "https://horizon-sp.com/",
-      title: "Horizon - Premier Security Services in Amman, Jordan",
+      url: "https://ecmc-ksa.com/",
+      title:
+        "ECMC - Empowering Saudi Businesses with Strategic and Sustainable Consulting Solutions",
       description:
-        "Horizon offers comprehensive security services, including trained security guards, CCTV monitoring, and supervision in Amman, Jordan. We ensure your safety with expert facility management and security manpower solutions.",
+        "ECMC is a leading consulting company in Saudi Arabia, dedicated to empowering businesses for sustainable growth and success in local and global markets. With expertise in strategy, digital transformation, risk management.",
     },
-    metadataBase: new URL("https://horizon-sp.com"), // Add this line
+    metadataBase: new URL("https://ecmc-ksa.com"),
   };
 }

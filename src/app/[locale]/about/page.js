@@ -3,8 +3,17 @@ import SectionHero from "../../_sections/SectionHero";
 import Specs from "../../_sections/Specs";
 import Values from "../../_sections/Values";
 import Vision from "../../_sections/Vision";
+import { setRequestLocale } from "next-intl/server";
 
-export default function About() {
+export async function generateMetadata({ params }) {
+  const { locale } = params;
+  return { title: "saifoo" };
+}
+
+export default async function About({ params }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <main>
       <SectionHero service="about" section="CompanyData" />

@@ -1,9 +1,22 @@
 {
-  "Buttons": {
-    "contact": "Contact Us Now"
+  "Form": {
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "name": "Name",
+    "message": "Message"
   },
-  "Nav": {
-    "items": ["Home", "About us", "Our Services", "Our Clients"]
+  "Buttons": {
+    "contact": "Contact Us Now",
+    "submit": "Submit",
+    "read": "Read More"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "publications": "Publications",
+    "careers": "Careers",
+    "contact": "Contact Us"
   },
   "Hero": {
     "title": "ECMC - Empowering Saudi Businesses with Strategic and Sustainable Consulting Solutions"
@@ -16,13 +29,21 @@
   },
   "OurServices": {
     "title": "Our Services",
+    "overview": {
+      "title": "Services",
+      "subTitle": "Expert Consulting for Your Business Growth",
+      "text1": "At ECMC, we provide innovative consulting solutions designed to help businesses navigate complex challenges and seize new opportunities. Our expertise spans strategy, operations, technology, and organizational transformation, empowering companies to enhance performance and achieve sustainable growth. Whether you're a startup or an established enterprise, our tailored approach ensures practical, actionable solutions that drive real results. Discover how ECMC can partner with you to unlock your business's full potential.",
+      "text2": "",
+      "text3": "",
+      "src": "/heroes/section-1.webp"
+    },
     "strategies": {
       "title": "Strategies",
       "subTitle": "Crafting Tailored, Professional Marketing Strategies to Drive Sustainable Growth",
       "text1": "At Emergence Capabilities Management Consulting (ECMC), we specialize in developing highly customized, professional marketing strategies that enable Saudi businesses to achieve sustained growth, enhance brand value, and engage effectively with their target audiences. Our deep understanding of the Saudi market and its unique dynamics allows us to design marketing solutions that are specifically aligned with your business goals and customer needs.",
       "text2": "Our services cover every aspect of marketing strategy, from market analysis and customer segmentation to brand positioning, integrated communication strategies, and performance measurement. We work closely with your team to create actionable, results-driven strategies that resonate with local and international audiences while ensuring maximum return on investment.",
       "text3": "Whether you're looking to launch a new product, refine your brand’s presence, or enter new market segments, ECMC’s tailored marketing strategies provide the expertise and precision needed to meet your objectives. With extensive experience across 21+ sectors, we empower Saudi businesses to establish a competitive edge in a rapidly evolving marketplace, contributing to the Kingdom’s economic goals under Vision 2030.",
-      "src": "/services/strategies.webp",
+      "src": "/services/strategies.jpg",
       "href": "strategies",
       "btnText": "Read More",
       "items": [
@@ -77,29 +98,76 @@
   "Whyus": {
     "title": "Why ECMC ?",
     "expertise": {
-      "title": "Broad expertise in operational procedures and institutional excellence",
+      "title": "institutional excellence",
       "text": "We provide services that enable organizations to achieve their strategies, starting from building organizational design and operating models, to developing policies and procedures, all while monitoring performance and enhancing human capital"
     },
     "knowledge": {
-      "title": "In-depth knowledge of the Saudi market, spanning both public and private sectors",
+      "title": "In-depth knowledge",
       "text": "At Emerge Capabilities, we stand out for our extensive experience in both the public and private sectors of the Saudi market, making us the ideal choice for this project"
     },
     "strategy": {
-      "title": "Extensive experience in strategy development",
+      "title": "strategy development",
       "text": "Our team possesses extensive knowledge and expertise in developing strategies across a wide range of sectors, having worked with numerous organizations. This has enabled us to develop a deep understanding of strategies and their associated challenges"
     },
     "governance": {
-      "title": "Extensive experience in governance, risk, compliance, and business continuity",
+      "title": "Extensive experience",
       "text": "We excel in crafting and developing governance, risk, compliance, and business continuity strategies for a wide range of clients in both the public and private sectors"
+    }
+  },
+  "stats": {
+    "title": "Our Reach",
+    "subtitle": "Emergence Capabilities Management Consulting was launched as a Saudi company, evolving with a clear vision and solid foundation. It has proven its ability to deliver high-quality consulting services, enabling it to compete with leading regional and global firms.",
+
+    "years": {
+      "title": "Years",
+      "number": "5"
+    },
+    "sectors": {
+      "title": "Sectors",
+      "number": "20"
+    },
+    "nationalities": {
+      "title": "Nationalities",
+      "number": "80"
+    },
+    "clients": {
+      "title": "Clients",
+      "number": "20"
+    },
+    "projects": {
+      "title": "Projects",
+      "number": "20"
     }
   },
   "team": {
     "title": "ECMC LEADERS",
-    "btnText": "Management Team"
+    "btnText": "Management Team",
+    "page": {
+      "title": "Meet our team!",
+      "src": "/hero.jpg"
+    },
+    "naser": {
+      "name": "Naser",
+      "position": "General Manager",
+      "text": "Nasser is a General Manager in Consulting Services, and has deep general experience with major international companies in the Middle East in many transformation, governance and organizational excellence projects, as well as his experience in developing various governance manuals, in addition to preparing and implementing many workshops and seminars in various local and regional conferences in various areas of expertise.",
+      "src": "/team/person-1.jpeg"
+    },
+    "yazan": {
+      "name": "Yazan",
+      "position": "Risk Strategist",
+      "text": "Yazan has more than ten years of experience in the private sector and major consulting companies, where Yazan provided advisory services to the public, private and government sectors through the establishment and operation of governance, risk, compliance and internal audit units in accordance with the standards issued by the International Organization for Standards and Standards issued by the Institute of Internal Auditors. Yazan's experience also extends to providing support to clients in developing contingency plans and dealing with crises to ensure business continuity for the main activities of the facility in accordance with the ISO 22301 standard.",
+      "src": "/team/person-2.jpeg"
+    },
+    "ahmad": {
+      "name": "Ahmad",
+      "position": "Data Analysis Specialist",
+      "text": "Ahmed Al Gharib is a professional expert in digital transformation, process transformation, IT operations management and data analysis, with a strong background in developing and implementing business processes.",
+      "src": "/team/person-3.jpeg"
+    }
   },
   "CompanyData": {
     "about": {
-      "src": "/hero.jpg",
+      "src": "/heroes/section-8.jpg",
       "title": "About us",
       "subTitle": "We’re Not Just Different—We’re the Golden Standard, Leading with Bold Vision and Unmatched Excellence.",
       "text1": "At Emergence Capabilities Management Consulting (ECMC), we are a leading consulting firm in Saudi Arabia, dedicated to empowering businesses to achieve sustainable growth and excel in both local and global markets. With a commitment to innovation and excellence, ECMC offers a wide range of consulting services tailored to meet the unique needs of our clients across various sectors, including strategy and planning, digital transformation, risk management, project management, marketing and branding, human resources, and innovation.",
@@ -135,5 +203,146 @@
   },
   "clients": {
     "title": "Our Clients"
+  },
+  "newsletter": {
+    "title": "Subscribe to our newsletter"
+  },
+  "contact": {
+    "hero": {
+      "title": "Contact Us",
+      "subtitle": "Get in Touch with ECMC – Your Growth Partner Awaits!",
+      "src": "/heroes/section-9.jpg"
+    },
+    "phone": {
+      "title": "Phone",
+      "text": "+966 56 5230514"
+    },
+    "social": {
+      "title": "Follow us"
+    },
+    "email": {
+      "title": "Email",
+      "hr": {
+        "title": "For Careers",
+        "text": "Hr@ecmc-ksa.com"
+      },
+      "bd": {
+        "title": "Business Enquiries",
+        "text": "Bd@ecmc-ksa.com"
+      }
+    }
+  },
+  "careers": {
+    "btnText": "Apply Now",
+    "hero": {
+      "title": "Careers",
+      "src": "/heroes/section-2.png"
+    },
+    "culture": {
+      "heading": "Break the Mold. Build Your Future with ECMC.",
+      "challenge": {
+        "title": "Challenge",
+        "text": "At ECMC, we are not a conventional company, nor do we follow traditional approaches. We challenge the status quo, innovate boldly, and redefine what it means to deliver exceptional consulting solutions."
+      },
+      "growth": {
+        "title": "growth",
+        "text": "Here, your career won’t just be a job — it will be a journey of growth, creativity, and purpose. We empower our team to think differently, break boundaries, and make a real impact."
+      },
+      "innovation": {
+        "title": "innovation",
+        "text": "If you’re looking for a place where you can be your authentic self, bring bold ideas to life, and thrive in a culture of innovation and excellence, ECMC is the company for you."
+      }
+    },
+    "needs": {
+      "heading": "Who We’re Looking For",
+      "character": {
+        "title": "Character",
+        "text": "Your unique background and approach reflect who you truly are. Be genuine and show us how your individuality can enrich the ECMC team."
+      },
+      "mindset": {
+        "title": "Mindset",
+        "text": "Your ability to analyze challenges and craft smart, practical solutions demonstrates your way of thinking."
+      },
+      "ambition": {
+        "title": "Ambition",
+        "text": "We’re invested in your goals. Share your vision for the future, and let’s explore how ECMC can help you bring it to life."
+      },
+      "journey": {
+        "title": "Journey",
+        "text": "Your past experiences shape your path forward. Share your story with us and let’s build the next chapter together at ECMC"
+      }
+    }
+  },
+  "jobs": {
+    "associateConsultant": {
+      "title": "Associate Consultant",
+      "type": "On Site - Full Time",
+      "href": "/careers/jobs"
+    },
+    "Consultant": {
+      "title": "Consultant",
+      "type": "On Site - Full Time",
+      "href": "/careers/jobs"
+    },
+    "Future Gears On-Job Training Program": {
+      "title": "Future Gears On-Job Training Program",
+      "type": "On Site - Internship",
+      "href": "/careers/jobs"
+    },
+    "Manager": {
+      "title": "Manager",
+      "type": "On Site - Full Time",
+      "href": "/careers/jobs"
+    },
+    "Marketing Specialist": {
+      "title": "Marketing Specialist",
+      "type": "On Site - Full Time",
+      "href": "/careers/jobs"
+    },
+    "Market Research Associate": {
+      "title": "Market Research Associate",
+      "type": "On Site - Full Time",
+      "href": "/careers/jobs"
+    },
+    "Finance Manager": {
+      "title": "Finance Manager",
+      "type": "On Site - Full Time",
+      "href": "/careers/jobs"
+    },
+    "Office Administrator": {
+      "title": "Office Administrator",
+      "type": "On Site - Full Time",
+      "href": "/careers/jobs"
+    },
+    "Partnership Specialist": {
+      "title": "Partnership Specialist",
+      "type": "Hybrid - Full Time",
+      "href": "/careers/jobs"
+    },
+    "Senior Advisory Operations Specialist": {
+      "title": "Senior Advisory Operations Specialist",
+      "type": "Hybrid - Full Time",
+      "href": "/careers/jobs"
+    },
+    "HR Operations Specialist": {
+      "title": "HR Operations Specialist",
+      "type": "Hybrid - Full Time",
+      "href": "/careers/jobs"
+    },
+    "HR PMO Executive": {
+      "title": "HR PMO Executive",
+      "type": "Hybrid - Full Time",
+      "href": "/careers/jobs"
+    },
+    "IT Support KSA": {
+      "title": "IT Support KSA",
+      "type": "On Site - Full Time",
+      "href": "/careers/jobs"
+    },
+    "Senior IT Specialist": {
+      "title": "Senior IT Specialist",
+      "type": "Hybrid - Full Time",
+      "href": "/careers/jobs"
+    }
   }
 }

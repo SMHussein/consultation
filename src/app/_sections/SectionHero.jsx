@@ -6,7 +6,6 @@ import { useTranslations } from "next-intl";
 
 export default function SectionHero({ service, section }) {
   const t = useTranslations(`${section}`);
-  console.log();
 
   return (
     <Section classes="relative">

@@ -3,10 +3,10 @@ import { useState } from "react";
 import { Link, usePathname } from "@/src/i18n/routing";
 import { HiBars4, HiXMark } from "react-icons/hi2";
 import Logo from "../_components/Logo";
+import { useTranslations } from "next-intl";
 
 const Header = ({ locale }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [submenuOpen, setSubmenuOpen] = useState(false);
   const pathname = usePathname(); // Get the current path
 
   const openMenu = () => {
@@ -15,10 +15,6 @@ const Header = ({ locale }) => {
 
   const closeMenu = () => {
     setIsOpen(false);
-  };
-
-  const toggleSubmenu = () => {
-    setSubmenuOpen((prev) => !prev);
   };
 
   return (
@@ -30,59 +26,7 @@ const Header = ({ locale }) => {
           </div>
 
           <div className="hidden md:flex items-center gap-8">
-            <Link
-              href="/"
-              className={`${
-                pathname === "/" ? "text-primary-170" : "text-primary-200"
-              } hover:text-blue-600 transition duration-300`}
-            >
-              Home
-            </Link>
-            <div className="relative group">
-              <button className="text-primary-200 hover:text-blue-600 transition duration-300">
-                Services
-              </button>
-              <div className="absolute hidden mt-2 space-y-2 bg-white shadow-lg rounded-md group-hover:block transition-all duration-300">
-                <Link
-                  href="/service1"
-                  className={`block px-4 py-2 ${
-                    pathname === "/service1"
-                      ? "text-primary-170"
-                      : "text-primary-200"
-                  } hover:bg-gray-100`}
-                >
-                  Service 1
-                </Link>
-                <Link
-                  href="/service2"
-                  className={`block px-4 py-2 ${
-                    pathname === "/service2"
-                      ? "text-primary-170"
-                      : "text-primary-200"
-                  } hover:bg-gray-100`}
-                >
-                  Service 2
-                </Link>
-              </div>
-            </div>
-            <Link
-              href="/about"
-              className={`${
-                pathname === "/about" ? "text-primary-170" : "text-primary-200"
-              } hover:text-blue-600 transition duration-300`}
-            >
-              About
-            </Link>
-            <Link
-              href="/contact"
-              className={`${
-                pathname === "/contact"
-                  ? "text-primary-170"
-                  : "text-primary-200"
-              } hover:text-blue-600 transition duration-300`}
-            >
-              Contact
-            </Link>
+            <GeneratHeaderLinks />
           </div>
           <div className="hidden md:flex">
             {locale === "ar" ? (
@@ -123,56 +67,7 @@ const Header = ({ locale }) => {
             <HiXMark size={28} />
           </button>
           <div className="space-y-4">
-            <Link
-              href="/"
-              className={`block text-lg ${
-                pathname === "/" ? "text-primary-170" : "text-primary-200"
-              }`}
-            >
-              Home
-            </Link>
-            <div className="relative">
-              <button
-                className="text-primary-200 text-lg w-full text-left"
-                onClick={toggleSubmenu}
-              >
-                Services
-              </button>
-              <div
-                className={`overflow-hidden transition-all duration-300  ${
-                  pathname === "/service2"
-                    ? "text-primary-170"
-                    : "text-primary-200"
-                } ${
-                  submenuOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
-                }`}
-              >
-                <Link href="/service1" className={`block px-4 py-2`}>
-                  Service 1
-                </Link>
-                <Link href="/service2" className={`block px-4 py-2`}>
-                  Service 2
-                </Link>
-              </div>
-            </div>
-            <Link
-              href="/about"
-              className={`block text-lg ${
-                pathname === "/about" ? "text-primary-170" : "text-primary-200"
-              }`}
-            >
-              About
-            </Link>
-            <Link
-              href="/contact"
-              className={`block text-lg ${
-                pathname === "/contact"
-                  ? "text-primary-170"
-                  : "text-primary-200"
-              }`}
-            >
-              Contact
-            </Link>
+            <GeneratHeaderLinks />
           </div>
         </div>
       </div>
@@ -181,3 +76,34 @@ const Header = ({ locale }) => {
 };
 
 export default Header;
+
+function GeneratHeaderLinks() {
+  const links = [
+    "home",
+    "services",
+    "about",
+    "contact",
+    "publications",
+    "careers",
+  ];
+  return links.map((link, i) => <HeaderLink key={i} item={link} />);
+}
+
+function HeaderLink({ item }) {
+  const t = useTranslations("navigation");
+
+  const pathname = usePathname(); // Get the current path
+  const href = item === "home" ? "/" : `/${item}`;
+  const label = t(`${item}`);
+
+  return (
+    <Link
+      href={href}
+      className={`${
+        pathname === href ? "text-primary-160" : "text-primary-200"
+      } hover:text-accent-200 transition duration-300 capitalize`}
+    >
+      {label}
+    </Link>
+  );
+}

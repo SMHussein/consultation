@@ -1,38 +1,35 @@
-import { BiGroup } from "react-icons/bi";
 import Button from "../_components/Button";
 import Heading from "../_components/Heading";
+import Row from "../_components/Row";
 import Section from "../_components/Section";
 import TeamMember from "../_components/TeamMember";
-import Row from "../_components/Row";
 import { useTranslations } from "next-intl";
-
-const team = [
-  { name: "Yazan Al-Salman", position: "CEO", src: "/test.jpg", href: "#" },
-  { name: "Yazan Al-Salman", position: "CEO", src: "/test.jpg", href: "#" },
-  { name: "Yazan Al-Salman", position: "CEO", src: "/test.jpg", href: "#" },
-  { name: "Yazan Al-Salman", position: "CEO", src: "/test.jpg", href: "#" },
-  { name: "Yazan Al-Salman", position: "CEO", src: "/test.jpg", href: "#" },
-];
 
 export default function Team() {
   const t = useTranslations("team");
 
   return (
     <Section>
-      <Row grid={3} classes="flex flex-col gap-6">
-        <Heading classes="text-primary-100 text-center">{t("title")}</Heading>
-        <ul className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-12 justify-items-center">
-          {team.map((member, i) => (
-            <TeamMember member={member} key={i} />
-          ))}
-        </ul>
-        <Button
-          href="/team"
-          className="self-center"
-          icon={<BiGroup size={20} />}
-        >
-          {t("btnText")}
-        </Button>
+      <Row grid={2} classes="flex flex-col gap-12 items-center">
+        <Heading type="secondary">{t("title")}</Heading>
+        <div className="flex justify-around items-center gap-16 w-full flex-wrap">
+          <TeamMember
+            name={t("yazan.name")}
+            position={t("yazan.position")}
+            imageUrl={t("yazan.src")}
+          />
+          <TeamMember
+            name={t("naser.name")}
+            position={t("naser.position")}
+            imageUrl={t("naser.src")}
+          />
+          <TeamMember
+            name={t("ahmad.name")}
+            position={t("ahmad.position")}
+            imageUrl={t("ahmad.src")}
+          />
+        </div>
+        <Button href="/team">{t("btnText")}</Button>
       </Row>
     </Section>
   );

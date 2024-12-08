@@ -16,12 +16,12 @@ export default function Vision() {
         <Card
           title={t("vision.title")}
           text={t("vision.text")}
-          icon={<BsBarChart size={20} />}
+          icon={<BsBarChart size={30} className="text-primary-150" />}
         />
         <Card
           title={t("mission.title")}
           text={t("mission.text")}
-          icon={<BsClipboard2Check size={20} />}
+          icon={<BsClipboard2Check size={30} className="text-primary-150" />}
         />
       </Row>
     </Section>
