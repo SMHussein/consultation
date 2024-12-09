@@ -29,15 +29,9 @@ const Header = ({ locale }) => {
             <GeneratHeaderLinks />
           </div>
           <div className="hidden md:flex">
-            {locale === "ar" ? (
-              <Link href={pathname} locale="en">
-                English
-              </Link>
-            ) : (
-              <Link href={pathname} locale="ar">
-                عربي
-              </Link>
-            )}
+            <Link href={pathname} locale={locale === "ar" ? "en" : "ar"}>
+              {locale === "ar" ? "English" : "عربي"}
+            </Link>
           </div>
           <button
             className="md:hidden flex items-center text-primary-170"
@@ -62,12 +56,17 @@ const Header = ({ locale }) => {
         >
           <button
             onClick={closeMenu}
-            className="text-primary-170 absolute top-6 right-6 text-2xl"
+            className={`text-primary-170 absolute top-6 text-2xl ${
+              locale === "en" ? "right-6" : "left-6"
+            }`}
           >
             <HiXMark size={28} />
           </button>
-          <div className="space-y-4">
-            <GeneratHeaderLinks />
+          <div className="space-y-4 flex flex-col">
+            <GeneratHeaderLinks onClick={closeMenu} />
+            <Link href={pathname} locale={locale === "ar" ? "en" : "ar"}>
+              {locale === "ar" ? "English" : "عربي"}
+            </Link>
           </div>
         </div>
       </div>
@@ -77,7 +76,7 @@ const Header = ({ locale }) => {
 
 export default Header;
 
-function GeneratHeaderLinks() {
+function GeneratHeaderLinks({ onClick }) {
   const links = [
     "home",
     "services",
@@ -86,10 +85,12 @@ function GeneratHeaderLinks() {
     "publications",
     "careers",
   ];
-  return links.map((link, i) => <HeaderLink key={i} item={link} />);
+  return links.map((link, i) => (
+    <HeaderLink key={i} item={link} onClick={onClick} />
+  ));
 }
 
-function HeaderLink({ item }) {
+function HeaderLink({ item, onClick }) {
   const t = useTranslations("navigation");
 
   const pathname = usePathname(); // Get the current path
@@ -98,6 +99,7 @@ function HeaderLink({ item }) {
 
   return (
     <Link
+      onClick={() => onClick()}
       href={href}
       className={`${
         pathname === href ? "text-primary-160" : "text-primary-200"
