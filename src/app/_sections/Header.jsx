@@ -90,7 +90,7 @@ function GeneratHeaderLinks({ onClick }) {
   ));
 }
 
-function HeaderLink({ item, onClick }) {
+function HeaderLink({ item, onClick = () => {} }) {
   const t = useTranslations("navigation");
 
   const pathname = usePathname(); // Get the current path
