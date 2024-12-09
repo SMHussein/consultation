@@ -1,4 +1,14 @@
 {
+  "responses": {
+    "success": {
+      "subscribe": "Thank you for subscribing to our newsletter!",
+      "contact": "Thank you for reaching out to us!"
+    },
+    "error": {
+      "generic": "Something went wrong. Please try again later.",
+      "fields": "Please fill out the fields correctly"
+    }
+  },
   "Form": {
     "email": "Email Address",
     "phone": "Phone Number",
@@ -154,13 +164,13 @@
     },
     "yazan": {
       "name": "Yazan",
-      "position": "Risk Strategist",
+      "position": "Director",
       "text": "Yazan has more than ten years of experience in the private sector and major consulting companies, where Yazan provided advisory services to the public, private and government sectors through the establishment and operation of governance, risk, compliance and internal audit units in accordance with the standards issued by the International Organization for Standards and Standards issued by the Institute of Internal Auditors. Yazan's experience also extends to providing support to clients in developing contingency plans and dealing with crises to ensure business continuity for the main activities of the facility in accordance with the ISO 22301 standard.",
       "src": "/team/person-2.jpeg"
     },
     "ahmad": {
       "name": "Ahmad",
-      "position": "Data Analysis Specialist",
+      "position": "Manager",
       "text": "Ahmed Al Gharib is a professional expert in digital transformation, process transformation, IT operations management and data analysis, with a strong background in developing and implementing business processes.",
       "src": "/team/person-3.jpeg"
     }

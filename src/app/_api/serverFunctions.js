@@ -1,16 +1,17 @@
 "use server";
-
 import { createClient } from "../_utils/supabase/server";
+import { getTranslations } from "next-intl/server";
 // await new Promise((resolve) => setTimeout(resolve, 5000));
 
 export async function newsLetterSubsribe(currentState, formData) {
+  const t = await getTranslations("responses");
   const supabase = await createClient();
   const email = formData.get("email");
   const name = formData.get("name");
 
   if (!name || !email) {
     return {
-      error: "Please fill out the fields correctly",
+      error: t("error.fields"),
     };
   }
 
@@ -21,16 +22,17 @@ export async function newsLetterSubsribe(currentState, formData) {
 
   if (error) {
     return {
-      error: "Something went wrong. Please try again later.",
+      error: t("error.generic"),
     };
   }
 
   return {
-    success: "Thank you for subscribing to our newsletter!",
+    success: t("success.subscribe"),
   };
 }
 
 export async function sendMessage(currentState, formData) {
+  const t = await getTranslations("responses");
   const supabase = await createClient();
   const email = formData.get("email");
   const name = formData.get("name");
@@ -39,7 +41,7 @@ export async function sendMessage(currentState, formData) {
 
   if (!name || !email || !phone || !message) {
     return {
-      error: "Please fill out the fields correctly",
+      error: t("error.fields"),
     };
   }
 
@@ -50,11 +52,11 @@ export async function sendMessage(currentState, formData) {
 
   if (error) {
     return {
-      error: "Something went wrong. Please try again later.",
+      error: t("error.generic"),
     };
   }
 
   return {
-    success: "Thank you for reaching out to us!",
+    success: t("success.contact"),
   };
 }

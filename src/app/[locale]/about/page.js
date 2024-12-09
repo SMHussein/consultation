@@ -6,7 +6,7 @@ import Vision from "../../_sections/Vision";
 import { setRequestLocale } from "next-intl/server";
 
 export async function generateMetadata({ params }) {
-  const { locale } = params;
+  const { locale } = await params;
   return { title: "saifoo" };
 }
 

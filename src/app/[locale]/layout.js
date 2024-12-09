@@ -20,7 +20,7 @@ const bahij = localFont({
 });
 
 export async function generateMetadata({ params }) {
-  const { locale } = params;
+  const { locale } = await params;
   return getMetadata(locale);
 }
 

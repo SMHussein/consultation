@@ -29,7 +29,7 @@ export default function Footer() {
             <Logo />
           </div>
           <div className={linkWrapperClass}>
-            <FooterLink href="/home" label={t("home")} icon={<BiHomeSmile />} />
+            <FooterLink href="/" label={t("home")} icon={<BiHomeSmile />} />
             <FooterLink href="/about" label={t("about")} icon={<BiGlobe />} />
             <FooterLink
               href="/services"

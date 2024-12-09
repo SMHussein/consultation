@@ -14,14 +14,14 @@ export default function Team() {
         <Heading type="secondary">{t("title")}</Heading>
         <div className="flex justify-around items-center gap-16 w-full flex-wrap">
           <TeamMember
-            name={t("yazan.name")}
-            position={t("yazan.position")}
-            imageUrl={t("yazan.src")}
-          />
-          <TeamMember
             name={t("naser.name")}
             position={t("naser.position")}
             imageUrl={t("naser.src")}
+          />
+          <TeamMember
+            name={t("yazan.name")}
+            position={t("yazan.position")}
+            imageUrl={t("yazan.src")}
           />
           <TeamMember
             name={t("ahmad.name")}

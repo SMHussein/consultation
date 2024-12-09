@@ -12,7 +12,7 @@ export default function Stats() {
       <Row grid={3} classes="flex flex-col gap-8 justify-center items-center">
         <Heading type="secondary">{t("title")}</Heading>
         <p>{t("subtitle")}</p>
-        <div className="flex flex-wrap gap-x-14 gap-y-8 justify-center">
+        <div className="flex flex-wrap gap-x-32 gap-y-8 justify-center">
           <CircularStat label={t("years.title")} value={t("years.number")} />
           <CircularStat
             label={t("sectors.title")}

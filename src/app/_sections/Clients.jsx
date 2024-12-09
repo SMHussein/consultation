@@ -19,14 +19,6 @@ export default function Clients() {
       <Row grid={2} classes="flex flex-col gap-8">
         <Heading classes="text-primary-100 text-center">{t("title")}</Heading>
         <Slider slides={slides} />
-        <Button
-          href="/clients"
-          type="secondary"
-          className="self-center"
-          icon={<BsPersonAdd size={20} />}
-        >
-          {t("title")}
-        </Button>
       </Row>
     </Section>
   );
