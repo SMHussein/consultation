@@ -23,6 +23,7 @@ body {
 .embla {
   direction: ltr;
   margin: auto;
+
   --slide-height: 15rem;
   --slide-spacing: 2rem;
   --slide-size: 30%;
