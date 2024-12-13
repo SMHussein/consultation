@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { HiArrowLeftStartOnRectangle } from "react-icons/hi2";
 import { logout } from "../_api/serverFunctions";
 import Button from "../_components/Button";
-import Logo from "../_components/Logo";
+import Image from "next/image";
 
 const NavLinks = [
   { id: 1, name: "Dashboard", path: "/admin" },
@@ -22,7 +22,9 @@ function AdminNav() {
       <nav className=" bg-accent-150 flex-1 pt-3">
         <ul className="flex flex-col items-center justify-center gap-6">
           <li>
-            <Logo />
+            <Link href="/" className="flex">
+              <Image src="/logo.png" height={200} width={180} alt="Logo" />
+            </Link>
           </li>
           {NavLinks.map((link) => {
             return (

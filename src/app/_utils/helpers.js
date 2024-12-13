@@ -60,3 +60,13 @@ export function getMetadata(locale) {
     metadataBase: new URL("https://ecmc-ksa.com"),
   };
 }
+
+export function toCamelCase(str) {
+  return str
+    .toLowerCase()
+    .split(/[\s-_]+/) // Split on spaces, hyphens, or underscores
+    .map((word, index) =>
+      index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
+    )
+    .join("");
+}
