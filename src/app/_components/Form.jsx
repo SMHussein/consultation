@@ -4,8 +4,9 @@ import Button from "./Button";
 import emailjs from "@emailjs/browser";
 import { useTranslations } from "next-intl";
 import { useActionState, useEffect } from "react";
+import RadioInput from "./RadioInput";
 
-export default function Form({ inputs, action, shouldMail = false }) {
+export default function Form({ inputs, action, shouldMail = false, job }) {
   const t = useTranslations("Buttons");
   const [formState, formAction] = useActionState(action, {});
 
@@ -56,8 +57,9 @@ export default function Form({ inputs, action, shouldMail = false }) {
       className="text-primary-200 flex flex-col gap-6 w-full border shadow-sm p-4 rounded-md"
     >
       {inputs.map((input, i) => (
-        <FormItem {...input} key={i} />
+        <FormItem {...input} key={`input-${i}`} />
       ))}
+      <input type="hidden" name="job" value={job} />
       <Button
         variation="secondary"
         type="submit"
@@ -71,28 +73,52 @@ export default function Form({ inputs, action, shouldMail = false }) {
 
 function FormItem({ id, type, required }) {
   const t = useTranslations("Form");
-
-  const element =
-    id !== "message" ? (
-      <input
-        className="p-2 border border-accent-50"
-        id={id}
-        type={type}
-        name={id}
-        required={required}
-      />
-    ) : (
-      <textarea
-        className="p-2 border border-accent-50"
-        rows={10}
-        id={id}
-        type={type}
-        name={id}
-        required={required}
-      />
-    );
-
+  const attributes = {
+    className: "p-2 border border-accent-50",
+    id,
+    type,
+    name: id,
+    required,
+    placeholder: t.has(`placeholder.${id}`) ? t(`placeholder.${id}`) : "",
+  };
   const dynamicLabel = t(`${id}`);
+
+  let element;
+  switch (id) {
+    case "message":
+    case "extraInfo":
+      element = <textarea rows={10} {...attributes} />;
+      break;
+    case "arabic":
+      return (
+        <RadioInput
+          label={dynamicLabel}
+          items={[
+            { id: "basic", name: t("language.basic") },
+            { id: "intermediate", name: t("language.medium") },
+            { id: "advanced", name: t("language.advanced") },
+          ]}
+          groupName={id}
+        />
+      );
+    case "english":
+      return (
+        <RadioInput
+          label={dynamicLabel}
+          items={[
+            { id: "basic", name: t("language.basic") },
+            { id: "intermediate", name: t("language.medium") },
+            { id: "advanced", name: t("language.advanced") },
+          ]}
+          groupName={id}
+        />
+      );
+
+    default:
+      element = <input {...attributes} />;
+      break;
+  }
+
   return (
     <div className="flex flex-col gap-2">
       <label htmlFor={id}>

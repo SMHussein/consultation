@@ -14,7 +14,7 @@ export default function Card({ title, text, icon, href, type = "secondary" }) {
         {icon}
         {title}
       </Heading>
-      <p>{text}</p>
+      <p className="flex-1">{text}</p>
       {href && (
         <Button href={href} type="secondary">
           {t("read")}

@@ -1,4 +1,4 @@
-import "../globals.css";
+import "@/src/app/globals.css";
 import localFont from "next/font/local";
 import Header from "@/src/app/_sections/Header";
 import Footer from "@/src/app/_sections/Footer";
@@ -7,15 +7,15 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/src/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
-import ToasterLayout from "../_components/Toaster";
-import { getMetadata } from "../_utils/helpers";
+import ToasterLayout from "@/src/app/_components/Toaster";
+import { getMetadata } from "@/src/app/_utils/helpers";
 
 const georgia = localFont({
   src: "../fonts/georgia.ttf",
   variable: "--font-georgia",
 });
 const bahij = localFont({
-  src: "../fonts/Bahij.ttf",
+  src: "../fonts//Bahij.ttf",
   variable: "--font-bahij",
 });
 

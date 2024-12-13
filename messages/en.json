@@ -2,23 +2,55 @@
   "responses": {
     "success": {
       "subscribe": "Thank you for subscribing to our newsletter!",
-      "contact": "Thank you for reaching out to us!"
+      "contact": "Thank you for reaching out to us!",
+      "apply": "Thank you for your intrest to work with us! we have recieved your application"
     },
     "error": {
       "generic": "Something went wrong. Please try again later.",
-      "fields": "Please fill out the fields correctly"
+      "fields": "Please fill out the fields correctly",
+      "size": "CV size should not exceed 1MB",
+      "job": "This job does not exist, please try again with another job"
     }
   },
+  "notFound": {
+    "jobs": "No such job is listed, please go back and check our listed jobs",
+    "noPage": "Sorry, we could not find this page"
+  },
   "Form": {
+    "cv": "Upload a resume",
     "email": "Email Address",
     "phone": "Phone Number",
     "name": "Name",
-    "message": "Message"
+    "message": "Message",
+    "location": "Current location",
+    "company": "Current Company",
+    "linkedin": "LinkedIn URL",
+    "nationality": "Nationality",
+    "university": "University Degree",
+    "arabic": "Arabic proficiency",
+    "english": "English  proficiency",
+    "salary": "Salary Expectations (SAR)",
+    "extraInfo": "Additional Information",
+
+    "language": {
+      "arabic": "Arabic proficiency",
+      "english": "English proficiency",
+      "advanced": "Fluent / bilingual",
+      "medium": "Conversational / intermediate",
+      "basic": "Basic / beginner"
+    },
+
+    "placeholder": {
+      "extraInfo": "Cover letter or any additional information you would like to share with us",
+      "university": "If any please specify"
+    }
   },
   "Buttons": {
     "contact": "Contact Us Now",
     "submit": "Submit",
-    "read": "Read More"
+    "read": "Read More",
+    "apply": "Apply Now",
+    "back": "Back"
   },
   "navigation": {
     "home": "Home",
@@ -284,75 +316,70 @@
     }
   },
   "jobs": {
+    "titles": {
+      "main": "Chose your major",
+      "qualifications": "Qualifications",
+      "responsibilities": "Responsibilities",
+      "skills": "Skills"
+    },
+
+    "marketingSpecialist": {
+      "title": "Marketing Specialist",
+      "location": "KSA",
+      "type": "Advisory – Marketing & Communication /Full Time /On-site",
+      "href": "/careers/jobs/marketingSpecialist",
+      "summary": "We are seeking a versatile and results-driven Marketing Specialist to support our offline, online, and event marketing efforts. This role is responsible for executing integrated marketing campaigns, supporting brand initiatives, and driving engagement across various platforms. The ideal candidate will have a strong understanding of digital and traditional marketing strategies, excellent project management skills, and experience in coordinating events to elevate our brand and achieve business objectives.",
+      "responsibilities": [
+        "Develop and execute online marketing campaigns across social media, email, and paid advertising channels to drive brand awareness and engagement.",
+        "Analyze digital campaign performance using metrics and insights, making data-driven recommendations to optimize future efforts.",
+        "Support the planning and execution of offline marketing activities, such as print advertising, direct mail campaigns, and brochures.",
+        "Coordinate with designers and vendors to produce high-quality marketing collateral that aligns with brand standards.",
+        "Organize, coordinate, and execute corporate events, trade shows, and conferences to maximize brand exposure and build client relationships.",
+        "Handle event logistics, including venue selection, vendor coordination, and on-site support.",
+        "Work with the marketing team to develop event materials such as banners, booths, presentations, and promotional items.",
+        "Track event success through post-event analysis and identify opportunities for improvement in future events."
+      ],
+      "qualifications": [
+        "Bachelor’s degree in Marketing, Business Administration, Communications, or a related field.",
+        "3+ years of experience in marketing, with exposure to digital marketing, offline channels, and event coordination.",
+        "Demonstrated experience managing marketing campaigns across both digital and traditional channels.",
+        "Proficiency in marketing software and tools, such as Google Analytics, social media platforms, and email marketing platforms.",
+        "Familiarity with CRM systems, SEO, and SEM practices is a plus.",
+        "Proven track record of organizing and executing successful events."
+      ],
+      "skills": [
+        "Strong project management skills with the ability to coordinate multiple marketing initiatives simultaneously.",
+        "Excellent written and verbal communication skills for clear, persuasive messaging.",
+        "Proficiency in digital marketing tools and platforms, including social media management, email marketing, and analytics tools.",
+        "Ability to work collaboratively across departments and with external partners, including designers, vendors, and event coordinators.",
+        "Analytical skills to interpret data and generate actionable insights for campaign improvement.",
+        "Strong attention to detail and organizational skills."
+      ]
+    },
     "associateConsultant": {
       "title": "Associate Consultant",
+      "location": "KSA",
       "type": "On Site - Full Time",
-      "href": "/careers/jobs"
-    },
-    "Consultant": {
-      "title": "Consultant",
-      "type": "On Site - Full Time",
-      "href": "/careers/jobs"
-    },
-    "Future Gears On-Job Training Program": {
-      "title": "Future Gears On-Job Training Program",
-      "type": "On Site - Internship",
-      "href": "/careers/jobs"
-    },
-    "Manager": {
-      "title": "Manager",
-      "type": "On Site - Full Time",
-      "href": "/careers/jobs"
-    },
-    "Marketing Specialist": {
-      "title": "Marketing Specialist",
-      "type": "On Site - Full Time",
-      "href": "/careers/jobs"
-    },
-    "Market Research Associate": {
-      "title": "Market Research Associate",
-      "type": "On Site - Full Time",
-      "href": "/careers/jobs"
-    },
-    "Finance Manager": {
-      "title": "Finance Manager",
-      "type": "On Site - Full Time",
-      "href": "/careers/jobs"
-    },
-    "Office Administrator": {
-      "title": "Office Administrator",
-      "type": "On Site - Full Time",
-      "href": "/careers/jobs"
-    },
-    "Partnership Specialist": {
-      "title": "Partnership Specialist",
-      "type": "Hybrid - Full Time",
-      "href": "/careers/jobs"
-    },
-    "Senior Advisory Operations Specialist": {
-      "title": "Senior Advisory Operations Specialist",
-      "type": "Hybrid - Full Time",
-      "href": "/careers/jobs"
-    },
-    "HR Operations Specialist": {
-      "title": "HR Operations Specialist",
-      "type": "Hybrid - Full Time",
-      "href": "/careers/jobs"
-    },
-    "HR PMO Executive": {
-      "title": "HR PMO Executive",
-      "type": "Hybrid - Full Time",
-      "href": "/careers/jobs"
-    },
-    "IT Support KSA": {
-      "title": "IT Support KSA",
-      "type": "On Site - Full Time",
-      "href": "/careers/jobs"
-    },
-    "Senior IT Specialist": {
-      "title": "Senior IT Specialist",
-      "type": "Hybrid - Full Time",
-      "href": "/careers/jobs"
+      "href": "/careers/jobs/associateConsultant",
+      "summary": "ECMC is one of the largest local management consultancies in Saudi Arabia, and the market leader in providing multidisciplinary services for both the private and public sectors. The company offers consulting solutions in the areas of Strategy, Marketing, Operations & Organizational Excellence, and Digital, to a range of clients in both the public and private sectors. The company is heavily involved in the transformation era of Saudi Arabia, driven by the Vision 2030 initiative, in engagement with various government organizations and the Vision Realization Programs as well as the private sector. ECMC has delivered projects in more than 17 sectors for the most well-known entities in the public sector including ministries, regulatory authorities, and the Saudi Stock Exchange, as well major private sector entities in the Kingdom. Today, ECMC has offices in Riyadh and Jeddah in Saudi Arabia, as well as an office in Cairo and in London. The company is currently expanding its operations in Cairo and is hiring to support this growth. ECMC is looking for an Associate Consultant to join the team in Egypt. Ideally, you will have consulting experience gained through previous work experience.",
+      "responsibilities": [
+        "Undertake primary research into customers and competitors",
+        "Work with our consulting team to determine their needs and goals by conducting interviews and surveys",
+        "Develop proposals and presentations based on research findings",
+        "Perform research tasks such as analyzing data sets or collecting information from industry experts",
+        "Present findings to clients using charts, graphs, and other visual aids such as PowerPoint presentations",
+        "Create operational plans based on available resources and aligning with organizational goals",
+        "Prepare reports summarizing research results and presenting them to management"
+      ],
+      "qualifications": [
+        "2-4 years of experience in related fields",
+        "Excellent English speaker",
+        "Ability to present information in easy-to-understand formats",
+        "Strong attention to detail",
+        "Ability to identify and gather information from different sources",
+        "Intermediate or advanced Excel skills & PowerPoint"
+      ]
     }
-  }
+  },
+  "apply": {}
 }
