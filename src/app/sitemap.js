@@ -123,53 +123,246 @@ export default function sitemap() {
       },
     },
     {
-      url: `${siteUrl}/careers/jobs/marketingSpecialist`,
+      url: `${siteUrl}/careers/jobs/marketing-specialist`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.4,
       alternates: {
         languages: {
-          en: `${siteUrl}/careers/job/marketingSpecialists`,
-          ar: `${siteUrl}/ar/careers/jobs/marketingSpecialist`,
+          en: `${siteUrl}/careers/job/marketing-specialist`,
+          ar: `${siteUrl}/ar/careers/jobs/marketing-specialist`,
         },
       },
     },
     {
-      url: `${siteUrl}/careers/jobs/associateConsultant`,
+      url: `${siteUrl}/careers/jobs/associate-consultant`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.4,
       alternates: {
         languages: {
-          en: `${siteUrl}/careers/jobs/associateConsultant`,
-          ar: `${siteUrl}/ar/careers/jobs/associateConsultant`,
+          en: `${siteUrl}/careers/jobs/associate-consultant`,
+          ar: `${siteUrl}/ar/careers/jobs/associate-consultant`,
         },
       },
     },
     {
-      url: `${siteUrl}/careers/jobs/marketingSpecialist/apply`,
+      url: `${siteUrl}/careers/jobs/manager`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.4,
       alternates: {
         languages: {
-          en: `${siteUrl}/careers/job/marketingSpecialists/apply`,
-          ar: `${siteUrl}/ar/careers/jobs/marketingSpecialist/apply`,
+          en: `${siteUrl}/careers/job/manager`,
+          ar: `${siteUrl}/ar/careers/jobs/manager`,
         },
       },
     },
     {
-      url: `${siteUrl}/careers/jobs/associateConsultant/apply`,
+      url: `${siteUrl}/careers/jobs/market-research-associate`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.4,
       alternates: {
         languages: {
-          en: `${siteUrl}/careers/jobs/associateConsultant/apply`,
-          ar: `${siteUrl}/ar/careers/jobs/associateConsultant/apply`,
+          en: `${siteUrl}/careers/job/market-research-associate`,
+          ar: `${siteUrl}/ar/careers/jobs/market-research-associate`,
         },
       },
     },
+    {
+      url: `${siteUrl}/careers/jobs/finance-manager`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.4,
+      alternates: {
+        languages: {
+          en: `${siteUrl}/careers/job/finance-manager`,
+          ar: `${siteUrl}/ar/careers/jobs/finance-manager`,
+        },
+      },
+    },
+    {
+      url: `${siteUrl}/careers/jobs/office-administrator`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.4,
+      alternates: {
+        languages: {
+          en: `${siteUrl}/careers/job/office-administrator`,
+          ar: `${siteUrl}/ar/careers/jobs/office-administrator`,
+        },
+      },
+    },
+    {
+      url: `${siteUrl}/careers/jobs/hr`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.4,
+      alternates: {
+        languages: {
+          en: `${siteUrl}/careers/job/hr`,
+          ar: `${siteUrl}/ar/careers/jobs/hr`,
+        },
+      },
+    },
+    {
+      url: `${siteUrl}/careers/jobs/it`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.4,
+      alternates: {
+        languages: {
+          en: `${siteUrl}/careers/job/it`,
+          ar: `${siteUrl}/ar/careers/jobs/it`,
+        },
+      },
+    },
+    {
+      url: `${siteUrl}/careers/jobs/partnership-specialist`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.4,
+      alternates: {
+        languages: {
+          en: `${siteUrl}/careers/job/partnership-specialist`,
+          ar: `${siteUrl}/ar/careers/jobs/partnership-specialist`,
+        },
+      },
+    },
+    {
+      url: `${siteUrl}/careers/jobs/senior-advisory-operations-specialist`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.4,
+      alternates: {
+        languages: {
+          en: `${siteUrl}/careers/job/senior-advisory-operations-specialist`,
+          ar: `${siteUrl}/ar/careers/jobs/senior-advisory-operations-specialist`,
+        },
+      },
+    },
+    {
+      url: `${siteUrl}/careers/jobs/marketing-specialist/apply`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.4,
+      alternates: {
+        languages: {
+          en: `${siteUrl}/careers/job/marketing-specialist/apply`,
+          ar: `${siteUrl}/ar/careers/jobs/marketing-specialist/apply`,
+        },
+      },
+    },
+    {
+      url: `${siteUrl}/careers/jobs/associate-consultant/apply`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.4,
+      alternates: {
+        languages: {
+          en: `${siteUrl}/careers/jobs/associate-consultant/apply`,
+          ar: `${siteUrl}/ar/careers/jobs/associate-consultant/apply`,
+        },
+      },
+    },
+    {
+      url: `${siteUrl}/careers/jobs/manager/apply`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.4,
+      alternates: {
+        languages: {
+          en: `${siteUrl}/careers/job/manager/apply`,
+          ar: `${siteUrl}/ar/careers/jobs/manager/apply`,
+        },
+      },
+    },
+    {
+      url: `${siteUrl}/careers/jobs/market-research-associate/apply`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.4,
+      alternates: {
+        languages: {
+          en: `${siteUrl}/careers/job/market-research-associate/apply`,
+          ar: `${siteUrl}/ar/careers/jobs/market-research-associate/apply`,
+        },
+      },
+    },
+    {
+      url: `${siteUrl}/careers/jobs/finance-manager/apply`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.4,
+      alternates: {
+        languages: {
+          en: `${siteUrl}/careers/job/finance-manager/apply`,
+          ar: `${siteUrl}/ar/careers/jobs/finance-manager/apply`,
+        },
+      },
+    },
+    {
+      url: `${siteUrl}/careers/jobs/office-administrator/apply`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.4,
+      alternates: {
+        languages: {
+          en: `${siteUrl}/careers/job/office-administrator/apply`,
+          ar: `${siteUrl}/ar/careers/jobs/office-administrator/apply`,
+        },
+      },
+    },
+    {
+      url: `${siteUrl}/careers/jobs/hr/apply`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.4,
+      alternates: {
+        languages: {
+          en: `${siteUrl}/careers/job/hr/apply`,
+          ar: `${siteUrl}/ar/careers/jobs/hr/apply`,
+        },
+      },
+    },
+    {
+      url: `${siteUrl}/careers/jobs/it/apply`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.4,
+      alternates: {
+        languages: {
+          en: `${siteUrl}/careers/job/it/apply`,
+          ar: `${siteUrl}/ar/careers/jobs/it/apply`,
+        },
+      },
+    },
+    {
+      url: `${siteUrl}/careers/jobs/partnership-specialist/apply`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.4,
+      alternates: {
+        languages: {
+          en: `${siteUrl}/careers/job/partnership-specialist/apply`,
+          ar: `${siteUrl}/ar/careers/jobs/partnership-specialist/apply`,
+        },
+      },
+    },
+    {
+      url: `${siteUrl}/careers/jobs/senior-advisory-operations-specialist/apply`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.4,
+      alternates: {
+        languages: {
+          en: `${siteUrl}/careers/job/senior-advisory-operations-specialist/apply`,
+          ar: `${siteUrl}/ar/careers/jobs/senior-advisory-operations-specialist/apply`,
+        },
+      },
+    },
+
     {
       url: `${siteUrl}/team`,
       lastModified: new Date(),

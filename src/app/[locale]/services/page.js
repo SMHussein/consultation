@@ -1,9 +1,18 @@
 import SectionDesc from "../../_sections/SectionDesc";
 import SectionHero from "../../_sections/SectionHero";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import ServicesCards from "../../_sections/ServicesCards";
 import Section from "../../_components/Section";
 import Row from "../../_components/Row";
+
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "metadata" });
+
+  return {
+    title: t("services.main"),
+  };
+}
 
 export default async function ServicesPage({ params }) {
   const { locale } = await params;

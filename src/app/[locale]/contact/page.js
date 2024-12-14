@@ -1,4 +1,4 @@
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import SectionHero from "../../_sections/SectionHero";
 import Section from "../../_components/Section";
 import Row from "../../_components/Row";
@@ -6,6 +6,15 @@ import ContactCards from "../../_sections/ContactCards";
 import Form from "../../_components/Form";
 import ContactHeading from "../../_components/ContactHeading";
 import { sendMessage } from "../../_api/serverFunctions";
+
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "metadata" });
+
+  return {
+    title: t("contact"),
+  };
+}
 
 const inputs = [
   { id: "name", type: "text", required: true },

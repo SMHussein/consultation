@@ -10,6 +10,11 @@ import { setRequestLocale } from "next-intl/server";
 import ToasterLayout from "@/src/app/_components/Toaster";
 import { getMetadata } from "@/src/app/_utils/helpers";
 
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  return getMetadata(locale);
+}
+
 const georgia = localFont({
   src: "../fonts/georgia.ttf",
   variable: "--font-georgia",
@@ -18,11 +23,6 @@ const bahij = localFont({
   src: "../fonts//Bahij.ttf",
   variable: "--font-bahij",
 });
-
-export async function generateMetadata({ params }) {
-  const { locale } = await params;
-  return getMetadata(locale);
-}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));

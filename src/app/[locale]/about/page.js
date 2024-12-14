@@ -3,11 +3,15 @@ import SectionHero from "../../_sections/SectionHero";
 import Specs from "../../_sections/Specs";
 import Values from "../../_sections/Values";
 import Vision from "../../_sections/Vision";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
-  return { title: "saifoo" };
+  const t = await getTranslations({ locale, namespace: "metadata" });
+
+  return {
+    title: t("about"),
+  };
 }
 
 export default async function About({ params }) {

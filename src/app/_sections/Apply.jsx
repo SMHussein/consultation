@@ -22,7 +22,7 @@ const inputs = [
   { id: "arabic", type: "text", required: true },
   { id: "english", type: "text", required: true },
   { id: "salary", type: "text", required: true },
-  { id: "cv", type: "file", required: true },
+  { id: "cv", type: "file", required: true, accept: "application/pdf" },
   {
     id: "extraInfo",
     type: "text",

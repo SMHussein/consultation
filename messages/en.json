@@ -1,4 +1,19 @@
 {
+  "metadata": {
+    "about": "About Us",
+    "services": {
+      "main": "Services",
+      "strategies": "Strategies Service",
+      "organizationalExcellency": "Organizational Excellency Service",
+      "marketing": "Marketing Service"
+    },
+    "careers": "Careers",
+    "currentCareers": "Current Careers",
+    "contact": "Contact Us",
+    "publications": "Publications",
+    "team": "Our Team",
+    "apply": "Apply For "
+  },
   "responses": {
     "success": {
       "subscribe": "Thank you for subscribing to our newsletter!",
@@ -17,7 +32,7 @@
     "noPage": "Sorry, we could not find this page"
   },
   "Form": {
-    "cv": "Upload a resume",
+    "cv": "Upload a resume (PDF)",
     "email": "Email Address",
     "phone": "Phone Number",
     "name": "Name",
@@ -317,17 +332,25 @@
   },
   "jobs": {
     "titles": {
-      "main": "Chose your major",
+      "main": "ECMC Open Positions",
       "qualifications": "Qualifications",
       "responsibilities": "Responsibilities",
-      "skills": "Skills"
+      "skills": "Skills",
+      "educationAndAcademicExperience": "Education and Academic Experience",
+      "consultancy": "Consultancy",
+      "marketingAndCommunication": "Marketing & Communication",
+      "accountingAndFinance": "Accounting & Finance",
+      "administration": "Administration",
+      "businessDevelopment": "Business Development",
+      "humanResource": "Human Resource",
+      "informationTechnology": "Information Technology"
     },
 
-    "marketingSpecialist": {
+    "marketing-specialist": {
       "title": "Marketing Specialist",
       "location": "KSA",
       "type": "Advisory – Marketing & Communication /Full Time /On-site",
-      "href": "/careers/jobs/marketingSpecialist",
+      "href": "/careers/jobs/marketing-specialist",
       "summary": "We are seeking a versatile and results-driven Marketing Specialist to support our offline, online, and event marketing efforts. This role is responsible for executing integrated marketing campaigns, supporting brand initiatives, and driving engagement across various platforms. The ideal candidate will have a strong understanding of digital and traditional marketing strategies, excellent project management skills, and experience in coordinating events to elevate our brand and achieve business objectives.",
       "responsibilities": [
         "Develop and execute online marketing campaigns across social media, email, and paid advertising channels to drive brand awareness and engagement.",
@@ -356,11 +379,11 @@
         "Strong attention to detail and organizational skills."
       ]
     },
-    "associateConsultant": {
+    "associate-consultant": {
       "title": "Associate Consultant",
       "location": "KSA",
       "type": "On Site - Full Time",
-      "href": "/careers/jobs/associateConsultant",
+      "href": "/careers/jobs/associate-consultant",
       "summary": "ECMC is one of the largest local management consultancies in Saudi Arabia, and the market leader in providing multidisciplinary services for both the private and public sectors. The company offers consulting solutions in the areas of Strategy, Marketing, Operations & Organizational Excellence, and Digital, to a range of clients in both the public and private sectors. The company is heavily involved in the transformation era of Saudi Arabia, driven by the Vision 2030 initiative, in engagement with various government organizations and the Vision Realization Programs as well as the private sector. ECMC has delivered projects in more than 17 sectors for the most well-known entities in the public sector including ministries, regulatory authorities, and the Saudi Stock Exchange, as well major private sector entities in the Kingdom. Today, ECMC has offices in Riyadh and Jeddah in Saudi Arabia, as well as an office in Cairo and in London. The company is currently expanding its operations in Cairo and is hiring to support this growth. ECMC is looking for an Associate Consultant to join the team in Egypt. Ideally, you will have consulting experience gained through previous work experience.",
       "responsibilities": [
         "Undertake primary research into customers and competitors",
@@ -379,7 +402,244 @@
         "Ability to identify and gather information from different sources",
         "Intermediate or advanced Excel skills & PowerPoint"
       ]
+    },
+    "manager": {
+      "title": "Manager",
+      "location": "KSA",
+      "type": "Full Time/ On Site",
+      "href": "/careers/jobs/manager",
+      "summary": "ECMC is one of the largest local management consultancies in Saudi Arabia and the market leader in providing multidisciplinary services for both the private and public sectors. The company offers consulting solutions in the areas of Strategy, Marketing, Operations & Organizational Excellence, and Digital, serving a range of clients in both the public and private sectors. ECMC is heavily involved in the transformation era of Saudi Arabia, driven by the Vision 2030 initiative, working closely with various government organizations, Vision Realization Programs, and the private sector. The company has delivered projects in more than 17 sectors for some of the most prominent entities in the public sector, including ministries, regulatory authorities, and the Saudi Stock Exchange, as well as major private sector entities in the Kingdom. ECMC is looking for a Manager to join the team in Saudi Arabia. Ideally, you will have consulting experience gained through previous work experience.",
+      "responsibilities": [
+        "Lead the day-to-day execution of a client project and assist in practice and solution development. Contribute to the creation of deliverables.",
+        "Manage client relationships on projects and ensure positive impact and sustainable results.",
+        "Direct the quantitative analysis, assess the depth required, and translate the analysis into useful findings and quality assure the results.",
+        "Take ownership of the overall project and delivery as per commitments to the client.",
+        "People management – handle a team of consultants, guiding and developing individual team members."
+      ],
+      "qualifications": [
+        "4.5 - 6.5 years of experience.",
+        "Previous experience in the consulting industry is A MUST.",
+        "Experience in Project Management, Policy & Procedure Development, Strategy Development, or Organizational Excellence.",
+        "Fluent in both Arabic and English (orally and written)."
+      ],
+      "skills": [
+        "Effective time management skills and the ability to multitask.",
+        "Excellent document development through MS Office.",
+        "Strong teamwork and relationship-building abilities.",
+        "“Roll up your sleeves” attitude.",
+        "Creative and Curious approaches.",
+        "Critical thinking and problem-solving skills.",
+        "Excellent leadership and communication skills.",
+        "Strong client and vendor management skills."
+      ]
+    },
+    "market-research-associate": {
+      "title": "Market Research Associate",
+      "location": "KSA",
+      "type": "Advisory – Research & Analysis /Full Time /On-site",
+      "href": "/careers/jobs/market-research-associate",
+      "summary": "The Market Research Associate plays a critical role in gathering and analyzing data to provide actionable insights that support strategic decision-making. The role involves conducting primary research, preparing comprehensive reports, and collaborating with teams to ensure findings align with client business objectives. This position requires strong analytical, communication, and project management skills, along with proficiency in research tools and data analysis methods.",
+      "responsibilities": [
+        "Gather and analyze qualitative and quantitative data from primary research.",
+        "Track and monitor trends, market developments, and competitive activities to provide insights.",
+        "Design questionnaire and discussion guides that align with research objectives and gather relevant data.",
+        "Conduct surveys, interviews, and focus groups to capture customer insights and preferences.",
+        "Prepare comprehensive research reports, market assessments, and presentations to support business decision-making.",
+        "Collaborate with consulting teams and clients to understand research needs and ensure alignment with client business goals.",
+        "Oversee the execution of fieldwork to ensure high-quality data collection and timely project completion.",
+        "Work closely with the consulting team to ensure that research findings are integrated into broader client strategies and solutions.",
+        "Utilize industry-standard market research tools and methodologies to collect, organize, and interpret data."
+      ],
+      "qualifications": [
+        "2-4 years of experience in market research, business consulting, or data analysis, preferably in a consulting environment.",
+        "Strong analytical and problem-solving skills with the ability to interpret large data sets and provide actionable recommendations.",
+        "Ability to understand business problems and provide research-based solutions to support strategic decision-making.",
+        "Strong communication and presentation skills, with the ability to interact with clients and stakeholders effectively.",
+        "Experience using market research tools and databases (e.g., Gartner, Statista), and proficiency in Excel and data visualization tools.",
+        "High attention to detail and ability to produce accurate and comprehensive research reports.",
+        "Experience managing multiple research projects, timelines, and deliverables.",
+        "Must be fluent in both English and Arabic."
+      ],
+      "educationAndAcademicExperience": [
+        "Bachelor’s degree in Business, Marketing, Economics, Statistics, or a related field; a master’s degree is a plus."
+      ]
+    },
+    "finance-manager": {
+      "title": "Finance Manager",
+      "location": "KSA",
+      "type": "Full Time/ On Site",
+      "href": "/careers/jobs/finance-manager",
+      "summary": "The Finance Manager plays a critical role in managing the accounting and financial functions of the organization. This position ensures compliance with accounting regulations, oversees financial reporting, and provides strategic insights to support decision-making. The ideal candidate will have strong leadership skills, proven experience in finance management, and a commitment to fostering a culture of accuracy, integrity, and continuous improvement.",
+      "responsibilities": [
+        "Oversee the day-to-day operations of the accounting department, ensuring accuracy, timeliness, and compliance with accounting principles and regulations.",
+        "Manage the financial reporting process, including the preparation of monthly, quarterly, and annual financial statements.",
+        "Monitor and analyze financial data, providing key insights and recommendations to support strategic decision-making.",
+        "Develop and implement accounting policies, procedures, and controls to enhance the efficiency and effectiveness of the department.",
+        "Coordinate and liaise with external auditors and tax authorities during audits and tax filings.",
+        "Stay updated on accounting regulations, industry trends, and best practices to ensure compliance and drive continuous improvement.",
+        "Lead, mentor, and develop a team of accounting professionals, fostering a positive work environment, and promoting professional growth."
+      ],
+      "qualifications": [
+        "Bachelor’s degree in accounting, Finance, or a related field.",
+        "5-8 years of experience.",
+        "CPA or CMA certificate is a must.",
+        "Proven experience as a Finance Manager, or in a similar senior accounting role.",
+        "In-depth knowledge of accounting principles, financial reporting, and tax regulations.",
+        "Strong analytical skills with the ability to interpret financial data and provide strategic insights.",
+        "Excellent attention to detail and accuracy in financial reporting and analysis.",
+        "Advanced proficiency in accounting software and MS Excel. Experience with ERP systems is a plus.",
+        "Ability to effectively communicate complex financial information to non-financial stakeholders.",
+        "Strong leadership skills with a track record of successfully managing and developing a team.",
+        "Demonstrated integrity, ethics, and commitment to maintaining confidentiality.",
+        "Fluent in English & Arabic."
+      ]
+    },
+    "office-administrator": {
+      "title": "Office Administrator",
+      "location": "KSA",
+      "type": "Full Time/ On Site",
+      "href": "/careers/jobs/office-administrator",
+      "summary": "We are seeking a highly organized and proactive Office Administrator to oversee and manage the daily operations of our office. Your role is to create and maintain a pleasant work environment, ensuring high levels of organizational effectiveness, communication, and safety.",
+      "responsibilities": [
+        "Oversee and ensure the smooth running of day-to-day office operations, including supplies, equipment, and facilities.",
+        "Develop and implement office policies, procedures, and workflows to enhance efficiency.",
+        "Evaluate and select vendors and suppliers based on established office policies to ensure quality and cost-effectiveness.",
+        "Oversee financial administration related to office operations, including budgeting and expense tracking.",
+        "Coordinate and oversee travel arrangements and itineraries for staff and visitors.",
+        "Maintain excellent communication across departments.",
+        "Ensure a well-maintained office environment, including cleanliness, hygiene, and safety.",
+        "Organize and lead office events, conferences, and regular meetings (weekly, monthly, quarterly) to foster team collaboration and engagement.",
+        "Supervise and manage the office operations team, ensuring efficient task delegation, performance monitoring, and support.",
+        "Ensure adherence to legal and regulatory requirements relevant to office operations."
+      ],
+      "qualifications": [
+        "Exceptional organizational and multitasking abilities.",
+        "Strong problem-solving skills and attention to detail.",
+        "Excellent communication and interpersonal skills.",
+        "5-7 years of relevant experience in office management or administration.",
+        "Experience in a corporate or multinational environment is preferred.",
+        "Fluency in English and Arabic is mandatory, both written and spoken.",
+        "Ability to manage confidential information with discretion."
+      ],
+      "educationAndAcademicExperience": [
+        "Bachelor’s degree in Business Administration, Management, or a related field.",
+        "Preferably holds one of the following certificates: (COM, FMP)."
+      ]
+    },
+    "hr": {
+      "title": "HR Operations Specialist",
+      "location": "KSA",
+      "type": "Operations – Human Resource /Full Time /On Site",
+      "href": "/careers/jobs/hr",
+      "summary": "We are seeking a dedicated and detail-oriented HR Operations Specialist to support the day-to-day HR operations, ensuring smooth processes and compliance with local labor laws. The role involves managing employee data, facilitating onboarding and offboarding, and fostering a positive work environment through effective communication and engagement initiatives.",
+      "responsibilities": [
+        "Execute day-to-day HR operations, including support in the first stage in onboarding, offboarding, and employee data management.",
+        "Maintain accurate and updated employee records in the ERP system.",
+        "Generate and analyze HR reports to support data-driven decision-making.",
+        "Ensure compliance and stay up-to-date with changes in local labor legislation.",
+        "Monitor and manage the probationary period for new hires, including evaluations and follow-up actions.",
+        "Act as a point of contact for HR-related inquiries from employees.",
+        "Assist in resolving employees’ issues and concerns, fostering a positive work environment.",
+        "Communicate company internal announcements, such as holidays and monthly gatherings.",
+        "Manage vacation requests in the ERP system.",
+        "Support other HR functions in activities such as engagements and events."
+      ],
+      "qualifications": [
+        "Bachelor’s degree in Human Resources, Business Administration, or a related field.",
+        "0-3 years of experience in HR operations or a similar role.",
+        "Proficiency in MS Office and ERP systems.",
+        "Fluent in English with excellent written and verbal communication skills.",
+        "Strong understanding of local labor law and company policies.",
+        "Exceptional organizational and multitasking abilities.",
+        "Detail-oriented with a commitment to accuracy in data management.",
+        "Ability to handle sensitive information with confidentiality and discretion.",
+        "Excellent interpersonal skills."
+      ]
+    },
+    "it": {
+      "title": "IT Support Specialist",
+      "location": "KSA",
+      "type": "Operations – Information Technology /Full Time /On-site",
+      "href": "/careers/jobs/it",
+      "summary": "As an IT Support Specialist, you will be the first point of contact for technical assistance and support within the organization. You will provide essential IT services to ensure the smooth operation of computer systems, software, and hardware. Your problem-solving skills, technical knowledge, and customer-focused approach are critical in this role.",
+      "responsibilities": [
+        "Handle technical support for daily operational tasks.",
+        "Provide first-line technical support to internal users.",
+        "Manage and monitor device stock and lifecycle.",
+        "Liaise with outsourced IT support teams, ensuring timely resolution of issues.",
+        "Assist users with Microsoft Office applications and ERP Next system queries.",
+        "Troubleshoot hardware, software, and network issues.",
+        "Ensure IT assets are well-maintained and meet company standards.",
+        "Assist in the onboarding process by setting up devices and accounts for new employees.",
+        "Provide feedback and recommendations on potential IT improvements."
+      ],
+      "qualifications": [
+        "Bachelor's degree in Computer Engineering, Network Engineering, Computer Science, or a related field or equivalent experience.",
+        "Familiarity with ERP Next, Microsoft Azure, Office applications, and user management.",
+        "Strong troubleshooting and problem-solving skills.",
+        "Excellent communication and interpersonal skills.",
+        "Experience in managing and maintaining IT assets.",
+        "Fresh graduate with a maximum of 2 years of experience in a related field.",
+        "Fluent in English and Arabic, with excellent written and verbal communication skills.",
+        "Attention to detail, strategic thinking, and exceptional problem-solving skills."
+      ]
+    },
+    "partnership-specialist": {
+      "title": "Partnership Specialist",
+      "location": "KSA",
+      "type": "Operations – Business Development /Full Time /On Site",
+      "href": "/careers/jobs/partnership-specialist",
+      "summary": "The Partnership Specialist is responsible for managing relationships with partner companies and ensuring the efficient delivery of services at all levels. This role involves overseeing existing partnerships, enhancing service quality, and supporting project coordination.",
+      "responsibilities": [
+        "Manage relationships with partner companies to ensure smooth service delivery.",
+        "Monitor partner performance and ensure compliance with service agreements and timelines.",
+        "Support project-level services, ensuring alignment between partners and internal teams.",
+        "Assist in drafting and managing partnership agreements.",
+        "Collaborate with internal teams to integrate partner contributions into project workflows.",
+        "Identify opportunities to enhance service delivery and work with partners to implement improvements.",
+        "Support partnership negotiations and agreement renewals."
+      ],
+      "qualifications": [
+        "Bachelor’s degree in Business Administration, Management, or a related field.",
+        "2-5 years of experience in partnership management, vendor management, or project management.",
+        "Strong communication and stakeholder management skills.",
+        "Experience in management consulting or project-based environments is an advantage.",
+        "Certifications such as PMP or CIPS are a plus."
+      ],
+      "skills": [
+        "Excellent relationship management and negotiation skills.",
+        "Strong organizational and project management capabilities.",
+        "Ability to handle multiple stakeholders and tasks simultaneously.",
+        "Problem-solving and analytical skills."
+      ]
+    },
+    "senior-advisory-operations-specialist": {
+      "title": "Senior Advisory Operations Specialist",
+      "location": "KSA",
+      "type": "Operations – Business Operations /Full Time /On Site",
+      "href": "/careers/jobs/senior-advisory-operations-specialist",
+      "summary": "",
+      "responsibilities": [
+        "Provide comprehensive project management support for all technical proposal-related tasks.",
+        "Receive RFPs from the government procurement platform.",
+        "Collect, organize, and archive all received RFPs in the shared drive.",
+        "Gather all required data from RFPs, ensuring accuracy and completeness.",
+        "Conduct thorough analysis of business opportunities from RFPs, evaluating viability and strategic alignment.",
+        "Manage RFPs and other business opportunities within the ERP system, ensuring data integrity and timely updates.",
+        "Collaborate with internal stakeholders to facilitate smooth proposal operations.",
+        "Identify and escalate potential issues or challenges to the relevant stakeholders.",
+        "Monitor all deadlines (submission dates, Q/A sessions, client meetings) to ensure timely compliance.",
+        "Support stakeholders in executing related initiatives effectively.",
+        "Develop and implement business development plans targeting key areas for growth."
+      ],
+      "qualifications": [
+        "Minimum 4-5 years of experience in Operations or a related field.",
+        "Consulting experience is preferred.",
+        "In-depth understanding of the business development process and requirements.",
+        "Strong analytical skills with the ability to conduct comprehensive analyses of business opportunities.",
+        "Advanced reporting skills with experience creating detailed reports and data presentations.",
+        "Proficiency in Excel and PowerPoint for data analysis and presentations."
+      ]
     }
-  },
-  "apply": {}
+  }
 }

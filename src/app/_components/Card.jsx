@@ -9,9 +9,9 @@ export default function Card({ title, text, icon, href, type = "secondary" }) {
     <div className="rounderd-sm shadow-md border p-6  flex flex-col gap-8">
       <Heading
         type={type}
-        classes="flex items-center gap-6 justify-center text-center border-b py-2 "
+        classes="flex items-center gap-6 justify-center text-center border-b py-2"
       >
-        {icon}
+        <span>{icon}</span>
         {title}
       </Heading>
       <p className="flex-1">{text}</p>

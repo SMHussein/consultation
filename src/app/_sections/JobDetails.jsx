@@ -18,7 +18,10 @@ export default function JobDetails({ job }) {
   const responsibilities = getItems(t, `jobs.${job}.responsibilities`);
   const qualifications = getItems(t, `jobs.${job}.qualifications`);
   const skills = getItems(t, `jobs.${job}.skills`);
-
+  const educationAndAcademicExperience = getItems(
+    t,
+    `jobs.${job}.educationAndAcademicExperience`
+  );
   if (!t.has(`${job}.title`)) return notFound();
   return (
     <Section>
@@ -51,6 +54,13 @@ export default function JobDetails({ job }) {
             icon={<BsLightningCharge size={25} className="text-primary-170" />}
           />
         )}
+        {educationAndAcademicExperience && (
+          <JobList
+            jobArray={educationAndAcademicExperience}
+            title={t("titles.educationAndAcademicExperience")}
+            icon={<BsLightningCharge size={25} className="text-primary-170" />}
+          />
+        )}
         <Button className="self-center" href={`/careers/jobs/${job}/apply`}>
           {b("apply")}
         </Button>
@@ -66,7 +76,7 @@ function JobList({ jobArray, title, icon }) {
         {icon}
         {title}
       </Heading>
-      <ul className="flex flex-col gap-2 list-disc pl-6 marker:text-primary-170 marker:text-lg">
+      <ul className="flex flex-col gap-2 list-disc ps-6 marker:text-primary-170 marker:text-lg">
         {jobArray.map((item, i) => (
           <li key={i} className="text-gray-800 text-base leading-relaxed">
             {item}

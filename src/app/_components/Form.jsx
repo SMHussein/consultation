@@ -71,7 +71,7 @@ export default function Form({ inputs, action, shouldMail = false, job }) {
   );
 }
 
-function FormItem({ id, type, required }) {
+function FormItem({ id, type, required, accept }) {
   const t = useTranslations("Form");
   const attributes = {
     className: "p-2 border border-accent-50",
@@ -80,6 +80,7 @@ function FormItem({ id, type, required }) {
     name: id,
     required,
     placeholder: t.has(`placeholder.${id}`) ? t(`placeholder.${id}`) : "",
+    accept,
   };
   const dynamicLabel = t(`${id}`);
 

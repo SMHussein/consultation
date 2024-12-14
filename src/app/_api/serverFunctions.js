@@ -6,8 +6,16 @@ import { redirect } from "next/navigation";
 // await new Promise((resolve) => setTimeout(resolve, 5000));
 
 const jobIds = {
-  associateConsultant: 1,
-  marketingSpecialist: 2,
+  "associate-consultant": 1,
+  "marketing-specialist": 2,
+  manager: 3,
+  "market-research-associate": 4,
+  "finance-manager": 5,
+  "office-administrator": 6,
+  hr: 7,
+  it: 8,
+  "partnership-specialist": 9,
+  "senior-advisory-operations-specialist": 10,
 };
 
 export async function newsLetterSubsribe(currentState, formData) {
@@ -87,7 +95,7 @@ export async function jobApply(currentState, formData) {
   const job = formData.get("job");
   const storageUrl = process.env.SUPABASE_STORAGE_URL;
   const cvName = `${Math.random()}-${cv?.name}`.replaceAll(" ", "-");
-  const cvPath = `${storageUrl}/cvs/${cvName}`;
+  const cvPath = `${storageUrl}/${cvName}`;
   const jobId = jobIds[job];
 
   if (!jobId) {
