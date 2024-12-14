@@ -1,4 +1,5 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import SectionHero from "@/src/app/_sections/SectionHero";
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -13,5 +14,9 @@ export default async function Publications({ params }) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <main></main>;
+  return (
+    <main>
+      <SectionHero service="hero" section="publications" />
+    </main>
+  );
 }

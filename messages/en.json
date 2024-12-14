@@ -84,6 +84,12 @@
     "textSecond": "We are committed to enhancing competitive advantage through high-quality, customized services. At ECMC, trust and long-term partnerships form the foundation of our client relationships.",
     "btnText": "Read More"
   },
+  "publications": {
+    "hero": {
+      "title": "Publications",
+      "src": "/heroes/section-10.webp"
+    }
+  },
   "OurServices": {
     "title": "Our Services",
     "overview": {
@@ -92,7 +98,7 @@
       "text1": "At ECMC, we provide innovative consulting solutions designed to help businesses navigate complex challenges and seize new opportunities. Our expertise spans strategy, operations, technology, and organizational transformation, empowering companies to enhance performance and achieve sustainable growth. Whether you're a startup or an established enterprise, our tailored approach ensures practical, actionable solutions that drive real results. Discover how ECMC can partner with you to unlock your business's full potential.",
       "text2": "",
       "text3": "",
-      "src": "/heroes/section-1.webp"
+      "src": "/heroes/section-1.jpg"
     },
     "strategies": {
       "title": "Strategies",
