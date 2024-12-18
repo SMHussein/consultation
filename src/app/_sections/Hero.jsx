@@ -16,7 +16,7 @@ export default function Hero() {
         alt="Hero Image"
         loading="eager"
       />
-      <Row classes="flex items-center justify-center  min-h-[50svh]">
+      <Row classes="flex items-center justify-center  min-h-[65svh]">
         <div className="absolute inset-0 bg-black/50 -z-10"></div>
         <Heading type="primary" classes="text-white text-balance max-w-[50rem]">
           {t("title")}
