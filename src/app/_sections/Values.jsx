@@ -13,7 +13,10 @@ export default function Values() {
         <Heading>{t("values.title")}</Heading>
         <ul className="flex flex-wrap gap-4">
           {values.map((value, i) => (
-            <li key={i} className="border px-4 py-2 rounded-full bg-accent-150">
+            <li
+              key={i}
+              className="border px-4 py-2 rounded-full bg-accent-150 dark:bg-primary-210"
+            >
               {value}
             </li>
           ))}

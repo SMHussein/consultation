@@ -29,7 +29,7 @@ export default function RadioInput({ label, items, groupName }) {
             />
             <label
               htmlFor={`${groupName}-${item.id}`}
-              className="capitalize text-gray-700 cursor-pointer"
+              className="capitalize text-gray-700 dark:text-white cursor-pointer"
             >
               {item.name}
             </label>

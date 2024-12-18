@@ -8,7 +8,7 @@ export default function Stats() {
   const t = useTranslations("stats");
 
   return (
-    <Section classes="bg-accent-150">
+    <Section isLight={false}>
       <Row grid={3} classes="flex flex-col gap-8 justify-center items-center">
         <Heading type="secondary">{t("title")}</Heading>
         <p>{t("subtitle")}</p>

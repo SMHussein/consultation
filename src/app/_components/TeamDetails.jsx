@@ -8,7 +8,7 @@ export default function TeamDetails() {
   const t = useTranslations("team");
 
   return (
-    <Section classes="bg-accent-150">
+    <Section isLight={false}>
       <Row grid={2} classes="flex flex-col gap-16">
         <TeamItem
           name={t("naser.name")}

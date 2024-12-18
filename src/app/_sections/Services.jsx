@@ -15,7 +15,7 @@ export default function Services() {
   const marketingServices = getItems(t, "OurServices.marketing.items");
 
   return (
-    <Section classes="bg-accent-150">
+    <Section isLight={false}>
       <Row grid={3}>
         <Heading classes="text-primary-100 text-center mb-6">
           {t("title")}

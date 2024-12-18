@@ -6,7 +6,7 @@ export default function Heading({
 }) {
   let element;
 
-  let classNames = `uppercase ${classes}`;
+  let classNames = `dark:text-white uppercase ${classes}`;
 
   if (isLight) classNames += " text-accent-50";
 
@@ -17,7 +17,7 @@ export default function Heading({
       element = <h1 className={`${classNames} text-3xl`}>{children}</h1>;
       break;
     case "secondary":
-      element = <h2 className={`${classNames} text-2xl`}>{children}</h2>;
+      element = <h2 className={`${classNames} text-2x`}>{children}</h2>;
       break;
     case "tertiary":
       element = <h3 className={`${classNames} text-md`}>{children}</h3>;

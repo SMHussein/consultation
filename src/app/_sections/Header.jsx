@@ -18,7 +18,7 @@ const Header = ({ locale }) => {
   };
 
   return (
-    <header className="sticky top-0 left-0 w-full bg-accent-150 shadow-md z-50 text-primary-170">
+    <header className="sticky top-0 left-0 w-full bg-accent-150 dark:bg-primary-210 shadow-md z-50 text-primary-170 dark:text-accent-50 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
@@ -102,7 +102,9 @@ function HeaderLink({ item, onClick = () => {} }) {
       onClick={() => onClick()}
       href={href}
       className={`${
-        pathname === href ? "text-primary-160" : "text-primary-200"
+        pathname === href
+          ? "text-primary-160"
+          : "text-primary-200 dark:text-white"
       } hover:text-accent-200 transition duration-300 capitalize`}
     >
       {label}

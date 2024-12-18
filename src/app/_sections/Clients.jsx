@@ -15,7 +15,7 @@ export default function Clients() {
   const t = useTranslations("clients");
 
   return (
-    <Section classes="bg-accent-150">
+    <Section isLight={false}>
       <Row grid={2} classes="flex flex-col gap-8">
         <Heading classes="text-primary-100 text-center">{t("title")}</Heading>
         <Slider slides={slides} />

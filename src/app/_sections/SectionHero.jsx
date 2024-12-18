@@ -8,7 +8,7 @@ export default function SectionHero({ service, section }) {
   const t = useTranslations(`${section}`);
 
   return (
-    <Section classes="relative">
+    <Section noBg={true}>
       <Image
         src={t(`${service}.src`)}
         fill
@@ -16,7 +16,7 @@ export default function SectionHero({ service, section }) {
         alt="Hero Image"
         loading="eager"
       />
-      <Row classes="flex items-center justify-center  min-h-[50dvh]">
+      <Row classes="flex items-center justify-center  min-h-[50svh]">
         <div className="absolute inset-0 bg-black/70 -z-10"></div>
         <Heading type="primary" classes="text-white text-balance max-w-[50rem]">
           {t(`${service}.title`)}

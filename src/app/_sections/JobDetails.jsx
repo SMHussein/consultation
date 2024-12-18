@@ -78,7 +78,10 @@ function JobList({ jobArray, title, icon }) {
       </Heading>
       <ul className="flex flex-col gap-2 list-disc ps-6 marker:text-primary-170 marker:text-lg">
         {jobArray.map((item, i) => (
-          <li key={i} className="text-gray-800 text-base leading-relaxed">
+          <li
+            key={i}
+            className="text-gray-800 dark:text-white text-base leading-relaxed"
+          >
             {item}
           </li>
         ))}

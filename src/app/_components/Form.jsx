@@ -54,7 +54,7 @@ export default function Form({ inputs, action, shouldMail = false, job }) {
   return (
     <form
       action={shouldMail ? submitAction : formAction}
-      className="text-primary-200 flex flex-col gap-6 w-full border shadow-sm p-4 rounded-md"
+      className="text-primary-200 dark:text-white flex flex-col gap-6 w-full border shadow-sm p-4 rounded-md"
     >
       {inputs.map((input, i) => (
         <FormItem {...input} key={`input-${i}`} />

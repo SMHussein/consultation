@@ -22,7 +22,7 @@ export default function Footer() {
   const t = useTranslations("navigation");
 
   return (
-    <footer className="bg-accent-150 border-t">
+    <footer className="bg-accent-150 border-t text-primary-200 dark:text-accent-50 dark:bg-primary-210">
       <Row grid={3}>
         <div className="flex justify-around flex-col md:flex-row gap-8">
           <div>

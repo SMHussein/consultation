@@ -5,7 +5,7 @@ import { BiPolygon } from "react-icons/bi";
 
 export default function ServiceItem({ service, title, href, btnText, src }) {
   return (
-    <div className="flex flex-col gap-6 justify-start shadow-md">
+    <div className="flex flex-col gap-6 justify-start shadow-md dark:bg-black">
       <div className="h-[270px] ">
         <Image
           src={src}
@@ -22,7 +22,7 @@ export default function ServiceItem({ service, title, href, btnText, src }) {
         {service.map((item, i) => (
           <li
             key={i}
-            className="flex items-center gap-2 text-accent-200 text-sm"
+            className="flex items-center gap-2 text-accent-200 dark:text-accent-50 text-sm"
           >
             <BiPolygon />
             {item}

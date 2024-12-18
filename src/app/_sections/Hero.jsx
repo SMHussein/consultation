@@ -8,7 +8,7 @@ export default function Hero() {
   const t = useTranslations("Hero");
 
   return (
-    <Section classes="relative">
+    <Section noBg={true}>
       <Image
         src="/hero.jpg"
         fill
@@ -16,7 +16,7 @@ export default function Hero() {
         alt="Hero Image"
         loading="eager"
       />
-      <Row classes="flex items-center justify-center  min-h-[50dvh]">
+      <Row classes="flex items-center justify-center  min-h-[50svh]">
         <div className="absolute inset-0 bg-black/50 -z-10"></div>
         <Heading type="primary" classes="text-white text-balance max-w-[50rem]">
           {t("title")}
