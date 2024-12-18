@@ -57,7 +57,10 @@ export default function Footer() {
         </div>
         <div className="flex justify-between items-center md:justify-around mt-8 pt-8 border-t-[0.5px] border-gray-500/50">
           <div className="flex items-center gap-4">
-            <FooterLink href="/twitter" icon={<BiLogoLinkedin size={20} />} />
+            <FooterLink
+              href="https://www.linkedin.com/company/ecmc-ksa"
+              icon={<BiLogoLinkedin size={20} />}
+            />
           </div>
           <div>
             <ScrollToTopButton />

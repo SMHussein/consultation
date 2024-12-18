@@ -88,7 +88,8 @@
     "hero": {
       "title": "Publications",
       "src": "/heroes/section-10.jpg"
-    }
+    },
+    "subTitle": "Stay tuned for our publications!"
   },
   "OurServices": {
     "title": "Our Services",
@@ -647,5 +648,6 @@
         "Proficiency in Excel and PowerPoint for data analysis and presentations."
       ]
     }
-  }
+  },
+  "apply": {}
 }

@@ -89,7 +89,8 @@
     "hero": {
       "title": "منشوراتنا",
       "src": "/heroes/section-10.jpg"
-    }
+    },
+    "subTitle": "ترقبوا منشوراتنا قريبا!"
   },
   "OurServices": {
     "title": "خدماتنا",
