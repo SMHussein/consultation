@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const siteUrl = "https://ecmc-ksa.com";
+  const siteUrl = "https://www.ecmc-ksa.com";
 
   return [
     {
