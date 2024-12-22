@@ -27,7 +27,7 @@ export function getMetadata(locale) {
         title:
           "ايميرج كبابليتيز للاستشارات الإدارية - تمكين الشركات السعودية من خلال حلول استشارية استراتيجية ومستدامة",
         description:
-          "شركة ايميرج كبابليتيز للاستشارات الإدارية هي شركة استشارية رائدة في المملكة العربية السعودية، مكرسة لتمكين الشركات من تحقيق النمو المستدام والنجاح في الأسواق المحلية والعالمية. بفضل خبرتنا في مجالات الاستراتيجية، والتحول الرقمي، وإدارة المخاطر",
+          "شركة ايميرج كبابليتيز للاستشارات الإدارية هي شركة استشارية رائدة في المملكة العربية السعودية، مكرسة لتمكين الشركات من تحقيق النمو المستدام. بفضل خبرتنا في مجالات الاستراتيجية، والتحول الرقمي، وإدارة المخاطر",
       },
       metadataBase: new URL("https://ecmc-ksa.com"),
     };
@@ -36,10 +36,10 @@ export function getMetadata(locale) {
     title: {
       template: "ECMC - %s",
       default:
-        "ECMC - Empowering Saudi Businesses with Strategic and Sustainable Consulting Solutions",
+        "ECMC - Empowering Saudi Businesses with Strategic Consulting Solutions",
     },
     description:
-      "ECMC is a leading consulting company in Saudi Arabia, dedicated to empowering businesses for sustainable growth and success in local and global markets. With expertise in strategy, digital transformation, risk management.",
+      "ECMC is a leading consulting company in Saudi Arabia, dedicated to empowering businesses for sustainable growth. With expertise in strategy, digital transformation, risk management.",
     author: "Emerge Capabilities",
     keywords:
       "Saudi Arabia consulting services, Strategic consulting solutions, Digital transformation consulting, Governance risk compliance (GRC), Sustainable business growth, Organizational excellence, Market research Saudi Arabia, Environmental Social Governance (ESG), Change management services, Corporate strategy development, Strategic planning consulting, Business continuity strategies, Risk management solutions, Performance management services, Innovation strategy consulting, Local economy studies consulting, Public-private sector strategies",
