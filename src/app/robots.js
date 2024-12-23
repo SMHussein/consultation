@@ -5,6 +5,6 @@ export default function robots() {
       allow: "/",
       disallow: "/admin",
     },
-    sitemap: "https://ecmc-ksa.com/sitemap.xml",
+    sitemap: "https://www.ecmc-ksa.com/sitemap.xml",
   };
 }
