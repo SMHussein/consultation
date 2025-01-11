@@ -54,6 +54,12 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
+      url: `${siteUrl}/team`,
+      lastModified: formattedDate,
+      changeFrequency: "yearly",
+      priority: 0.7,
+    },
+    {
       url: `${siteUrl}/publications`,
       lastModified: formattedDate,
       changeFrequency: "weekly",
@@ -130,72 +136,6 @@ export default function sitemap() {
       lastModified: formattedDate,
       changeFrequency: "weekly",
       priority: 0.6,
-    },
-    {
-      url: `${siteUrl}/careers/jobs/marketing-specialist/apply`,
-      lastModified: formattedDate,
-      changeFrequency: "weekly",
-      priority: 0.6,
-    },
-    {
-      url: `${siteUrl}/careers/jobs/associate-consultant/apply`,
-      lastModified: formattedDate,
-      changeFrequency: "weekly",
-      priority: 0.6,
-    },
-    {
-      url: `${siteUrl}/careers/jobs/manager/apply`,
-      lastModified: formattedDate,
-      changeFrequency: "weekly",
-      priority: 0.6,
-    },
-    {
-      url: `${siteUrl}/careers/jobs/market-research-associate/apply`,
-      lastModified: formattedDate,
-      changeFrequency: "weekly",
-      priority: 0.6,
-    },
-    {
-      url: `${siteUrl}/careers/jobs/finance-manager/apply`,
-      lastModified: formattedDate,
-      changeFrequency: "weekly",
-      priority: 0.6,
-    },
-    {
-      url: `${siteUrl}/careers/jobs/office-administrator/apply`,
-      lastModified: formattedDate,
-      changeFrequency: "weekly",
-      priority: 0.6,
-    },
-    {
-      url: `${siteUrl}/careers/jobs/hr/apply`,
-      lastModified: formattedDate,
-      changeFrequency: "weekly",
-      priority: 0.6,
-    },
-    {
-      url: `${siteUrl}/careers/jobs/it/apply`,
-      lastModified: formattedDate,
-      changeFrequency: "weekly",
-      priority: 0.6,
-    },
-    {
-      url: `${siteUrl}/careers/jobs/partnership-specialist/apply`,
-      lastModified: formattedDate,
-      changeFrequency: "weekly",
-      priority: 0.6,
-    },
-    {
-      url: `${siteUrl}/careers/jobs/senior-advisory-operations-specialist/apply`,
-      lastModified: formattedDate,
-      changeFrequency: "weekly",
-      priority: 0.6,
-    },
-    {
-      url: `${siteUrl}/team`,
-      lastModified: formattedDate,
-      changeFrequency: "yearly",
-      priority: 0.7,
     },
   ];
 }

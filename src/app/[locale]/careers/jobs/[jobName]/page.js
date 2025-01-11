@@ -1,5 +1,6 @@
 import JobDetails from "@/src/app/_sections/JobDetails";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { canonicalLocale } from "@/src/app/_utils/helpers";
 
 export async function generateMetadata({ params }) {
   const { locale, jobName } = await params;
@@ -10,6 +11,12 @@ export async function generateMetadata({ params }) {
 
   return {
     title: `${t("careers")} - ${jobTitle}`,
+    description: t("careers.description"),
+    alternates: {
+      canonical: `https://www.ecmc-ksa.com${canonicalLocale(
+        locale
+      )}/careers/jobs/${jobName}`,
+    },
   };
 }
 

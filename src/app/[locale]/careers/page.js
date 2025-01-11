@@ -1,14 +1,19 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import SectionHero from "../../_sections/SectionHero";
-import CareersIntro from "../../_sections/CareersIntro";
-import CareersNeeds from "../../_sections/CareersNeeds";
+import SectionHero from "@/src/app/_sections/SectionHero";
+import CareersIntro from "@/src/app/_sections/CareersIntro";
+import CareersNeeds from "@/src/app/_sections/CareersNeeds";
+import { canonicalLocale } from "@/src/app/_utils/helpers";
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "metadata" });
 
   return {
-    title: t("careers"),
+    title: t("careers.title"),
+    description: t("careers.description"),
+    alternates: {
+      canonical: `https://www.ecmc-ksa.com${canonicalLocale(locale)}/careers`,
+    },
   };
 }
 

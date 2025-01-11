@@ -1,15 +1,25 @@
 {
   "metadata": {
-    "about": "About Us",
+    "about": {
+      "title": "About Us",
+      "description": "We are a leading consulting firm in Saudi Arabia, dedicated to empowering businesses to achieve sustainable growth and excel in both local and global markets."
+    },
     "services": {
       "main": "Services",
       "strategies": "Strategies Service",
       "organizationalExcellency": "Organizational Excellency Service",
-      "marketing": "Marketing Service"
+      "marketing": "Marketing Service",
+      "description": "We provide innovative consulting solutions designed to help businesses navigate complex challenges and seize new opportunities"
     },
-    "careers": "Careers",
+    "careers": {
+      "title": "Careers",
+      "description": "Your career won’t just be a job — it will be a journey of growth, creativity, and purpose. "
+    },
     "currentCareers": "Current Careers",
-    "contact": "Contact Us",
+    "contact": {
+      "title": "Contact Us",
+      "description": "Get in Touch with ECMC – Your Growth Partner Awaits!"
+    },
     "publications": "Publications",
     "team": "Our Team",
     "apply": "Apply For "

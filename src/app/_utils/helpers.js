@@ -8,6 +8,10 @@ export function getItems(t, jsonPath) {
   return Array.from({ length: roleLength }, (_, i) => t(`${roleType}.${i}`));
 }
 
+export function canonicalLocale(local) {
+  return local === "en" ? "" : `/${local}`;
+}
+
 export function getMetadata(locale) {
   if (locale === "ar") {
     return {
@@ -19,6 +23,9 @@ export function getMetadata(locale) {
       description:
         "شركة ايميرج كبابليتيز للاستشارات الإدارية هي شركة استشارية رائدة في المملكة العربية السعودية.",
       author: "Emerge Capabilities",
+      alternates: {
+        canonical: `https://www.ecmc-ksa.com/${locale}`,
+      },
       keywords:
         "خدمات استشارية في السعودية, حلول استشارية استراتيجية, استشارات التحول الرقمي, الحوكمة وإدارة المخاطر , النمو المستدام , التميز التنظيمي, أبحاث السوق في السعودية, الحوكمة, إدارة التغيير, تطوير الاستراتيجيات , تخطيط استراتيجي, استدامة الأعمال, إدارة المخاطر, إدارة الأداء, الابتكار  ",
       openGraph: {
@@ -40,6 +47,9 @@ export function getMetadata(locale) {
     description:
       "ECMC is a leading consulting company in Saudi Arabia. With expertise in strategy, digital transformation and risk management.",
     author: "Emerge Capabilities",
+    alternates: {
+      canonical: "https://www.ecmc-ksa.com",
+    },
     keywords:
       "Saudi Arabia consulting services, consulting, Digital transformation, Risk compliance, business growth, Organizational excellence, Market research Saudi Arabia, Environmental Social Governance (ESG), Corporate strategy, Strategic planning, Business continuity, Risk management, Performance management, strategy consulting, Economy consulting, strategies",
     openGraph: {

@@ -1,9 +1,9 @@
-import Heading from "../_components/Heading";
-import Row from "../_components/Row";
-import Section from "../_components/Section";
+import Heading from "@/src/app/_components/Heading";
+import Row from "@/src/app/_components/Row";
+import Section from "@/src/app/_components/Section";
 import { useTranslations } from "next-intl";
-import { getItems } from "../_utils/helpers";
-import Button from "../_components/Button";
+import { getItems } from "@/src/app/_utils/helpers";
+import Button from "@/src/app/_components/Button";
 import {
   BsCardChecklist,
   BsMortarboard,
@@ -61,7 +61,11 @@ export default function JobDetails({ job }) {
             icon={<BsLightningCharge size={25} className="text-primary-170" />}
           />
         )}
-        <Button className="self-center" href={`/careers/jobs/${job}/apply`}>
+        <Button
+          className="self-center"
+          rel="nofollow"
+          href={`/careers/jobs/${job}/apply`}
+        >
           {b("apply")}
         </Button>
       </Row>

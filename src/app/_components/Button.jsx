@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useFormStatus } from "react-dom";
 import SpinnerMini from "./SpinnerMini";
 
-function Button({ href, type, icon, children, className, onClick }) {
+function Button({ href, type, icon, children, className, onClick, rel }) {
   const pathname = usePathname();
   const { pending } = useFormStatus();
 
@@ -23,7 +23,7 @@ function Button({ href, type, icon, children, className, onClick }) {
 
   if (href)
     element = (
-      <Link className={classes} href={href}>
+      <Link className={classes} href={href} rel={rel}>
         {children}
         {btnIcon}
       </Link>

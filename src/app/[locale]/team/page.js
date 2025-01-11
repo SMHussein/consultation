@@ -1,6 +1,7 @@
-import TeamDetails from "../../_components/TeamDetails";
-import SectionHero from "../../_sections/SectionHero";
+import TeamDetails from "@/src/app/_components/TeamDetails";
+import SectionHero from "@/src/app/_sections/SectionHero";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { canonicalLocale } from "@/src/app/_utils/helpers";
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -8,6 +9,9 @@ export async function generateMetadata({ params }) {
 
   return {
     title: t("team"),
+    alternates: {
+      canonical: `https://www.ecmc-ksa.com${canonicalLocale(locale)}/team`,
+    },
   };
 }
 

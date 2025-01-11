@@ -1,18 +1,23 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import SectionHero from "../../_sections/SectionHero";
-import Section from "../../_components/Section";
-import Row from "../../_components/Row";
-import ContactCards from "../../_sections/ContactCards";
-import Form from "../../_components/Form";
-import ContactHeading from "../../_components/ContactHeading";
-import { sendMessage } from "../../_api/serverFunctions";
+import SectionHero from "@/src/app/_sections/SectionHero";
+import Section from "@/src/app/_components/Section";
+import Row from "@/src/app/_components/Row";
+import ContactCards from "@/src/app/_sections/ContactCards";
+import Form from "@/src/app/_components/Form";
+import ContactHeading from "@/src/app/_components/ContactHeading";
+import { sendMessage } from "@/src/app/_api/serverFunctions";
+import { canonicalLocale } from "@/src/app/_utils/helpers";
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "metadata" });
 
   return {
-    title: t("contact"),
+    title: t("contact.title"),
+    description: t("contact.description"),
+    alternates: {
+      canonical: `https://www.ecmc-ksa.com${canonicalLocale(locale)}/contact`,
+    },
   };
 }
 

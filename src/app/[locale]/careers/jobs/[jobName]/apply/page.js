@@ -10,6 +10,9 @@ export async function generateMetadata({ params }) {
 
   return {
     title: `${t("apply")}${jobTitle}`,
+    alternates: {
+      canonical: ``,
+    },
   };
 }
 

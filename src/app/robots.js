@@ -3,7 +3,7 @@ export default function robots() {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: "/admin",
+      disallow: ["/admin", "/*apply*"],
     },
     sitemap: "https://www.ecmc-ksa.com/sitemap.xml",
   };
