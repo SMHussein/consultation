@@ -1,22 +1,25 @@
-import { createClient } from "../_utils/supabase/server";
+import { createClient } from '../_utils/supabase/server';
 
 export async function getJobs() {
   const supabase = await createClient();
-  let { data: jobs, error } = await supabase.from("jobs").select("*");
+  let { data: jobs, error } = await supabase.from('jobs').select('*');
+  let { data: applicants, error: applicantsError } = await supabase
+    .from('applicants')
+    .select('*');
 
-  if (error) {
-    throw new Error(error.message);
+  if (error || applicantsError) {
+    throw new Error(error);
   }
 
-  return jobs;
+  return { applicants, jobs };
 }
 
 export async function getApplicants(id) {
   const supabase = await createClient();
   let { data: applicants, error } = await supabase
-    .from("applicants")
-    .select("*")
-    .eq("job_id", id);
+    .from('applicants')
+    .select('*')
+    .eq('job_id', id);
 
   if (error) {
     throw new Error(error.message);

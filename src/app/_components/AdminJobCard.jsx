@@ -1,13 +1,14 @@
-import Link from "next/link";
-import Button from "./Button";
-import Heading from "./Heading";
+import Link from 'next/link';
+import Button from './Button';
+import Heading from './Heading';
 
 export default function AdminJobCard({
   title,
   text,
   icon,
   href,
-  type = "secondary",
+  type = 'secondary',
+  applicantCount = 0,
 }) {
   let classes = `text-primary-200 bg-primary-150 rounded-sm shadow-md bg-accent-100 hover:bg-primary-160 inline-flex gap-2 items-center justify-center transition-all min-w-[150px] inline-block py-2 px-4 disabled:opacity-70 disabled:cursor-not-allowed `;
 
@@ -19,6 +20,9 @@ export default function AdminJobCard({
       >
         {icon}
         {title}
+        {applicantCount && (
+          <span className="text-primary-100">{`(${applicantCount})`}</span>
+        )}
       </Heading>
       <p className="flex-1">{text}</p>
       {href && (
