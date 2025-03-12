@@ -47,7 +47,7 @@ export default async function LocaleLayout({ children, params }) {
         <ToasterLayout />
         <NextIntlClientProvider messages={messages}>
           <Header locale={locale} />
-          <main className="min-h-svh">{children}</main>
+          <main className="min-h-svh relative">{children}</main>
           <Footer />
         </NextIntlClientProvider>
       </body>

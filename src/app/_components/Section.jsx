@@ -5,15 +5,15 @@ export default function Section({
   isBule = false,
   noBg = false,
 }) {
-  let themeClass = "";
+  let themeClass = '';
 
   if (!noBg) {
     themeClass = isLight
-      ? "bg-white text-primary-200 dark:bg-black dark:text-white"
+      ? 'bg-white text-primary-200 dark:bg-black dark:text-white'
       : isBule
-      ? "bg-primary-200  text-accent-50 dark:bg-black"
-      : "bg-accent-150 text-primary-200  dark:bg-primary-210 dark:text-white";
+      ? 'bg-primary-200  text-accent-50 dark:bg-black'
+      : 'bg-accent-150 text-primary-200  dark:bg-primary-210 dark:text-white';
   }
-  const classNames = `relatived dark:text-white ${classes || ""} ${themeClass}`;
+  const classNames = `relative dark:text-white ${classes || ''} ${themeClass}`;
   return <section className={`${classNames}`}>{children}</section>;
 }

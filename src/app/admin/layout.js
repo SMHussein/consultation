@@ -16,7 +16,7 @@ export default async function AdminLayout({ children }) {
 
   if (user) {
     element = (
-      <main className="grid grid-cols-[max-content_1fr] h-dvh">
+      <main className="grid grid-cols-[max-content_1fr] h-dvh relative">
         <Sidebar />
         {children}
       </main>
