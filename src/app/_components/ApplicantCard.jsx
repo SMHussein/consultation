@@ -1,4 +1,4 @@
-import Heading from "./Heading";
+import Heading from './Heading';
 import {
   BsEnvelope,
   BsTelephone,
@@ -12,7 +12,7 @@ import {
   BsLinkedin,
   BsCardList,
   BsFileEarmarkPerson,
-} from "react-icons/bs";
+} from 'react-icons/bs';
 
 const classes = `text-primary-200 bg-primary-150 rounded-sm shadow-md bg-accent-100 hover:bg-primary-160 inline-flex gap-2 items-center justify-center transition-all min-w-[150px] inline-block py-2 px-4 disabled:opacity-70 disabled:cursor-not-allowed`;
 
@@ -30,16 +30,16 @@ const fieldIcons = {
 };
 
 const fieldLabels = {
-  email: "Email",
-  phone: "Phone Number",
-  nationality: "Nationality",
-  salary: "Expected Salary (SAR)",
-  location: "Current Location",
-  company: "Current Company",
-  university: "University Degree",
-  arabic: "Arabic Proficiency",
-  english: "English Proficiency",
-  extraInfo: "Extra Info",
+  email: 'Email',
+  phone: 'Phone Number',
+  nationality: 'Nationality',
+  salary: 'Expected Salary (SAR)',
+  location: 'Current Location',
+  company: 'Current Company',
+  university: 'University Degree',
+  arabic: 'Arabic Proficiency',
+  english: 'English Proficiency',
+  extraInfo: 'Extra Info',
 };
 
 export default function ApplicantCard({ applicant }) {
@@ -119,7 +119,7 @@ function Para({ children, className }) {
   );
 }
 
-function Link({ href, children, target = "_blank", type, icon }) {
+function Link({ href, children, target = '_blank', type, icon }) {
   const attributes = { href, type, target, className: classes };
   return (
     <a {...attributes}>
