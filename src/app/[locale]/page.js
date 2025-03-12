@@ -1,12 +1,12 @@
-import Hero from "@/src/app/_sections/Hero";
-import Overview from "@/src/app/_sections/Overview";
-import Clients from "@/src/app/_sections/Clients";
-import Services from "@/src/app/_sections/Services";
-import Team from "@/src/app/_sections/Team";
-import Contact from "@/src/app/_sections/Contact";
-import WhyUs from "@/src/app/_sections/Whyus";
-import { setRequestLocale } from "next-intl/server";
-import Stats from "@/src/app/_sections/Stats";
+import Hero from '@/src/app/_sections/Hero';
+import Overview from '@/src/app/_sections/Overview';
+import Clients from '@/src/app/_sections/Clients';
+import Services from '@/src/app/_sections/Services';
+import Team from '@/src/app/_sections/Team';
+import Contact from '@/src/app/_sections/Contact';
+import WhyUs from '@/src/app/_sections/Whyus';
+import { setRequestLocale } from 'next-intl/server';
+import Stats from '@/src/app/_sections/Stats';
 
 export default async function Home({ params }) {
   const { locale } = await params;
@@ -14,7 +14,7 @@ export default async function Home({ params }) {
   setRequestLocale(locale);
 
   return (
-    <main>
+    <>
       <Hero />
       <Overview />
       <Services />
@@ -23,6 +23,6 @@ export default async function Home({ params }) {
       <Team />
       <Clients />
       <Contact />
-    </main>
+    </>
   );
 }
