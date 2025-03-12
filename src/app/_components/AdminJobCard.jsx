@@ -20,8 +20,10 @@ export default function AdminJobCard({
       >
         {icon}
         {title}
-        {applicantCount && (
+        {applicantCount ? (
           <span className="text-primary-100">{`(${applicantCount})`}</span>
+        ) : (
+          ''
         )}
       </Heading>
       <p className="flex-1">{text}</p>

@@ -39,3 +39,30 @@ export async function getUser() {
   }
   return user;
 }
+
+export async function getNewsletterEmails() {
+  const supabase = await createClient();
+
+  let { data: emails, error } = await supabase.from('news').select('*');
+
+  if (error) {
+    console.log(error.message);
+    return null;
+  }
+  return emails;
+}
+
+export async function getMessages() {
+  const supabase = await createClient();
+
+  let { data: messages, error } = await supabase
+    .from('messages')
+    .select('*')
+    .eq('origin', 'ecmc');
+
+  if (error) {
+    console.log(error.message);
+    return null;
+  }
+  return messages;
+}

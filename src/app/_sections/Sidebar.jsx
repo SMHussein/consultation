@@ -1,16 +1,17 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { HiArrowLeftStartOnRectangle } from "react-icons/hi2";
-import { logout } from "../_api/serverFunctions";
-import Button from "../_components/Button";
-import Image from "next/image";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { HiArrowLeftStartOnRectangle } from 'react-icons/hi2';
+import { logout } from '../_api/serverFunctions';
+import Button from '../_components/Button';
+import Image from 'next/image';
 
 const NavLinks = [
-  { id: 1, name: "Dashboard", path: "/admin" },
-  { id: 2, name: "Jobs", path: "/admin/jobs" },
-  { id: 3, name: "Messages", path: "/admin/messages" },
+  { id: 1, name: 'Dashboard', path: '/admin' },
+  { id: 2, name: 'Jobs', path: '/admin/jobs' },
+  { id: 3, name: 'Messages', path: '/admin/messages' },
+  { id: 4, name: 'Subscribers', path: '/admin/subscribers' },
 ];
 
 function AdminNav() {
@@ -34,7 +35,7 @@ function AdminNav() {
               >
                 <Link
                   href={link.path}
-                  className={isActive(link.path) ? " text-primary-170" : ""}
+                  className={isActive(link.path) ? ' text-primary-170' : ''}
                 >
                   {link.name}
                 </Link>
