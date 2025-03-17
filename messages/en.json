@@ -56,7 +56,6 @@
     "english": "English  proficiency",
     "salary": "Salary Expectations (SAR)",
     "extraInfo": "Additional Information",
-
     "language": {
       "arabic": "Arabic proficiency",
       "english": "English proficiency",
@@ -64,7 +63,6 @@
       "medium": "Conversational / intermediate",
       "basic": "Basic / beginner"
     },
-
     "placeholder": {
       "extraInfo": "Cover letter or any additional information you would like to share with us",
       "university": "If any please specify"
@@ -191,14 +189,13 @@
   "stats": {
     "title": "Our Reach",
     "subtitle": "Emergence Capabilities Management Consulting was launched as a Saudi company, evolving with a clear vision and solid foundation. It has proven its ability to deliver high-quality consulting services, enabling it to compete with leading regional and global firms.",
-
     "years": {
       "title": "Years",
       "number": "5"
     },
     "sectors": {
       "title": "Sectors",
-      "number": "20"
+      "number": "200"
     },
     "nationalities": {
       "title": "Employees",
@@ -363,7 +360,6 @@
       "humanResource": "Human Resource",
       "informationTechnology": "Information Technology"
     },
-
     "marketing-specialist": {
       "title": "Marketing Specialist",
       "location": "KSA",
