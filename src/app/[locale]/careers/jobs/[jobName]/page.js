@@ -10,7 +10,7 @@ export async function generateMetadata({ params }) {
   const jobTitle = j(`${jobName}.title`);
 
   return {
-    title: `${t('careers')} - ${jobTitle}`,
+    title: `${t('careers.title')} - ${jobTitle}`,
     description: t('careers.description'),
     alternates: {
       canonical: `https://www.ecmc-ksa.com${canonicalLocale(

@@ -6,12 +6,28 @@ export async function getJobs() {
   let { data: applicants, error: applicantsError } = await supabase
     .from('applicants')
     .select('*');
+  let { data: archivedApplicants, error: archivedError } = await supabase
+    .from('archive')
+    .select('*');
 
-  if (error || applicantsError) {
+  if (error || applicantsError || archivedError) {
     throw new Error(error);
   }
 
-  return { applicants, jobs };
+  return { applicants, jobs, archivedApplicants };
+}
+
+export async function getArchivedApplicants() {
+  const supabase = await createClient();
+  let { data: applicants, error: applicantsError } = await supabase
+    .from('archive')
+    .select('*');
+
+  if (applicantsError) {
+    throw new Error(error);
+  }
+
+  return applicants;
 }
 
 export async function getApplicants(id) {

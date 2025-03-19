@@ -1,14 +1,14 @@
 import Heading from '@/src/app/_components/Heading';
 import Row from '@/src/app/_components/Row';
 import Section from '@/src/app/_components/Section';
-import AdminDashboardForm from '@/src/app/_sections/AdminDashboardForm';
+import AdminJobs from '../../_sections/AdminJobs';
 
-export default async function Dashboard() {
+export default async function Jobs() {
   return (
     <Section>
       <Row grid={2}>
-        <Heading type="primary">Dashboard</Heading>
-        <AdminDashboardForm />
+        <Heading type="primary">Archived Job Applications</Heading>
+        <AdminJobs archived={true} />
       </Row>
     </Section>
   );

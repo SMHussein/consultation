@@ -1,9 +1,9 @@
-"use client";
-import { BiRightArrowAlt, BiLeftArrowAlt } from "react-icons/bi";
-import { Link } from "@/src/i18n/routing";
-import { usePathname } from "next/navigation";
-import { useFormStatus } from "react-dom";
-import SpinnerMini from "./SpinnerMini";
+'use client';
+import { BiRightArrowAlt, BiLeftArrowAlt } from 'react-icons/bi';
+import { Link } from '@/src/i18n/routing';
+import { usePathname } from 'next/navigation';
+import { useFormStatus } from 'react-dom';
+import SpinnerMini from './SpinnerMini';
 
 function Button({ href, type, icon, children, className, onClick, rel }) {
   const pathname = usePathname();
@@ -14,7 +14,7 @@ function Button({ href, type, icon, children, className, onClick, rel }) {
   let element = null;
 
   if (!icon) {
-    btnIcon = pathname.includes("/ar") ? (
+    btnIcon = pathname.includes('/ar') ? (
       <BiLeftArrowAlt size={20} />
     ) : (
       <BiRightArrowAlt size={20} />

@@ -1,4 +1,9 @@
-import Heading from './Heading';
+'use client';
+
+import Button from '@/src/app/_components/Button';
+import Heading from '@/src/app/_components/Heading';
+import Modal from '@/src/app/_components/Modal';
+import { useState } from 'react';
 import {
   BsEnvelope,
   BsTelephone,
@@ -13,6 +18,7 @@ import {
   BsCardList,
   BsFileEarmarkPerson,
 } from 'react-icons/bs';
+import { archiveApplicant } from '../_api/serverFunctions';
 
 const classes = `text-primary-200 bg-primary-150 rounded-sm shadow-md bg-accent-100 hover:bg-primary-160 inline-flex gap-2 items-center justify-center transition-all min-w-[150px] inline-block py-2 px-4 disabled:opacity-70 disabled:cursor-not-allowed`;
 
@@ -42,7 +48,8 @@ const fieldLabels = {
   extraInfo: 'Extra Info',
 };
 
-export default function ApplicantCard({ applicant }) {
+export default function ApplicantCard({ applicant, archive = false }) {
+  const [showModal, setShowModal] = useState(false);
   const { name, linkedin, cv, extraInfo, ...fields } = applicant;
 
   const fieldEntries = Object.entries(fields).filter(
@@ -99,6 +106,18 @@ export default function ApplicantCard({ applicant }) {
           <Link href={cv} type="download" icon={<BsCardList size={20} />}>
             Download CV
           </Link>
+        )}
+        {!archive && (
+          <>
+            <Button onClick={() => setShowModal(true)}>Archive</Button>
+            <Modal
+              id={applicant.id}
+              isOpen={showModal}
+              onClose={() => setShowModal(false)}
+              message="Are you sure you want to archive this applicant ? this action is irrivartable."
+              onConfirm={archiveApplicant}
+            />
+          </>
         )}
       </div>
     </div>

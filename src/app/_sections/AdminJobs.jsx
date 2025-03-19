@@ -1,13 +1,15 @@
-import { getJobs } from '@/src/app/_api/services';
 import AdminJobCard from '@/src/app/_components/AdminJobCard';
+import { getJobs } from '@/src/app/_api/services';
 
-export default async function AdminJobs() {
-  const { jobs, applicants } = await getJobs();
+export default async function AdminJobs({ archived = false }) {
+  const { jobs, applicants, archivedApplicants } = await getJobs();
+  const applicantsType = archived ? archivedApplicants : applicants;
+  const url = archived ? 'archive' : 'jobs';
 
   return (
     <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
       {jobs?.map((job) => {
-        const jobApplicants = applicants?.filter(
+        const jobApplicants = applicantsType?.filter(
           (applicant) => applicant['job_id'] === job.id
         );
         const applicantCount = jobApplicants?.length || 0;
@@ -16,7 +18,7 @@ export default async function AdminJobs() {
             key={job.id}
             title={job.name}
             text={`${job.type} / ${job.location}`}
-            href={`/admin/jobs/${job.id}`}
+            href={`/admin/${url}/${job.id}`}
             applicantCount={applicantCount}
           />
         );

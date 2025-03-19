@@ -2,7 +2,7 @@ import Heading from '@/src/app/_components/Heading';
 import Row from '@/src/app/_components/Row';
 import Section from '@/src/app/_components/Section';
 import AdminApplicants from '@/src/app/_sections/AdminApplicants';
-import { getApplicants } from '@/src/app/_api/services';
+import { getArchivedApplicants } from '@/src/app/_api/services';
 
 export default async function JobApplicants({ params }) {
   const { id } = await params;
@@ -13,7 +13,11 @@ export default async function JobApplicants({ params }) {
         <Heading type="primary" classes="mb-8">
           Applicants
         </Heading>
-        <AdminApplicants id={id} getApplicantsFn={getApplicants} />
+        <AdminApplicants
+          id={id}
+          archive={true}
+          getApplicantsFn={getArchivedApplicants}
+        />
       </Row>
     </Section>
   );

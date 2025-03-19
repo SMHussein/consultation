@@ -12,6 +12,7 @@ const NavLinks = [
   { id: 2, name: 'Jobs', path: '/admin/jobs' },
   { id: 3, name: 'Messages', path: '/admin/messages' },
   { id: 4, name: 'Subscribers', path: '/admin/subscribers' },
+  { id: 5, name: 'Archive', path: '/admin/archive' },
 ];
 
 function AdminNav() {
