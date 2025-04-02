@@ -1,8 +1,8 @@
-import Image from "next/image";
-import Row from "../_components/Row";
-import Section from "../_components/Section";
-import Heading from "../_components/Heading";
-import { useTranslations } from "next-intl";
+import Image from 'next/image';
+import Row from '../_components/Row';
+import Section from '../_components/Section';
+import Heading from '../_components/Heading';
+import { useTranslations } from 'next-intl';
 
 export default function SectionHero({ service, section }) {
   const t = useTranslations(`${section}`);

@@ -7,7 +7,7 @@
     "services": {
       "main": "Services",
       "strategies": "Strategies Service",
-      "organizationalExcellency": "Organizational Excellency Service",
+      "organizational-excellency": "Organizational Excellency Service",
       "marketing": "Marketing Service",
       "description": "We provide innovative consulting solutions designed to help businesses navigate complex challenges and seize new opportunities"
     },
@@ -109,62 +109,45 @@
       "text3": "",
       "src": "/heroes/section-1.jpg"
     },
-    "strategies": {
-      "title": "Strategies",
-      "subTitle": "Crafting Tailored, Professional Marketing Strategies to Drive Sustainable Growth",
-      "text1": "At Emergence Capabilities Management Consulting (ECMC), we specialize in developing highly customized, professional marketing strategies that enable Saudi businesses to achieve sustained growth, enhance brand value, and engage effectively with their target audiences. Our deep understanding of the Saudi market and its unique dynamics allows us to design marketing solutions that are specifically aligned with your business goals and customer needs.",
-      "text2": "Our services cover every aspect of marketing strategy, from market analysis and customer segmentation to brand positioning, integrated communication strategies, and performance measurement. We work closely with your team to create actionable, results-driven strategies that resonate with local and international audiences while ensuring maximum return on investment.",
-      "text3": "Whether you're looking to launch a new product, refine your brand’s presence, or enter new market segments, ECMC’s tailored marketing strategies provide the expertise and precision needed to meet your objectives. With extensive experience across 21+ sectors, we empower Saudi businesses to establish a competitive edge in a rapidly evolving marketplace, contributing to the Kingdom’s economic goals under Vision 2030.",
-      "src": "/services/strategies.jpg",
-      "href": "strategies",
-      "btnText": "Read More",
-      "items": [
-        "Strategy development",
-        "Strategy execution",
-        "Market Research and Local Economy Studies",
-        "Policies development",
-        "Polices auditing",
-        "Corporate Social Responsibility (CSR) strategy",
-        "Environmental, Social, and Governance (ESG) strategy"
-      ]
-    },
-    "organizationalExcellency": {
-      "title": "Organizational excellency",
-      "subTitle": "Empowering Saudi Organizations with Tailored Excellence Solutions for Sustainable Growth",
-      "text1": "At Emergence Capabilities Management Consulting (ECMC), we specialize in driving organizational excellence for Saudi businesses by providing customized solutions designed to enhance performance, streamline operations, and foster sustainable success. With a deep understanding of the Saudi market and global best practices, we help organizations build resilient structures that adapt to evolving business environments.",
-      "text2": "Our services include governance frameworks, business process optimization, operational efficiency, risk management, and continuous improvement initiatives. By focusing on strengthening internal capabilities, we empower organizations to achieve their strategic goals, improve their competitive positioning, and ensure long-term resilience.",
-      "text3": "Whether you are seeking to enhance operational efficiency, strengthen governance, or implement innovative performance strategies, ECMC is your trusted partner. With proven expertise across 21+ sectors and a commitment to excellence, we help Saudi organizations thrive in a fast-changing market, contributing to the Kingdom’s broader economic development goals under Vision 2030.",
-      "src": "/services/organizational-excellency.webp",
-      "href": "organizational-excellency",
-      "btnText": "Read More",
-      "items": [
-        "Governance, risk, compliance and business continuity",
-        "Designing Operating models",
-        "Performance and Project Management",
-        "Organizational culture transformation",
-        "Change management",
-        "Policies and procedures",
-        "Building capabilities"
-      ]
-    },
-    "marketing": {
-      "title": "Marketing",
-      "subTitle": "Driving Marketing Excellence for Saudi Businesses with Innovative, Tailored Strategies.",
-      "text1": "At Emergence Capabilities Management Consulting (ECMC), we empower Saudi businesses to stand out in today’s competitive market through innovative, data-driven marketing solutions. Our deep understanding of the local market, combined with global expertise, allows us to deliver customized strategies that resonate with target audiences and drive sustainable growth.",
-      "text2": "From crafting impactful brand identities and developing comprehensive marketing strategies to optimizing communication channels and conducting in-depth market research, our marketing services are designed to enhance your brand’s presence, improve customer engagement, and maximize ROI.",
-      "text3": "Whether you’re a growing business looking to establish your brand or a leading organization seeking to refine your market positioning, ECMC is your trusted partner. With a strong track record of success across 21+ sectors, we help businesses in Saudi Arabia create meaningful connections with their customers and achieve long-term success in an ever-evolving marketplace.",
-      "src": "/services/marketing.webp",
-      "href": "marketing",
-      "btnText": "Read More",
-      "items": [
-        "Marketing",
-        "Branding",
-        "Marketing strategy",
-        "Communication strategy",
-        "Costing",
-        "Marketing operational support",
-        "Marketing research•Distribution strategies"
-      ]
+    "services": {
+      "strategies": {
+        "title": "Strategies",
+        "subTitle": "Crafting Tailored, Professional Marketing Strategies to Drive Sustainable Growth",
+        "text1": "At Emergence Capabilities Management Consulting (ECMC), we specialize in developing highly customized, professional marketing strategies that enable Saudi businesses to achieve sustained growth, enhance brand value, and engage effectively with their target audiences. Our deep understanding of the Saudi market and its unique dynamics allows us to design marketing solutions that are specifically aligned with your business goals and customer needs.",
+        "text2": "Our services cover every aspect of marketing strategy, from market analysis and customer segmentation to brand positioning, integrated communication strategies, and performance measurement. We work closely with your team to create actionable, results-driven strategies that resonate with local and international audiences while ensuring maximum return on investment.",
+        "text3": "Whether you're looking to launch a new product, refine your brand’s presence, or enter new market segments, ECMC’s tailored marketing strategies provide the expertise and precision needed to meet your objectives. With extensive experience across 21+ sectors, we empower Saudi businesses to establish a competitive edge in a rapidly evolving marketplace, contributing to the Kingdom’s economic goals under Vision 2030.",
+        "src": "/services/strategies.jpg",
+        "href": "strategies",
+        "btnText": "Read More",
+        "items": [
+          "Strategy development",
+          "Strategy execution",
+          "Market Research and Local Economy Studies",
+          "Policies development",
+          "Polices auditing",
+          "Corporate Social Responsibility (CSR) strategy",
+          "Environmental, Social, and Governance (ESG) strategy"
+        ]
+      },
+      "organizational-excellency": {
+        "title": "Organizational excellency",
+        "subTitle": "Empowering Saudi Organizations with Tailored Excellence Solutions for Sustainable Growth",
+        "text1": "At Emergence Capabilities Management Consulting (ECMC), we specialize in driving organizational excellence for Saudi businesses by providing customized solutions designed to enhance performance, streamline operations, and foster sustainable success. With a deep understanding of the Saudi market and global best practices, we help organizations build resilient structures that adapt to evolving business environments.",
+        "text2": "Our services include governance frameworks, business process optimization, operational efficiency, risk management, and continuous improvement initiatives. By focusing on strengthening internal capabilities, we empower organizations to achieve their strategic goals, improve their competitive positioning, and ensure long-term resilience.",
+        "text3": "Whether you are seeking to enhance operational efficiency, strengthen governance, or implement innovative performance strategies, ECMC is your trusted partner. With proven expertise across 21+ sectors and a commitment to excellence, we help Saudi organizations thrive in a fast-changing market, contributing to the Kingdom’s broader economic development goals under Vision 2030.",
+        "src": "/services/organizational-excellency.webp",
+        "href": "organizational-excellency",
+        "btnText": "Read More",
+        "items": [
+          "Governance, risk, compliance and business continuity",
+          "Designing Operating models",
+          "Performance and Project Management",
+          "Organizational culture transformation",
+          "Change management",
+          "Policies and procedures",
+          "Building capabilities"
+        ]
+      }
     }
   },
   "Whyus": {
@@ -1574,13 +1557,7 @@
       },
       "values": {
         "title": "قيمنا",
-        "items": [
-          "التميز",
-          "الابتكار",
-          "التعاون",
-          "التمكين",
-          "النمو المستدام"
-        ]
+        "items": ["التميز", "الابتكار", "التعاون", "التمكين", "النمو المستدام"]
       },
       "specs": {
         "title": "ما الذي يجعلنا مميزين؟",

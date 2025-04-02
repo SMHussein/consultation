@@ -1,18 +1,18 @@
-import SectionDesc from "@/src/app/_sections/SectionDesc";
-import SectionHero from "@/src/app/_sections/SectionHero";
-import { getTranslations, setRequestLocale } from "next-intl/server";
-import ServicesCards from "@/src/app/_sections/ServicesCards";
-import Section from "@/src/app/_components/Section";
-import Row from "@/src/app/_components/Row";
-import { canonicalLocale } from "@/src/app/_utils/helpers";
+import SectionDesc from '@/src/app/_sections/SectionDesc';
+import SectionHero from '@/src/app/_sections/SectionHero';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import ServicesCards from '@/src/app/_sections/ServicesCards';
+import Section from '@/src/app/_components/Section';
+import Row from '@/src/app/_components/Row';
+import { canonicalLocale } from '@/src/app/_utils/helpers';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "metadata" });
+  const t = await getTranslations({ locale, namespace: 'metadata' });
 
   return {
-    title: t("services.main"),
-    description: t("services.description"),
+    title: t('services.main'),
+    description: t('services.description'),
     alternates: {
       canonical: `https://www.ecmc-ksa.com${canonicalLocale(locale)}/services`,
     },

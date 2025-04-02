@@ -1,7 +1,7 @@
-import Image from "next/image";
-import Button from "./Button";
-import Heading from "./Heading";
-import { BiPolygon } from "react-icons/bi";
+import Image from 'next/image';
+import Button from './Button';
+import Heading from './Heading';
+import { BiPolygon } from 'react-icons/bi';
 
 export default function ServiceItem({ service, title, href, btnText, src }) {
   return (
@@ -22,7 +22,7 @@ export default function ServiceItem({ service, title, href, btnText, src }) {
         {service.map((item, i) => (
           <li
             key={i}
-            className="flex items-center gap-2 text-accent-200 dark:text-accent-50 text-sm"
+            className="flex capitalize items-center gap-2 text-accent-200 dark:text-accent-50 text-sm"
           >
             <BiPolygon />
             {item}

@@ -2,17 +2,13 @@ import Heading from '../_components/Heading';
 import Row from '../_components/Row';
 import Section from '../_components/Section';
 import ServiceItem from '../_components/ServiceItem';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useMessages } from 'next-intl';
 import { getItems } from '../_utils/helpers';
 
 export default function Services() {
   const t = useTranslations('OurServices');
-  const strategiesServices = getItems(t, 'OurServices.strategies.items');
-  const organizationalExcellencyrServices = getItems(
-    t,
-    'OurServices.organizationalExcellency.items'
-  );
-  const marketingServices = getItems(t, 'OurServices.marketing.items');
+  const messages = useMessages();
+  const keys = Object.keys(messages.OurServices.services);
 
   return (
     <Section isLight={false}>
@@ -21,27 +17,16 @@ export default function Services() {
           {t('title')}
         </Heading>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-16 gap-x-12">
-          <ServiceItem
-            service={strategiesServices}
-            href={t('strategies.href')}
-            title={t('strategies.title')}
-            btnText={t('strategies.btnText')}
-            src={t('strategies.src')}
-          />
-          <ServiceItem
-            service={organizationalExcellencyrServices}
-            href={t('organizationalExcellency.href')}
-            title={t('organizationalExcellency.title')}
-            btnText={t('organizationalExcellency.btnText')}
-            src={t('organizationalExcellency.src')}
-          />
-          {/* <ServiceItem
-            service={marketingServices}
-            href={t("marketing.href")}
-            title={t("marketing.title")}
-            btnText={t("marketing.btnText")}
-            src={t("marketing.src")}
-          /> */}
+          {keys.map((key, i) => (
+            <ServiceItem
+              key={`service-${i}`}
+              service={getItems(t, `OurServices.services.${key}.items`)}
+              href={t(`services.${key}.href`)}
+              title={t(`services.${key}.title`)}
+              btnText={t(`services.${key}.btnText`)}
+              src={t(`services.${key}.src`)}
+            />
+          ))}
         </div>
       </Row>
     </Section>
