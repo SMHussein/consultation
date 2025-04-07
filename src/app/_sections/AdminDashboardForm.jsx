@@ -43,20 +43,24 @@ export default function AdminDashboardForm() {
     const clients = data.get('clients');
     const projects = data.get('projects');
 
-    enMessages.stats.sectors.number = arMessages.stats.sectors.number = sectors;
+    enMessages.stats.sectors.number = sectors;
+    arMessages.stats.sectors.number = sectors;
 
-    enMessages.stats.years.number = arMessages.stats.years.number = years;
+    enMessages.stats.years.number = years;
+    arMessages.stats.years.number = years;
 
-    enMessages.stats.nationalities.number =
-      arMessages.stats.nationalities.number = nationalities;
+    enMessages.stats.nationalities.number = nationalities;
+    arMessages.stats.nationalities.number = nationalities;
 
-    enMessages.stats.clients.number = arMessages.stats.clients.number = clients;
+    enMessages.stats.clients.number = clients;
+    arMessages.stats.clients.number = clients;
 
-    enMessages.stats.projects.number = arMessages.stats.projects.number =
-      projects;
+    enMessages.stats.projects.number = projects;
+    arMessages.stats.projects.number = projects;
 
     const updatedData = { enMessages, arMessages };
-    formAction(updatedData);
+
+    // formAction(updatedData);
   };
 
   return (
