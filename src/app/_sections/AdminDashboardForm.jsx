@@ -60,7 +60,7 @@ export default function AdminDashboardForm() {
 
     const updatedData = { enMessages, arMessages };
 
-    // formAction(updatedData);
+    formAction(updatedData);
   };
 
   return (
