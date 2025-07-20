@@ -178,11 +178,11 @@
     },
     "sectors": {
       "title": "القطاعات",
-      "number": "20"
+      "number": "5"
     },
     "nationalities": {
       "title": "الموظفين",
-      "number": "80"
+      "number": "10"
     },
     "clients": {
       "title": "العملاء",
@@ -190,7 +190,7 @@
     },
     "projects": {
       "title": "المشاريع",
-      "number": "20"
+      "number": "18"
     }
   },
   "team": {

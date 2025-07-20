@@ -178,11 +178,11 @@
     },
     "sectors": {
       "title": "Sectors",
-      "number": "20"
+      "number": "5"
     },
     "nationalities": {
       "title": "Employees",
-      "number": "80"
+      "number": "10"
     },
     "clients": {
       "title": "Clients",
@@ -190,7 +190,7 @@
     },
     "projects": {
       "title": "Projects",
-      "number": "20"
+      "number": "18"
     }
   },
   "team": {
