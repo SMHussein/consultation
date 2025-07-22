@@ -148,6 +148,17 @@
           "بناء القدرات"
         ]
       }
+    },
+    "": {
+      "title": "",
+      "subTitle": "",
+      "text1": "",
+      "text2": "",
+      "text3": "",
+      "items": [],
+      "src": "/services/null",
+      "href": "",
+      "btnText": "اقرأ المزيد"
     }
   },
   "Whyus": {
