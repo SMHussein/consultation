@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 import { BsPersonAdd } from "react-icons/bs";
 
 const slides = Array.from(
-  { length: 8 },
+  { length: 11 },
   (_, i) => `/clients/client-${i + 1}.png`
 );
 
