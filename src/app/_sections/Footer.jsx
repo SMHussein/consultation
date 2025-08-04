@@ -9,7 +9,7 @@ import {
   BiSolidColor,
   BiLayer,
   BiLogoLinkedin,
-  BiMapPin,
+  BiMapPin,   // ✅ added map pin icon
 } from "react-icons/bi";
 import ScrollToTopButton from "../_components/ScrollButton";
 import { useTranslations } from "next-intl";
@@ -23,10 +23,13 @@ export default function Footer() {
   return (
     <footer className="bg-accent-150 border-t text-primary-200 dark:text-accent-50 dark:bg-primary-210">
       <Row grid={3}>
+        {/* === Top Section: Logo and Links === */}
         <div className="flex justify-around flex-col md:flex-row gap-8">
           <div>
             <Logo />
           </div>
+
+          {/* First group of links */}
           <div className={linkWrapperClass}>
             <FooterLink href="/" label={t("home")} icon={<BiHomeSmile />} />
             <FooterLink href="/about" label={t("about")} icon={<BiGlobe />} />
@@ -36,6 +39,8 @@ export default function Footer() {
               icon={<BiSolidColor />}
             />
           </div>
+
+          {/* Second group of links */}
           <div className={linkWrapperClass}>
             <FooterLink
               href="/publications"
@@ -52,21 +57,27 @@ export default function Footer() {
               label={t("contact")}
               icon={<BiPhone />}
             />
-            {/* Updated drop-pin with exact Maps link */}
-            <FooterLink
-              href="https://maps.app.goo.gl/DGACHYp1bTqjo5Lc9?g_st=ipc"
-              label="ECMC, Riyadh"
-              icon={<BiMapPin />}
-            />
           </div>
         </div>
+
+        {/* === Bottom Section: Social Icons & Location === */}
         <div className="flex justify-between items-center md:justify-around mt-8 pt-8 border-t-[0.5px] border-gray-500/50">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-6">
+            {/* LinkedIn */}
             <FooterLink
               href="https://www.linkedin.com/company/ecmc-ksa"
               icon={<BiLogoLinkedin size={20} />}
             />
+
+            {/* ✅ New Google Maps Location Link */}
+            <FooterLink
+              href="https://maps.app.goo.gl/DGACHYp1bTqjo5Lc9?g_st=ipc"
+              icon={<BiMapPin size={20} />}
+              label="Our Location"
+            />
           </div>
+
+          {/* Scroll To Top */}
           <div>
             <ScrollToTopButton />
           </div>
@@ -76,15 +87,8 @@ export default function Footer() {
   );
 }
 
-function FooterLink({
-  href,
-  label,
-  icon,
-}: {
-  href: string;
-  label?: string;
-  icon: React.ReactNode;
-}) {
+/* === Footer Link Component === */
+function FooterLink({ href, label, icon }) {
   return (
     <Link
       href={href}
