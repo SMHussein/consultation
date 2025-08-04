@@ -9,7 +9,7 @@ import {
   BiSolidColor,
   BiLayer,
   BiLogoLinkedin,
-  BiMapPin, // ✅ Map pin icon
+  BiMapPin,
 } from "react-icons/bi";
 import ScrollToTopButton from "../_components/ScrollButton";
 import { useTranslations } from "next-intl";
@@ -23,7 +23,7 @@ export default function Footer() {
   return (
     <footer className="bg-accent-150 border-t text-primary-200 dark:text-accent-50 dark:bg-primary-210">
       <Row grid={3}>
-        {/* === Top Section: Logo and Navigation Links === */}
+        {/* === Top Section: Logo + Links === */}
         <div className="flex justify-around flex-col md:flex-row gap-8">
           <div>
             <Logo />
@@ -60,25 +60,23 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* === Bottom Section: Social Media and Location === */}
-        <div className="flex justify-between items-center md:justify-around mt-8 pt-8 border-t-[0.5px] border-gray-500/50">
-          <div className="flex items-center gap-6">
-            {/* LinkedIn Icon */}
+        {/* === Bottom Section: Centered Icons & Scroll Button === */}
+        <div className="flex flex-col items-center mt-8 pt-8 border-t-[0.5px] border-gray-500/50 gap-4">
+          {/* Centered location + LinkedIn */}
+          <div className="flex gap-6 items-center justify-center">
+            <FooterLink
+              href="https://maps.app.goo.gl/DGACHYp1bTqjo5Lc9?g_st=ipc"
+              icon={<BiMapPin size={20} />}
+              label="Our Location"
+            />
             <FooterLink
               href="https://www.linkedin.com/company/ecmc-ksa"
               icon={<BiLogoLinkedin size={20} />}
             />
-
-            {/* ✅ Google Maps Location with translation */}
-            <FooterLink
-              href="https://maps.app.goo.gl/DGACHYp1bTqjo5Lc9?g_st=ipc"
-              icon={<BiMapPin size={20} />}
-              label={t("location")}
-            />
           </div>
 
-          {/* Scroll To Top Button */}
-          <div>
+          {/* Centered Scroll Button */}
+          <div className="flex justify-center">
             <ScrollToTopButton />
           </div>
         </div>
@@ -87,7 +85,7 @@ export default function Footer() {
   );
 }
 
-/* === FooterLink Component === */
+/* === Footer Link Component === */
 function FooterLink({ href, label, icon }) {
   return (
     <Link
