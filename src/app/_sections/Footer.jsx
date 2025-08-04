@@ -61,21 +61,22 @@ export default function Footer() {
         </div>
 
         {/* === Bottom Section: Social Icons & Location === */}
-        <div className="flex justify-between items-center md:justify-around mt-8 pt-8 border-t-[0.5px] border-gray-500/50">
-          <div className="flex items-center gap-6">
-            {/* LinkedIn */}
-            <FooterLink
-              href="https://www.linkedin.com/company/ecmc-ksa"
-              icon={<BiLogoLinkedin size={20} />}
-            />
+<div className="flex items-center gap-6">
+  <div className="flex items-center">
+    <FooterLink
+      href="https://www.linkedin.com/company/ecmc-ksa"
+      icon={<BiLogoLinkedin size={20} />}
+    />
+  </div>
+  <div className="flex items-center">
+    <FooterLink
+      href="https://maps.app.goo.gl/DGACHYp1bTqjo5Lc9?g_st=ipc"
+      icon={<BiMapPin size={20} />}
+      label="Our Location"
+    />
+  </div>
+</div>
 
-            {/* ✅ New Google Maps Location Link */}
-            <FooterLink
-              href="https://maps.app.goo.gl/DGACHYp1bTqjo5Lc9?g_st=ipc"
-              icon={<BiMapPin size={20} />}
-              label="Our Location"
-            />
-          </div>
 
           {/* Scroll To Top */}
           <div>
