@@ -8,10 +8,9 @@ import {
   BiPhone,
   BiSolidColor,
   BiLayer,
-  BiLogoFacebook,
   BiLogoLinkedin,
+  BiMapPin,
 } from "react-icons/bi";
-import { BsTwitterX } from "react-icons/bs";
 import ScrollToTopButton from "../_components/ScrollButton";
 import { useTranslations } from "next-intl";
 
@@ -53,6 +52,12 @@ export default function Footer() {
               label={t("contact")}
               icon={<BiPhone />}
             />
+            {/* Updated drop-pin with exact Maps link */}
+            <FooterLink
+              href="https://maps.app.goo.gl/DGACHYp1bTqjo5Lc9?g_st=ipc"
+              label="ECMC, Riyadh"
+              icon={<BiMapPin />}
+            />
           </div>
         </div>
         <div className="flex justify-between items-center md:justify-around mt-8 pt-8 border-t-[0.5px] border-gray-500/50">
@@ -71,7 +76,15 @@ export default function Footer() {
   );
 }
 
-function FooterLink({ href, label, icon }) {
+function FooterLink({
+  href,
+  label,
+  icon,
+}: {
+  href: string;
+  label?: string;
+  icon: React.ReactNode;
+}) {
   return (
     <Link
       href={href}
