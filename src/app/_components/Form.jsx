@@ -1,13 +1,13 @@
-"use client";
-import { toast } from "react-hot-toast";
-import Button from "./Button";
-import emailjs from "@emailjs/browser";
-import { useTranslations } from "next-intl";
-import { useActionState, useEffect } from "react";
-import RadioInput from "./RadioInput";
+'use client';
+import { toast } from 'react-hot-toast';
+import Button from './Button';
+import emailjs from '@emailjs/browser';
+import { useTranslations } from 'next-intl';
+import { useActionState, useEffect } from 'react';
+import RadioInput from './RadioInput';
 
 export default function Form({ inputs, action, shouldMail = false, job }) {
-  const t = useTranslations("Buttons");
+  const t = useTranslations('Buttons');
   const [formState, formAction] = useActionState(action, {});
 
   const sendEmail = async (name, email, message, phone) => {
@@ -28,7 +28,7 @@ export default function Form({ inputs, action, shouldMail = false, job }) {
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       );
     } catch (error) {
-      console.error("Failed to send message. Please try again later.", error);
+      console.error('Failed to send message. Please try again later.', error);
     }
   };
 
@@ -42,10 +42,10 @@ export default function Form({ inputs, action, shouldMail = false, job }) {
   }, [formState]);
 
   const submitAction = (data) => {
-    const email = data.get("email");
-    const name = data.get("name");
-    const phone = data.get("phone");
-    const message = data.get("message");
+    const email = data.get('email');
+    const name = data.get('name');
+    const phone = data.get('phone');
+    const message = data.get('message');
 
     formAction(data);
     sendEmail(name, email, message, phone);
@@ -65,51 +65,52 @@ export default function Form({ inputs, action, shouldMail = false, job }) {
         type="submit"
         className="self-start bg-primary-150"
       >
-        {t("submit")}
+        {t('submit')}
       </Button>
     </form>
   );
 }
 
-function FormItem({ id, type, required, accept }) {
-  const t = useTranslations("Form");
+function FormItem({ id, type, required, accept, autocomplete }) {
+  const t = useTranslations('Form');
   const attributes = {
-    className: "p-2 border border-accent-50",
+    className: 'p-2 border border-accent-50',
     id,
     type,
     name: id,
     required,
-    placeholder: t.has(`placeholder.${id}`) ? t(`placeholder.${id}`) : "",
+    placeholder: t.has(`placeholder.${id}`) ? t(`placeholder.${id}`) : '',
     accept,
+    autoComplete: autocomplete || 'off',
   };
   const dynamicLabel = t(`${id}`);
 
   let element;
   switch (id) {
-    case "message":
-    case "extraInfo":
+    case 'message':
+    case 'extraInfo':
       element = <textarea rows={10} {...attributes} />;
       break;
-    case "arabic":
+    case 'arabic':
       return (
         <RadioInput
           label={dynamicLabel}
           items={[
-            { id: "basic", name: t("language.basic") },
-            { id: "intermediate", name: t("language.medium") },
-            { id: "advanced", name: t("language.advanced") },
+            { id: 'basic', name: t('language.basic') },
+            { id: 'intermediate', name: t('language.medium') },
+            { id: 'advanced', name: t('language.advanced') },
           ]}
           groupName={id}
         />
       );
-    case "english":
+    case 'english':
       return (
         <RadioInput
           label={dynamicLabel}
           items={[
-            { id: "basic", name: t("language.basic") },
-            { id: "intermediate", name: t("language.medium") },
-            { id: "advanced", name: t("language.advanced") },
+            { id: 'basic', name: t('language.basic') },
+            { id: 'intermediate', name: t('language.medium') },
+            { id: 'advanced', name: t('language.advanced') },
           ]}
           groupName={id}
         />
@@ -123,7 +124,15 @@ function FormItem({ id, type, required, accept }) {
   return (
     <div className="flex flex-col gap-2">
       <label htmlFor={id}>
-        {dynamicLabel} {required && <span className="text-red-500">*</span>}
+        {dynamicLabel}{' '}
+        {required && (
+          <>
+            <span className="text-red-700" aria-hidden="true">
+              *
+            </span>
+            <span className="sr-only">required</span>
+          </>
+        )}
       </label>
       {element}
     </div>

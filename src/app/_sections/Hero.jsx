@@ -1,25 +1,24 @@
-import Image from "next/image";
-import Heading from "../_components/Heading";
-import Section from "../_components/Section";
-import Row from "../_components/Row";
-import { useTranslations } from "next-intl";
+import Image from 'next/image';
+import Heading from '../_components/Heading';
+import Section from '../_components/Section';
+import Row from '../_components/Row';
+import { useTranslations } from 'next-intl';
 
 export default function Hero() {
-  const t = useTranslations("Hero");
+  const t = useTranslations('Hero');
 
   return (
-    <Section noBg={true}>
+    <Section noBg={true} classes="bg-black/70">
       <Image
         src="/hero.jpg"
         fill
         className="object-cover -z-10"
-        alt="Hero Image"
+        alt="Hero Section background Image - building with modern bridges"
         loading="eager"
       />
-      <Row classes="flex items-center justify-center  min-h-[65svh]">
-        <div className="absolute inset-0 bg-black/50 -z-10"></div>
+      <Row classes="relative flex items-center justify-center min-h-[65svh] z-10">
         <Heading type="primary" classes="text-white text-balance max-w-[50rem]">
-          {t("title")}
+          {t('title')}
         </Heading>
       </Row>
     </Section>

@@ -22,9 +22,9 @@ export async function generateMetadata({ params }) {
 }
 
 const inputs = [
-  { id: 'name', type: 'text', required: true },
-  { id: 'phone', type: 'tel', required: true },
-  { id: 'email', type: 'email', required: true },
+  { id: 'name', type: 'text', required: true, autocomplete: 'name' },
+  { id: 'phone', type: 'tel', required: true, autocomplete: 'tel' },
+  { id: 'email', type: 'email', required: true, autocomplete: 'email' },
   { id: 'message', type: 'text', required: true },
 ];
 

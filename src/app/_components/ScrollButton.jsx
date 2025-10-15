@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { BsArrowUpCircle } from "react-icons/bs";
+import { BsArrowUpCircle } from 'react-icons/bs';
 
 const ScrollToTopButton = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
 
@@ -17,7 +17,7 @@ const ScrollToTopButton = () => {
       aria-label="Scroll to top"
       title="Back To Top"
     >
-      <BsArrowUpCircle size={20} />
+      <BsArrowUpCircle aria-hidden="true" size={20} />
     </button>
   );
 };

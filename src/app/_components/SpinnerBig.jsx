@@ -6,6 +6,7 @@ const SpinnerBig = () => {
       <BiLoaderAlt
         className="w-12 h-12 animate-spin"
         style={{ animationDuration: '1.5s' }}
+        aria-hidden="true"
       />
     </div>
   );

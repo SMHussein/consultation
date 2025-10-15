@@ -1,9 +1,9 @@
-import Button from "./Button";
-import Heading from "./Heading";
-import { useTranslations } from "next-intl";
+import Button from './Button';
+import Heading from './Heading';
+import { useTranslations } from 'next-intl';
 
-export default function Card({ title, text, icon, href, type = "secondary" }) {
-  const t = useTranslations("Buttons");
+export default function Card({ title, text, icon, href, type = 'secondary' }) {
+  const t = useTranslations('Buttons');
 
   return (
     <div className="rounderd-sm shadow-md border p-6  flex flex-col gap-8">
@@ -17,7 +17,7 @@ export default function Card({ title, text, icon, href, type = "secondary" }) {
       <p className="flex-1">{text}</p>
       {href && (
         <Button href={href} type="secondary">
-          {t("read")}
+          {t('read')}
         </Button>
       )}
     </div>

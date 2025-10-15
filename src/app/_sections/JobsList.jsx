@@ -10,7 +10,7 @@ export default function JobsList() {
 
   return (
     <Section>
-      <Row grid={2} classes="flex flex-col gap-12 text-center sm:text-justify">
+      <Row grid={2} classes="flex flex-col gap-12 text-center">
         <div className="flex gap-1 flex-col ">
           <Heading type="primary">{t('titles.main')}</Heading>
           <Heading

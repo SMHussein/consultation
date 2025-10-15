@@ -1,10 +1,8 @@
-import Button from "../_components/Button";
-import Heading from "../_components/Heading";
-import Row from "../_components/Row";
-import Section from "../_components/Section";
-import Slider from "../_components/Slider";
-import { useTranslations } from "next-intl";
-import { BsPersonAdd } from "react-icons/bs";
+import Heading from '../_components/Heading';
+import Row from '../_components/Row';
+import Section from '../_components/Section';
+import Slider from '../_components/Slider';
+import { useTranslations } from 'next-intl';
 
 const slides = Array.from(
   { length: 11 },
@@ -12,12 +10,12 @@ const slides = Array.from(
 );
 
 export default function Clients() {
-  const t = useTranslations("clients");
+  const t = useTranslations('clients');
 
   return (
     <Section isLight={false}>
       <Row grid={2} classes="flex flex-col gap-8">
-        <Heading classes="text-primary-100 text-center">{t("title")}</Heading>
+        <Heading classes="text-primary-100 text-center">{t('title')}</Heading>
         <Slider slides={slides} />
       </Row>
     </Section>

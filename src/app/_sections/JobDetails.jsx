@@ -1,20 +1,20 @@
-import Heading from "@/src/app/_components/Heading";
-import Row from "@/src/app/_components/Row";
-import Section from "@/src/app/_components/Section";
-import { useTranslations } from "next-intl";
-import { getItems } from "@/src/app/_utils/helpers";
-import Button from "@/src/app/_components/Button";
+import Heading from '@/src/app/_components/Heading';
+import Row from '@/src/app/_components/Row';
+import Section from '@/src/app/_components/Section';
+import { useTranslations } from 'next-intl';
+import { getItems } from '@/src/app/_utils/helpers';
+import Button from '@/src/app/_components/Button';
 import {
   BsCardChecklist,
   BsMortarboard,
   BsLightningCharge,
-} from "react-icons/bs";
-import JobHeading from "../_components/JobHeading";
-import { notFound } from "next/navigation";
+} from 'react-icons/bs';
+import JobHeading from '../_components/JobHeading';
+import { notFound } from 'next/navigation';
 
 export default function JobDetails({ job }) {
-  const t = useTranslations("jobs");
-  const b = useTranslations("Buttons");
+  const t = useTranslations('jobs');
+  const b = useTranslations('Buttons');
   const responsibilities = getItems(t, `jobs.${job}.responsibilities`);
   const qualifications = getItems(t, `jobs.${job}.qualifications`);
   const skills = getItems(t, `jobs.${job}.skills`);
@@ -35,30 +35,54 @@ export default function JobDetails({ job }) {
         {responsibilities && (
           <JobList
             jobArray={responsibilities}
-            title={t("titles.responsibilities")}
-            icon={<BsCardChecklist size={25} className="text-primary-170" />}
+            title={t('titles.responsibilities')}
+            icon={
+              <BsCardChecklist
+                aria-hidden="true"
+                size={25}
+                className="text-primary-170"
+              />
+            }
           />
         )}
         {qualifications && (
           <JobList
             jobArray={qualifications}
-            title={t("titles.qualifications")}
-            icon={<BsMortarboard size={25} className="text-primary-170" />}
+            title={t('titles.qualifications')}
+            icon={
+              <BsMortarboard
+                aria-hidden="true"
+                size={25}
+                className="text-primary-170"
+              />
+            }
           />
         )}
 
         {skills && (
           <JobList
             jobArray={skills}
-            title={t("titles.skills")}
-            icon={<BsLightningCharge size={25} className="text-primary-170" />}
+            title={t('titles.skills')}
+            icon={
+              <BsLightningCharge
+                aria-hidden="true"
+                size={25}
+                className="text-primary-170"
+              />
+            }
           />
         )}
         {educationAndAcademicExperience && (
           <JobList
             jobArray={educationAndAcademicExperience}
-            title={t("titles.educationAndAcademicExperience")}
-            icon={<BsLightningCharge size={25} className="text-primary-170" />}
+            title={t('titles.educationAndAcademicExperience')}
+            icon={
+              <BsLightningCharge
+                aria-hidden="true"
+                size={25}
+                className="text-primary-170"
+              />
+            }
           />
         )}
         <Button
@@ -66,7 +90,7 @@ export default function JobDetails({ job }) {
           rel="nofollow"
           href={`/careers/jobs/${job}/apply`}
         >
-          {b("apply")}
+          {b('apply')}
         </Button>
       </Row>
     </Section>

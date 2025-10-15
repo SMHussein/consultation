@@ -46,8 +46,13 @@ export default async function LocaleLayout({ children, params }) {
       <body className={locale === 'ar' ? bahij.className : georgia.className}>
         <ToasterLayout />
         <NextIntlClientProvider messages={messages}>
+          <a className="skip-link" href="#main-content" class="skip-link">
+            Skip to main content
+          </a>
           <Header locale={locale} />
-          <main className="min-h-svh relative">{children}</main>
+          <main className="min-h-svh relative" id="main-content">
+            {children}
+          </main>
           <Footer />
         </NextIntlClientProvider>
       </body>

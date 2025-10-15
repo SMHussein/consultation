@@ -1,6 +1,8 @@
-import { Link } from "@/src/i18n/routing";
-import Logo from "../_components/Logo";
-import Row from "../_components/Row";
+'use client';
+
+import { Link, usePathname } from '@/src/i18n/routing';
+import Logo from '../_components/Logo';
+import Row from '../_components/Row';
 import {
   BiHomeSmile,
   BiGlobe,
@@ -9,16 +11,16 @@ import {
   BiSolidColor,
   BiLayer,
   BiLogoLinkedin,
-  BiMapPin,   // ✅ added map pin icon
-} from "react-icons/bi";
-import ScrollToTopButton from "../_components/ScrollButton";
-import { useTranslations } from "next-intl";
+  BiMapPin,
+} from 'react-icons/bi';
+import ScrollToTopButton from '../_components/ScrollButton';
+import { useTranslations } from 'next-intl';
 
 const linkWrapperClass =
-  "flex flex-col gap-2 border-t-[0.5px] pt-8 md:pt-0 md:ps-8 border-gray-500/50 md:border-s-[0.5px] md:border-t-0";
+  'flex flex-col gap-2 border-t-[0.5px] pt-8 md:pt-0 md:ps-8 border-gray-500/50 md:border-s-[0.5px] md:border-t-0';
 
 export default function Footer() {
-  const t = useTranslations("navigation");
+  const t = useTranslations('navigation');
 
   return (
     <footer className="bg-accent-150 border-t text-primary-200 dark:text-accent-50 dark:bg-primary-210">
@@ -30,54 +32,60 @@ export default function Footer() {
           </div>
 
           {/* First group of links */}
-          <div className={linkWrapperClass}>
-            <FooterLink href="/" label={t("home")} icon={<BiHomeSmile />} />
-            <FooterLink href="/about" label={t("about")} icon={<BiGlobe />} />
+          <ul className={linkWrapperClass}>
+            <FooterLink
+              href="/"
+              label={t('home')}
+              icon={<BiHomeSmile aria-hidden="true" />}
+            />
+            <FooterLink
+              href="/about"
+              label={t('about')}
+              icon={<BiGlobe aria-hidden="true" />}
+            />
             <FooterLink
               href="/services"
-              label={t("services")}
-              icon={<BiSolidColor />}
+              label={t('services')}
+              icon={<BiSolidColor aria-hidden="true" />}
             />
-          </div>
+          </ul>
 
           {/* Second group of links */}
-          <div className={linkWrapperClass}>
+          <ul className={linkWrapperClass}>
             <FooterLink
               href="/publications"
-              label={t("publications")}
-              icon={<BiLayer />}
+              label={t('publications')}
+              icon={<BiLayer aria-hidden="true" />}
             />
             <FooterLink
               href="/careers"
-              label={t("careers")}
-              icon={<BiShoppingBag />}
+              label={t('careers')}
+              icon={<BiShoppingBag aria-hidden="true" />}
             />
             <FooterLink
               href="/contact"
-              label={t("contact")}
-              icon={<BiPhone />}
+              label={t('contact')}
+              icon={<BiPhone aria-hidden="true" />}
             />
-          </div>
+          </ul>
         </div>
 
         {/* === Bottom Section: Social Icons & Location === */}
         <div className="flex justify-between items-center md:justify-around mt-8 pt-8 border-t-[0.5px] border-gray-500/50">
-          <div className="flex items-center gap-6">
-            {/* LinkedIn */}
+          <ul className="flex items-center gap-6">
             <FooterLink
               href="https://www.linkedin.com/company/ecmc-ksa"
-              icon={<BiLogoLinkedin size={20} />}
+              icon={<BiLogoLinkedin aria-hidden="true" size={20} />}
+              ariaLabel="LinkedIn"
             />
 
-            {/* ✅ New Google Maps Location Link */}
             <FooterLink
               href="https://maps.app.goo.gl/DGACHYp1bTqjo5Lc9?g_st=ipc"
-              icon={<BiMapPin size={20} />}
+              icon={<BiMapPin aria-hidden="true" size={20} />}
               label="Our Location"
             />
-          </div>
+          </ul>
 
-          {/* Scroll To Top */}
           <div>
             <ScrollToTopButton />
           </div>
@@ -88,14 +96,22 @@ export default function Footer() {
 }
 
 /* === Footer Link Component === */
-function FooterLink({ href, label, icon }) {
+function FooterLink({ href, label, icon, ariaLabel }) {
+  const pathname = usePathname();
+  const isActive = pathname === href;
+  const activeClass = isActive ? 'text-primary-160' : '';
+
   return (
-    <Link
-      href={href}
-      className="text-sm font-thin flex items-center gap-2 hover:text-primary-170"
-    >
-      {icon}
-      {label}
-    </Link>
+    <li>
+      <Link
+        href={href}
+        className={`text-sm font-thin flex items-center gap-2 hover:text-primary-170 ${activeClass}`}
+        aria-label={ariaLabel}
+        aria-current={isActive ? 'page' : undefined}
+      >
+        {icon}
+        {label}
+      </Link>
+    </li>
   );
 }

@@ -9,7 +9,7 @@ export default function ServiceItem({ service, title, href, btnText, src }) {
       <div className="h-[270px] ">
         <Image
           src={src}
-          alt={title}
+          alt={`this is an image for ${title}`}
           width={690}
           height={270}
           className="w-full h-full object-cover rounded-md"
@@ -24,7 +24,7 @@ export default function ServiceItem({ service, title, href, btnText, src }) {
             key={i}
             className="flex capitalize items-center gap-2 text-accent-200 dark:text-accent-50 text-sm"
           >
-            <BiPolygon />
+            <BiPolygon aria-hidden="true" />
             {item}
           </li>
         ))}
