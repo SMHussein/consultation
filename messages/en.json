@@ -34,7 +34,9 @@
       "generic": "Something went wrong. Please try again later.",
       "fields": "Please fill out the fields correctly",
       "size": "CV size should not exceed 1MB",
-      "job": "This job does not exist, please try again with another job"
+      "job": "This job does not exist, please try again with another job",
+      "applied": "You have already applied for this job",
+      "appliedTwoJobs": "You have already applied for two jobs, you cannot apply for more than two jobs"
     }
   },
   "notFound": {

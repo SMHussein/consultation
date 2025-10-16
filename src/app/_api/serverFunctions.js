@@ -30,6 +30,24 @@ export async function newsLetterSubsribe(currentState, formData) {
     };
   }
 
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return {
+      error: t('error.email'),
+    };
+  }
+
+  const { data: existing, error: existingError } = await supabase
+    .from('news')
+    .select('*')
+    .eq('email', email)
+    .single();
+
+  if (existing) {
+    return {
+      error: t('error.generic'),
+    };
+  }
+
   const { data, error } = await supabase
     .from('news')
     .insert([{ name, email }])
@@ -58,6 +76,25 @@ export async function sendMessage(currentState, formData) {
   if (!name || !email || !phone || !message) {
     return {
       error: t('error.fields'),
+    };
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return {
+      error: t('error.email'),
+    };
+  }
+
+  const { data: existing, error: existingError } = await supabase
+    .from('messages')
+    .select('*')
+    .eq('email', email)
+    .single();
+
+  if (existing) {
+    return {
+      error: t('error.generic'),
     };
   }
 
@@ -125,6 +162,29 @@ export async function jobApply(currentState, formData) {
   ) {
     return {
       error: t('error.fields'),
+    };
+  }
+
+  const { data: existing, error: existingError } = await supabase
+    .from('applicants')
+    .select('*')
+    .eq('email', email)
+    .eq('job_id', jobId);
+
+  if (existing.length) {
+    return {
+      error: t('error.applied'),
+    };
+  }
+
+  const { count, error: countError } = await supabase
+    .from('applicants')
+    .select('*', { count: 'exact', head: true })
+    .eq('email', email);
+
+  if (count >= 2) {
+    return {
+      error: t('error.appliedTwoJobs'),
     };
   }
 

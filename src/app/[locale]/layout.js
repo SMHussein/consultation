@@ -9,7 +9,7 @@ import { routing } from '@/src/i18n/routing';
 import { setRequestLocale } from 'next-intl/server';
 import ToasterLayout from '@/src/app/_components/Toaster';
 import { getMetadata } from '@/src/app/_utils/helpers';
-import { GoogleTagManager } from '@next/third-parties/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -42,7 +42,7 @@ export default async function LocaleLayout({ children, params }) {
 
   return (
     <html lang={locale} dir={direction}>
-      <GoogleTagManager gtmId="GTM-K738482T" />
+      <GoogleAnalytics gaId="G-XHD0SJNZWP" />
       <body className={locale === 'ar' ? bahij.className : georgia.className}>
         <ToasterLayout />
         <NextIntlClientProvider messages={messages}>
