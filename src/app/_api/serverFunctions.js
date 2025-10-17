@@ -39,12 +39,11 @@ export async function newsLetterSubsribe(currentState, formData) {
   const { data: existing, error: existingError } = await supabase
     .from('news')
     .select('*')
-    .eq('email', email)
-    .single();
+    .eq('email', email);
 
-  if (existing) {
+  if (existing.length) {
     return {
-      error: t('error.generic'),
+      error: t('error.alreadySubscribed'),
     };
   }
 
@@ -89,12 +88,13 @@ export async function sendMessage(currentState, formData) {
   const { data: existing, error: existingError } = await supabase
     .from('messages')
     .select('*')
-    .eq('email', email)
-    .single();
+    .eq('email', email);
 
-  if (existing) {
+  console.log('Existing messages:', existing);
+
+  if (existing.length > 2) {
     return {
-      error: t('error.generic'),
+      error: t('error.manyMasseges'),
     };
   }
 

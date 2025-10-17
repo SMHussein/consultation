@@ -36,7 +36,9 @@
       "size": "CV size should not exceed 1MB",
       "job": "This job does not exist, please try again with another job",
       "applied": "You have already applied for this job",
-      "appliedTwoJobs": "You have already applied for two jobs, you cannot apply for more than two jobs"
+      "appliedTwoJobs": "You have already applied for two jobs, you cannot apply for more than two jobs",
+      "manyMasseges": "You are sending messages too frequently, please wait a while before sending another message",
+      "alreadySubscribed": "You are already subscribed to our newsletter"
     }
   },
   "notFound": {

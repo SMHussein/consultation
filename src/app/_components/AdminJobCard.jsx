@@ -10,7 +10,7 @@ export default function AdminJobCard({
   type = 'secondary',
   applicantCount = 0,
 }) {
-  let classes = `text-primary-200 bg-primary-150 rounded-sm shadow-md bg-accent-100 hover:bg-primary-160 inline-flex gap-2 items-center justify-center transition-all min-w-[150px] inline-block py-2 px-4 disabled:opacity-70 disabled:cursor-not-allowed `;
+  let classes = `text-white bg-primary-150 rounded-sm shadow-md bg-accent-100 hover:bg-primary-160 inline-flex gap-2 items-center justify-center transition-all min-w-[150px] inline-block py-2 px-4 disabled:opacity-70 disabled:cursor-not-allowed `;
 
   return (
     <div className="rounderd-sm shadow-md border p-6  flex flex-col gap-8">
