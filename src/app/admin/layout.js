@@ -2,8 +2,8 @@ import '@/src/app/globals.css';
 import localFont from 'next/font/local';
 import ToasterLayout from '@/src/app/_components/Toaster';
 import Sidebar from '@/src/app/_sections/Sidebar';
-import { getUser } from '@/src/app/_api/services';
 import LoginPage from '@/src/app/_sections/Login';
+import { getSession } from '../_api/session';
 
 const georgia = localFont({
   src: '../fonts/georgia.ttf',
@@ -11,10 +11,10 @@ const georgia = localFont({
 });
 
 export default async function AdminLayout({ children }) {
-  const user = await getUser();
+  const user = await getSession();
   let element;
 
-  if (user) {
+  if (user && user.role === 'admin') {
     element = (
       <main className="grid grid-cols-[max-content_1fr] h-dvh relative">
         <Sidebar />

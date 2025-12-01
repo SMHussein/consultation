@@ -28,7 +28,7 @@
     "success": {
       "subscribe": "Thank you for subscribing to our newsletter!",
       "contact": "Thank you for reaching out to us!",
-      "apply": "Thank you for your intrest to work with us! we have recieved your application"
+      "apply": "Thank you for your intrest to work with us! You can view your applications under your profile page"
     },
     "error": {
       "generic": "Something went wrong. Please try again later.",
@@ -652,6 +652,88 @@
         "Advanced reporting skills with experience creating detailed reports and data presentations.",
         "Proficiency in Excel and PowerPoint for data analysis and presentations."
       ]
+    }
+  },
+  "profile": {
+    "welcome": "Welcome back",
+    "title": "My profile",
+    "subtitle": "Track every role you have applied to and keep your details handy.",
+    "noApplications": "You have not applied to any jobs yet.",
+    "appliedOn": "Applied on",
+    "currentCompany": "Current company",
+    "expectedSalary": "Expected salary",
+    "location": "Location",
+    "phone": "Phone number",
+    "linkedin": "LinkedIn",
+    "viewProfile": "View profile",
+    "extraInfo": "Extra information",
+    "cv": "CV",
+    "downloadCv": "Download CV",
+    "roleRemoved": "Role removed",
+    "pending": "Pending",
+    "fields": {
+      "fullName": "Full name",
+      "phone": "Phone number",
+      "location": "Location",
+      "company": "Current company",
+      "salary": "Expected salary",
+      "linkedin": "LinkedIn profile",
+      "extraInfo": "Extra information"
+    },
+    "actions": {
+      "edit": "Edit details",
+      "cancelEdit": "Cancel",
+      "save": "Save changes",
+      "saving": "Saving...",
+      "withdraw": "Withdraw application",
+      "withdrawing": "Withdrawing...",
+      "confirmWithdraw": "Are you sure you want to withdraw this application? This action cannot be undone.",
+      "editIntro": "Keep your information up to date so our recruiters can reach you quickly.",
+      "updateSuccess": "Application updated successfully.",
+      "withdrawSuccess": "Application withdrawn.",
+      "updateError": "We couldn't update this application. Please try again.",
+      "withdrawError": "We couldn't withdraw this application. Please try again.",
+      "notAuthenticated": "Please sign in again to continue."
+    }
+  },
+  "header": {
+    "myAccount": "My account",
+    "logout": "Logout",
+    "loggingOut": "Logging out...",
+    "login": "Login"
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome back",
+      "subtitle": "Sign in to continue your application journey.",
+      "cta": "Sign in",
+      "switchText": "Don't have an account?",
+      "switchLabel": "Create one"
+    },
+    "signup": {
+      "title": "Create an account",
+      "subtitle": "Sign up to save progress and apply for roles.",
+      "cta": "Sign up",
+      "switchText": "Already have an account?",
+      "switchLabel": "Sign in"
+    },
+    "email": "Email address",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "orContinueWith": "or continue with",
+    "google": "Google",
+    "signingIn": "Signing in...",
+    "error": {
+      "fieldsRequired": "Email and password are required",
+      "invalidCredentials": "Unable to sign in with these credentials",
+      "passwordTooShort": "Password must be at least 6 characters",
+      "passwordsDontMatch": "Passwords do not match",
+      "signupFailed": "Unable to create account with these details",
+      "googleSignInFailed": "Unable to start Google sign in. Please try again.",
+      "googleRedirectFailed": "Unable to redirect to Google at the moment."
+    },
+    "success": {
+      "emailConfirmation": "Account created! Please confirm your email to continue."
     }
   },
   "apply": {}

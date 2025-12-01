@@ -44,18 +44,6 @@ export async function getApplicants(id) {
   return applicants;
 }
 
-export async function getUser() {
-  const supabase = await createClient();
-
-  let { data: user, error } = await supabase.auth.getUser();
-
-  if (error) {
-    console.log(error.message);
-    return null;
-  }
-  return user;
-}
-
 export async function getNewsletterEmails() {
   const supabase = await createClient();
 

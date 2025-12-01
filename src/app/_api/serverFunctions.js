@@ -2,21 +2,15 @@
 import { createClient } from '../_utils/supabase/server';
 import { getTranslations } from 'next-intl/server';
 import { redirect } from 'next/navigation';
+import { jobIds } from '../_utils/jobs';
 
 // await new Promise((resolve) => setTimeout(resolve, 5000));
 
-const jobIds = {
-  'associate-consultant': 1,
-  'marketing-specialist': 2,
-  manager: 3,
-  'market-research-associate': 4,
-  'finance-manager': 5,
-  'office-administrator': 6,
-  hr: 7,
-  it: 8,
-  'partnership-specialist': 9,
-  'senior-advisory-operations-specialist': 10,
-};
+function sanitizeRedirectPath(path) {
+  if (typeof path !== 'string') return '/';
+  if (!path.startsWith('/')) return '/';
+  return path;
+}
 
 export async function newsLetterSubsribe(currentState, formData) {
   const t = await getTranslations('responses');
@@ -114,10 +108,48 @@ export async function sendMessage(currentState, formData) {
   };
 }
 
+async function verifyRecaptcha(token) {
+  if (!process.env.RECAPTCHA_SECRET_KEY) {
+    // If secret key is not set, skip verification (for development)
+    return true;
+  }
+
+  try {
+    const response = await fetch(
+      `https://www.google.com/recaptcha/api/siteverify`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
+      }
+    );
+
+    const data = await response.json();
+    return data.success && data.score >= 0.5;
+  } catch (error) {
+    console.error('reCAPTCHA verification error:', error);
+    return false;
+  }
+}
+
 export async function jobApply(currentState, formData) {
   const t = await getTranslations('responses');
   const supabase = await createClient();
-  const email = formData.get('email');
+
+  // Get logged-in user
+  const {
+    data: { user: authUser },
+  } = await supabase.auth.getUser();
+
+  if (!authUser) {
+    return {
+      error: t('error.unauthorized') || 'You must be logged in to apply',
+    };
+  }
+
+  const email = formData.get('email')?.toLowerCase().trim();
   const name = formData.get('name');
   const phone = formData.get('phone');
   const location = formData.get('location');
@@ -131,10 +163,37 @@ export async function jobApply(currentState, formData) {
   const extraInfo = formData.get('extraInfo');
   const cv = formData.get('cv');
   const job = formData.get('job');
+  const recaptchaToken = formData.get('recaptchaToken');
   const storageUrl = process.env.SUPABASE_STORAGE_URL;
   const cvName = `${Math.random()}-${cv?.name}`.replaceAll(' ', '-');
   const cvPath = `${storageUrl}/${cvName}`;
   const jobId = jobIds[job];
+
+  // Verify email matches logged-in user
+  if (email !== authUser.email?.toLowerCase().trim()) {
+    return {
+      error: t('error.emailMismatch') || 'Email must match your account email',
+    };
+  }
+
+  // Verify reCAPTCHA if enabled
+  if (process.env.RECAPTCHA_SECRET_KEY) {
+    if (!recaptchaToken) {
+      return {
+        error:
+          t('error.captcha') || 'Please complete the security verification',
+      };
+    }
+
+    const isValidCaptcha = await verifyRecaptcha(recaptchaToken);
+    if (!isValidCaptcha) {
+      return {
+        error:
+          t('error.captchaInvalid') ||
+          'Security verification failed. Please try again.',
+      };
+    }
+  }
 
   if (!jobId) {
     return {
@@ -240,6 +299,116 @@ export async function logout() {
   }
 
   redirect('/');
+}
+
+export async function authLogin(currentState, formData) {
+  const t = await getTranslations('auth');
+  const supabase = await createClient();
+
+  const email = formData.get('email');
+  const password = formData.get('password');
+  const redirectTo = sanitizeRedirectPath(formData.get('redirectTo')) || '/';
+
+  if (!email || !password) {
+    return {
+      error: t('error.fieldsRequired'),
+    };
+  }
+
+  const { error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
+
+  if (error) {
+    console.log(error);
+    return {
+      error: t('error.invalidCredentials'),
+    };
+  }
+
+  redirect(redirectTo);
+}
+
+export async function authSignup(currentState, formData) {
+  const t = await getTranslations('auth');
+  const supabase = await createClient();
+
+  const email = formData.get('email');
+  const password = formData.get('password');
+  const confirmPassword = formData.get('confirmPassword');
+  const redirectTo = sanitizeRedirectPath(formData.get('redirectTo')) || '/';
+
+  if (!email || !password) {
+    return {
+      error: t('error.fieldsRequired'),
+    };
+  }
+
+  if (password.length < 6) {
+    return {
+      error: t('error.passwordTooShort'),
+    };
+  }
+
+  if (password !== confirmPassword) {
+    return {
+      error: t('error.passwordsDontMatch'),
+    };
+  }
+
+  const { data, error } = await supabase.auth.signUp({
+    email,
+    password,
+  });
+
+  if (error) {
+    console.log(error);
+    return {
+      error: t('error.signupFailed'),
+    };
+  }
+
+  if (data?.session) {
+    redirect(redirectTo);
+  }
+
+  return {
+    success: t('success.emailConfirmation'),
+  };
+}
+
+export async function authGoogle(next) {
+  const t = await getTranslations('auth');
+  const supabase = await createClient();
+  const redirectUrl = next !== '/' ? `?next=${next}` : '';
+
+  const url = `${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback${redirectUrl}`;
+
+  console.log(url);
+
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: 'google',
+    options: {
+      redirectTo: url,
+    },
+  });
+
+  if (error) {
+    console.log(error);
+    return {
+      error: t('error.googleSignInFailed'),
+    };
+  }
+
+  if (data?.url) {
+    console.log(data.url);
+    redirect(data.url);
+  }
+
+  return {
+    error: t('error.googleRedirectFailed'),
+  };
 }
 
 export async function login(currentState, formData) {

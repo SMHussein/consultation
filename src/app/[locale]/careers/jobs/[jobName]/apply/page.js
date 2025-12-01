@@ -1,5 +1,7 @@
 import JobApply from '@/src/app/_sections/Apply';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { redirect } from 'next/navigation';
+import { getSession } from '@/src/app/_api/session';
 
 export async function generateMetadata({ params }) {
   const { locale, jobName } = await params;
@@ -43,5 +45,12 @@ export default async function Apply({ params }) {
   const { locale, jobName } = await params;
   setRequestLocale(locale);
 
-  return <JobApply job={jobName} />;
+  const user = await getSession();
+
+  if (!user) {
+    const nextPath = `/${locale}/careers/jobs/${jobName}/apply`;
+    redirect(`/${locale}/auth/login?next=${encodeURIComponent(nextPath)}`);
+  }
+
+  return <JobApply job={jobName} user={user} />;
 }

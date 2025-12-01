@@ -11,6 +11,7 @@ import ToasterLayout from '@/src/app/_components/Toaster';
 import { getMetadata } from '@/src/app/_utils/helpers';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { GoogleTagManager } from '@next/third-parties/google';
+import { getSession } from '@/src/app/_api/session';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -38,8 +39,9 @@ export default async function LocaleLayout({ children, params }) {
   }
   setRequestLocale(locale);
 
-  const messages = await getMessages();
   const direction = locale === 'ar' ? 'rtl' : 'ltr';
+
+  const [messages, user] = await Promise.all([getMessages(), getSession()]);
 
   return (
     <html lang={locale} dir={direction}>
@@ -51,7 +53,7 @@ export default async function LocaleLayout({ children, params }) {
           <a className="skip-link" href="#main-content" class="skip-link">
             Skip to main content
           </a>
-          <Header locale={locale} />
+          <Header locale={locale} user={user} />
           <main className="min-h-svh relative" id="main-content">
             {children}
           </main>

@@ -41,11 +41,19 @@ const inputs = [
   },
 ];
 
-export default function JobApply({ job }) {
+export default function JobApply({ job, user }) {
   const t = useTranslations('apply');
   const j = useTranslations(`jobs`);
 
   if (!j.has(`${job}.title`)) return notFound();
+
+  // Get user name from metadata, fallback to email
+  const userName =
+    user?.user_metadata?.name ||
+    user?.user_metadata?.full_name ||
+    user?.user_metadata?.display_name ||
+    '';
+  const userEmail = user?.email || '';
 
   return (
     <Section>
@@ -55,7 +63,13 @@ export default function JobApply({ job }) {
           location={j(`${job}.location`)}
           type={j(`${job}.type`)}
         />
-        <Form inputs={inputs} action={jobApply} job={job} />
+        <Form
+          inputs={inputs}
+          action={jobApply}
+          job={job}
+          defaultValues={{ name: userName, email: userEmail }}
+          readOnlyFields={['name', 'email']}
+        />
       </Row>
     </Section>
   );
