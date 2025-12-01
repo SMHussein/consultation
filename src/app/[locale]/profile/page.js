@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation';
 import { getSession } from '@/src/app/_api/session';
 import { enrichApplicationsWithJobMeta } from '@/src/app/_api/users';
 import ApplicationActions from '@/src/app/_components/ApplicationActions';
+import Link from 'next/link';
 
 async function formatDate(value, locale, t) {
   if (!value) return t('pending');
@@ -67,12 +68,12 @@ export default async function ProfilePage({ params }) {
             <p className="text-base text-primary-170">{t('subtitle')}</p>
           </div>
           {user.role === 'admin' && (
-            <a
+            <Link
               href="/admin"
               className="rounded-md bg-primary-150 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-primary-160"
             >
               {t('adminPanel') || 'Admin Panel'}
-            </a>
+            </Link>
           )}
         </header>
 
