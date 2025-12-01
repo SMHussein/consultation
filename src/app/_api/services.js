@@ -47,7 +47,10 @@ export async function getApplicants(id) {
 export async function getNewsletterEmails() {
   const supabase = await createClient();
 
-  let { data: emails, error } = await supabase.from('news').select('*');
+  let { data: emails, error } = await supabase
+    .from('news')
+    .select('*')
+    .order('created_at', { ascending: false });
 
   if (error) {
     console.log(error.message);
@@ -62,11 +65,42 @@ export async function getMessages() {
   let { data: messages, error } = await supabase
     .from('messages')
     .select('*')
-    .eq('origin', 'ecmc');
+    .eq('origin', 'ecmc')
+    .order('created_at', { ascending: false });
 
   if (error) {
     console.log(error.message);
     return null;
   }
   return messages;
+}
+
+export async function getApplicantById(id) {
+  const supabase = await createClient();
+  let { data: applicant, error } = await supabase
+    .from('applicants')
+    .select('*')
+    .eq('id', id)
+    .single();
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return applicant;
+}
+
+export async function getArchivedApplicantById(id) {
+  const supabase = await createClient();
+  let { data: applicant, error } = await supabase
+    .from('archive')
+    .select('*')
+    .eq('id', id)
+    .single();
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return applicant;
 }

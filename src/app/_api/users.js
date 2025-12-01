@@ -130,26 +130,107 @@ export async function withdrawApplicationAction(formData) {
     return { error: 'notAuthenticated' };
   }
 
-  const { data: applicantData, error } = await supabase
+  // First, fetch the applicant data to get the CV path BEFORE deleting
+  const { data: applicantData, error: fetchError } = await supabase
+    .from('applicants')
+    .select('cv')
+    .eq('id', applicationId)
+    .eq('email', user.email)
+    .single();
+
+  if (fetchError || !applicantData) {
+    console.error('Error fetching applicant:', fetchError);
+    return { error: 'withdrawError' };
+  }
+
+  // Extract CV file name from the stored path
+  // CV is uploaded with: supabase.storage.from('cvs').upload(cvName, cv)
+  // Where cvName = ${Math.random()}-${cv?.name}.replaceAll(' ', '-')
+  // The path stored in DB is: ${storageUrl}/${cvName}
+  // We need to extract just the cvName part for deletion
+  let cvFileName = null;
+  if (applicantData.cv) {
+    try {
+      const cvPath = applicantData.cv;
+      console.log('CV path from database:', cvPath);
+      
+      // The path could be in different formats:
+      // 1. Full URL: https://xxx.supabase.co/storage/v1/object/public/cvs/0.123-filename.pdf
+      // 2. Storage URL: https://xxx.supabase.co/storage/v1/object/public/cvs/0.123-filename.pdf
+      // 3. Relative path: /cvs/0.123-filename.pdf
+      // 4. Just filename: 0.123-filename.pdf
+      
+      // Try to extract filename after /cvs/ first (most common case)
+      if (cvPath.includes('/cvs/')) {
+        const parts = cvPath.split('/cvs/');
+        if (parts.length > 1) {
+          cvFileName = parts[1];
+        }
+      }
+      
+      // If that didn't work, get the last part of the path
+      if (!cvFileName && cvPath.includes('/')) {
+        cvFileName = cvPath.split('/').pop();
+      }
+      
+      // If still no filename, assume the whole path is the filename
+      if (!cvFileName) {
+        cvFileName = cvPath;
+      }
+
+      // Clean up: remove query parameters, fragments, and whitespace
+      if (cvFileName) {
+        cvFileName = cvFileName.split('?')[0].split('#')[0].trim();
+      }
+      
+      console.log('Extracted CV filename:', cvFileName);
+    } catch (error) {
+      console.error('Error parsing CV path:', error, cvPath);
+    }
+  }
+
+  // Delete the CV from storage if we have a filename
+  if (cvFileName) {
+    try {
+      console.log('Attempting to delete CV from storage bucket "cvs" with filename:', cvFileName);
+      
+      // Use remove method to delete the file
+      const { data: deleteData, error: storageError } = await supabase.storage
+        .from('cvs')
+        .remove([cvFileName]);
+
+      if (storageError) {
+        console.error('Failed to delete CV from storage:', storageError);
+        console.error('Storage error details:', JSON.stringify(storageError, null, 2));
+        console.error('Attempted filename:', cvFileName);
+        console.error('Original CV path:', applicantData.cv);
+        // Continue with deletion even if storage deletion fails
+      } else {
+        console.log('CV successfully deleted from storage');
+        if (deleteData && deleteData.length > 0) {
+          console.log('Deleted files:', deleteData);
+        }
+      }
+    } catch (error) {
+      console.error('Exception while deleting CV from storage:', error);
+      console.error('CV filename:', cvFileName);
+      // Continue with applicant deletion even if storage deletion fails
+    }
+  } else {
+    console.warn('No CV filename extracted from path:', applicantData.cv);
+    console.warn('Skipping storage deletion');
+  }
+
+  // Now delete the applicant record
+  const { error: deleteError } = await supabase
     .from('applicants')
     .delete()
     .eq('id', applicationId)
     .eq('email', user.email);
 
-  if (error) {
-    console.error(error);
+  if (deleteError) {
+    console.error('Error deleting applicant:', deleteError);
     return { error: 'withdrawError' };
-  }
-
-  const fileUrl = applicantData.cvurl;
-  const filePath = fileUrl.split('/object/public/cvs/')[1];
-
-  const { data, error: storageError } = await supabase.storage
-    .from('cvs')
-    .remove([filePath]);
-
-  if (storageError) {
-    console.error('Failed to delete CV:', storageError);
   }
 
   revalidatePath(profilePath(locale));

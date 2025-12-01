@@ -114,6 +114,10 @@ async function verifyRecaptcha(token) {
     return true;
   }
 
+  if (!token || token.trim() === '') {
+    return false;
+  }
+
   try {
     const response = await fetch(
       `https://www.google.com/recaptcha/api/siteverify`,
@@ -127,7 +131,10 @@ async function verifyRecaptcha(token) {
     );
 
     const data = await response.json();
-    return data.success && data.score >= 0.5;
+    // For reCAPTCHA v2, we only check data.success
+    // For v3, we would also check data.score >= 0.5
+    // Since we're using v2 now, just check success
+    return data.success === true;
   } catch (error) {
     console.error('reCAPTCHA verification error:', error);
     return false;
@@ -149,7 +156,14 @@ export async function jobApply(currentState, formData) {
     };
   }
 
-  const email = formData.get('email')?.toLowerCase().trim();
+  // Use authenticated user's email directly (email field removed from form)
+  const email = authUser.email?.toLowerCase().trim();
+  if (!email) {
+    return {
+      error: t('error.email') || 'Email is required',
+    };
+  }
+
   const name = formData.get('name');
   const phone = formData.get('phone');
   const location = formData.get('location');
@@ -169,12 +183,6 @@ export async function jobApply(currentState, formData) {
   const cvPath = `${storageUrl}/${cvName}`;
   const jobId = jobIds[job];
 
-  // Verify email matches logged-in user
-  if (email !== authUser.email?.toLowerCase().trim()) {
-    return {
-      error: t('error.emailMismatch') || 'Email must match your account email',
-    };
-  }
 
   // Verify reCAPTCHA if enabled
   if (process.env.RECAPTCHA_SECRET_KEY) {
@@ -206,9 +214,10 @@ export async function jobApply(currentState, formData) {
     };
   }
 
+  console.log(name, phone, cv, location, linkedin, nationality, university, arabic, english, salary);
+
   if (
     !name ||
-    !email ||
     !phone ||
     !cv ||
     !location ||
@@ -474,6 +483,82 @@ export async function archiveApplicant(currentState, formData) {
 
   return {
     success: 'Applicant archived successfully',
+  };
+}
+
+export async function deleteMessage(currentState, formData) {
+  const id = formData.get('id');
+  
+  if (!id) {
+    return {
+      error: 'Message ID is required',
+    };
+  }
+
+  const supabase = await createClient();
+
+  // Try to delete and get the deleted record
+  const { error, data } = await supabase
+    .from('messages')
+    .delete()
+    .eq('id', id)
+    .select();
+
+  if (error) {
+    console.error('Delete message error:', error);
+    return {
+      error: `Failed to delete message: ${error.message}`,
+    };
+  }
+
+  // If no data returned, the record might not exist or was already deleted
+  if (!data || data.length === 0) {
+    // Still return success if the record doesn't exist (idempotent delete)
+    return {
+      success: 'Message deleted successfully',
+    };
+  }
+
+  return {
+    success: 'Message deleted successfully',
+  };
+}
+
+export async function deleteSubscriber(currentState, formData) {
+  const id = formData.get('id');
+  
+  if (!id) {
+    return {
+      error: 'Subscriber ID is required',
+    };
+  }
+
+  const supabase = await createClient();
+
+  // Try to delete and get the deleted record
+  const { error, data } = await supabase
+    .from('news')
+    .delete()
+    .eq('id', id)
+    .select();
+
+  if (error) {
+    console.error('Delete subscriber error:', error);
+    return {
+      error: `Failed to delete subscriber: ${error.message}`,
+    };
+  }
+
+  // If no data returned, the record might not exist or was already deleted
+  if (!data || data.length === 0) {
+    // Still return success if the record doesn't exist (idempotent delete)
+    return {
+      success: 'Subscriber deleted successfully',
+    };
+  }
+
+  return {
+    success: 'Subscriber deleted successfully',
   };
 }
 

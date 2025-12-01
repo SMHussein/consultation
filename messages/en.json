@@ -38,7 +38,9 @@
       "applied": "You have already applied for this job",
       "appliedTwoJobs": "You have already applied for two jobs, you cannot apply for more than two jobs",
       "manyMasseges": "You are sending messages too frequently, please wait a while before sending another message",
-      "alreadySubscribed": "You are already subscribed to our newsletter"
+      "alreadySubscribed": "You are already subscribed to our newsletter",
+      "email": "Please enter a valid email address",
+      "emailMismatch": "Email must match your account email"
     }
   },
   "notFound": {
@@ -659,6 +661,7 @@
     "title": "My profile",
     "subtitle": "Track every role you have applied to and keep your details handy.",
     "noApplications": "You have not applied to any jobs yet.",
+    "adminPanel": "Admin Panel",
     "appliedOn": "Applied on",
     "currentCompany": "Current company",
     "expectedSalary": "Expected salary",
@@ -700,7 +703,8 @@
     "myAccount": "My account",
     "logout": "Logout",
     "loggingOut": "Logging out...",
-    "login": "Login"
+    "login": "Login",
+    "adminPanel": "Admin Panel"
   },
   "auth": {
     "login": {

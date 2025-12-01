@@ -8,7 +8,6 @@ import { notFound } from 'next/navigation';
 
 const inputs = [
   { id: 'name', type: 'text', required: true, autocomplete: 'name' },
-  { id: 'email', type: 'email', required: true, autocomplete: 'email' },
   { id: 'phone', type: 'tel', required: true, autocomplete: 'tel' },
   {
     id: 'location',
@@ -53,7 +52,6 @@ export default function JobApply({ job, user }) {
     user?.user_metadata?.full_name ||
     user?.user_metadata?.display_name ||
     '';
-  const userEmail = user?.email || '';
 
   return (
     <Section>
@@ -67,8 +65,8 @@ export default function JobApply({ job, user }) {
           inputs={inputs}
           action={jobApply}
           job={job}
-          defaultValues={{ name: userName, email: userEmail }}
-          readOnlyFields={['name', 'email']}
+          defaultValues={{ name: userName }}
+          readOnlyFields={['name']}
         />
       </Row>
     </Section>

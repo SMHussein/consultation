@@ -56,62 +56,94 @@ export default async function ProfilePage({ params }) {
   return (
     <section className="bg-gray-50 py-12">
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-8 px-4">
-        <header className="space-y-2">
-          <p className="text-sm uppercase tracking-wide text-primary-150">
-            {t('welcome')} {user.user_metadata?.name || ''}
-          </p>
-          <h1 className="text-3xl font-semibold text-primary-200">
-            {t('title')}
-          </h1>
-          <p className="text-base text-primary-170">{t('subtitle')}</p>
+        <header className="flex items-start justify-between">
+          <div className="space-y-2">
+            <p className="text-sm uppercase tracking-wide text-primary-150">
+              {t('welcome')} {user.user_metadata?.name || ''}
+            </p>
+            <h1 className="text-3xl font-semibold text-primary-200">
+              {t('title')}
+            </h1>
+            <p className="text-base text-primary-170">{t('subtitle')}</p>
+          </div>
+          {user.role === 'admin' && (
+            <a
+              href="/admin"
+              className="rounded-md bg-primary-150 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-primary-160"
+            >
+              {t('adminPanel') || 'Admin Panel'}
+            </a>
+          )}
         </header>
 
-        <div className="rounded-2xl bg-white shadow-sm ring-1 ring-black/5">
-          {enriched.length === 0 ? (
-            <div className="p-8 text-center text-primary-170">
-              {t('noApplications')}
-            </div>
-          ) : (
-            <ul className="divide-y divide-gray-100">
-              {enriched.map((application) => (
-                <li key={application.id} className="p-6">
-                  <div className="flex flex-wrap items-start justify-between gap-4">
-                    <div>
-                      <p className="text-lg font-semibold text-primary-200">
+        {enriched.length === 0 ? (
+          <div className="rounded-2xl bg-white shadow-sm ring-1 ring-black/5 p-12 text-center text-primary-170">
+            {t('noApplications')}
+          </div>
+        ) : (
+          <div className="grid gap-6">
+            {enriched.map((application) => (
+              <div
+                key={application.id}
+                className="rounded-xl bg-white shadow-sm ring-1 ring-black/5 overflow-hidden"
+              >
+                <div className="p-6 border-b border-gray-100">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex-1 min-w-0">
+                      <h2 className="text-xl font-semibold text-primary-200 mb-1">
                         {application.jobTitle}
-                      </p>
-                      <p className="text-sm text-primary-170">
-                        {application.jobLocation}
-                        {application.jobType ? ` • ${application.jobType}` : ''}
-                      </p>
+                      </h2>
+                      <div className="flex flex-wrap items-center gap-3 text-sm text-primary-170 mb-2">
+                        <span>{application.jobLocation}</span>
+                        {application.jobType && (
+                          <>
+                            <span className="text-primary-160">•</span>
+                            <span>{application.jobType}</span>
+                          </>
+                        )}
+                      </div>
                       <p className="text-xs text-primary-160">
                         {t('appliedOn')} {application.appliedOn}
                       </p>
                     </div>
-                    <div className="text-right text-sm text-primary-160">
-                      {application.company && (
-                        <p>
-                          {t('currentCompany')}: {application.company}
-                        </p>
-                      )}
-                      {application.salary && (
-                        <p>
-                          {t('expectedSalary')}: {application.salary}
-                        </p>
-                      )}
-                    </div>
                   </div>
+                </div>
 
-                  <dl className="mt-4 grid gap-4 text-sm text-primary-160 sm:grid-cols-2">
+                <div className="p-6 space-y-4">
+                  <div className="grid gap-4 text-sm sm:grid-cols-2">
+                    {application.company && (
+                      <div>
+                        <dt className="font-medium text-primary-200 mb-1">
+                          {t('currentCompany')}
+                        </dt>
+                        <dd className="text-primary-160">{application.company}</dd>
+                      </div>
+                    )}
+                    {application.salary && (
+                      <div>
+                        <dt className="font-medium text-primary-200 mb-1">
+                          {t('expectedSalary')}
+                        </dt>
+                        <dd className="text-primary-160">{application.salary}</dd>
+                      </div>
+                    )}
                     <div>
-                      <dt className="font-medium text-primary-200">
+                      <dt className="font-medium text-primary-200 mb-1">
                         {t('location')}
                       </dt>
-                      <dd>{application.location}</dd>
+                      <dd className="text-primary-160">{application.location}</dd>
                     </div>
+                    {application.phone && (
+                      <div>
+                        <dt className="font-medium text-primary-200 mb-1">
+                          {t('phone')}
+                        </dt>
+                        <dd className="text-primary-160">{application.phone}</dd>
+                      </div>
+                    )}
                     {application.linkedin && (
                       <div>
-                        <dt className="font-medium text-primary-200">
+                        <dt className="font-medium text-primary-200 mb-1">
                           {t('linkedin')}
                         </dt>
                         <dd>
@@ -126,25 +158,9 @@ export default async function ProfilePage({ params }) {
                         </dd>
                       </div>
                     )}
-                    {application.phone && (
-                      <div>
-                        <dt className="font-medium text-primary-200">
-                          {t('phone')}
-                        </dt>
-                        <dd>{application.phone}</dd>
-                      </div>
-                    )}
-                    {application.extraInfo && (
-                      <div className="sm:col-span-2">
-                        <dt className="font-medium text-primary-200">
-                          {t('extraInfo')}
-                        </dt>
-                        <dd>{application.extraInfo}</dd>
-                      </div>
-                    )}
                     {application.cv && (
-                      <div className="sm:col-span-2">
-                        <dt className="font-medium text-primary-200">
+                      <div>
+                        <dt className="font-medium text-primary-200 mb-1">
                           {t('cv')}
                         </dt>
                         <dd>
@@ -159,16 +175,29 @@ export default async function ProfilePage({ params }) {
                         </dd>
                       </div>
                     )}
-                  </dl>
+                  </div>
+                  {application.extraInfo && (
+                    <div className="pt-2 border-t border-gray-100">
+                      <dt className="font-medium text-primary-200 mb-2 text-sm">
+                        {t('extraInfo')}
+                      </dt>
+                      <dd className="text-primary-160 text-sm whitespace-pre-wrap">
+                        {application.extraInfo}
+                      </dd>
+                    </div>
+                  )}
+                </div>
+
+                <div className="px-6 pb-6">
                   <ApplicationActions
                     application={application}
                     locale={locale}
                   />
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

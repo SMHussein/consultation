@@ -30,6 +30,10 @@ export default function Modal({ isOpen, onClose, onConfirm, message, id }) {
       toast.success(formState.success);
       lastToastRef.current = formState.success; // Store last success to avoid duplicate toasts
       onClose();
+      // Trigger a page refresh to update the data
+      if (typeof window !== 'undefined') {
+        window.location.reload();
+      }
     }
 
     return () => {
