@@ -1,5 +1,5 @@
 import AdminJobCard from '@/src/app/_components/AdminJobCard';
-import { getJobs } from '@/src/app/_api/services';
+import { getJobs } from '@/src/app/_api/adminServices';
 
 export default async function AdminJobs({ archived = false }) {
   const { jobs, applicants, archivedApplicants } = await getJobs();

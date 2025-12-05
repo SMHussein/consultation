@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { getArchivedApplicantById } from '@/src/app/_api/services';
+import { getArchivedApplicantById } from '@/src/app/_api/adminServices';
 import ApplicantDetailView from '@/src/app/_sections/ApplicantDetailView';
 import Link from 'next/link';
 import { HiArrowLeft } from 'react-icons/hi2';
@@ -27,4 +27,3 @@ export default async function ArchivedApplicantDetailPage({ params }) {
     </div>
   );
 }
-

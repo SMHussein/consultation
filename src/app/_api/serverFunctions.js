@@ -30,23 +30,18 @@ export async function newsLetterSubsribe(currentState, formData) {
     };
   }
 
-  const { data: existing, error: existingError } = await supabase
-    .from('news')
-    .select('*')
-    .eq('email', email);
-
-  if (existing.length) {
-    return {
-      error: t('error.alreadySubscribed'),
-    };
-  }
-
   const { data, error } = await supabase
     .from('news')
     .insert([{ name, email }])
     .select();
 
   if (error) {
+    if (error.code === '23505') {
+      return {
+        error: t('error.alreadySubscribed'),
+      };
+    }
+
     return {
       error: t('error.generic'),
     };
@@ -182,7 +177,7 @@ export async function jobApply(currentState, formData) {
   const cvName = `${Math.random()}-${cv?.name}`.replaceAll(' ', '-');
   const cvPath = `${storageUrl}/${cvName}`;
   const jobId = jobIds[job];
-
+  const userId = authUser.id;
 
   // Verify reCAPTCHA if enabled
   if (process.env.RECAPTCHA_SECRET_KEY) {
@@ -213,8 +208,6 @@ export async function jobApply(currentState, formData) {
       error: t('error.size'),
     };
   }
-
-  console.log(name, phone, cv, location, linkedin, nationality, university, arabic, english, salary);
 
   if (
     !name ||
@@ -274,6 +267,7 @@ export async function jobApply(currentState, formData) {
         extraInfo,
         cv: cvPath,
         job_id: jobId,
+        user_id: userId,
       },
     ])
     .select();
@@ -488,7 +482,7 @@ export async function archiveApplicant(currentState, formData) {
 
 export async function deleteMessage(currentState, formData) {
   const id = formData.get('id');
-  
+
   if (!id) {
     return {
       error: 'Message ID is required',
@@ -526,7 +520,7 @@ export async function deleteMessage(currentState, formData) {
 
 export async function deleteSubscriber(currentState, formData) {
   const id = formData.get('id');
-  
+
   if (!id) {
     return {
       error: 'Subscriber ID is required',
